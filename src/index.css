@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Gothic';
+  src: url('./fonts/GOTHIC.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gothic-Bold';
+  src: url('./fonts/GOTHICB.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gothic-Italic';
+  src: url('./fonts/GOTHICI.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gothic-Bold-Italic';
+  src: url('./fonts/GOTHICBI.TTF') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: 'Gothic';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+
