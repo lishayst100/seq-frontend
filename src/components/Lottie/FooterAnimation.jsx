@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import lottie from 'lottie-web';
-import animationData from '../../lottie/fotr.json'; // Replace with your Lottie animation data
+import animationData from '../../lottie/footer.json'; // Replace with your Lottie animation data
 
 const LottieAnimation = () => {
   const targetRef = useRef(null);
@@ -21,7 +21,7 @@ const LottieAnimation = () => {
             loop: false,
             autoplay: true
           });
-        }, 500); // Delay of 0.5 seconds (500 milliseconds)
+        }, 300); // Delay of 0.5 seconds (500 milliseconds)
       }
     };
 
@@ -48,9 +48,9 @@ const LottieAnimation = () => {
   }, []);
 
   return (
-  <div className='bg-primary'>
-      <div ref={targetRef} className='d-flex justify-content-end align-items-end bg-danger'></div>
-      <div>adasdad</div>
+  <div className='' style={{height:'500px'}}>
+      <div ref={targetRef} className='d-flex justify-content-end align-items-end' style={{width:'100%' , height:"100%"}}></div>
+     
   </div>
   );
 };

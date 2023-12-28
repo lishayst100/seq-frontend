@@ -1,7 +1,7 @@
 import React from 'react';
 import './Projects.scss'; // Ensure the correct path to your SCSS file
 import navbar from '../../lottie/navbarAnimation.json'
-import footer from '../../lottie/fotr.json'
+
 import Lottie from 'lottie-react';
 import YourComponent from '../Lottie/FooterAnimation';
 
