@@ -21,7 +21,7 @@ const LottieAnimation = () => {
             loop: false,
             autoplay: true
           });
-        }, 300); // Delay of 0.5 seconds (500 milliseconds)
+        }, 100); // Delay of 0.5 seconds (500 milliseconds)
       }
     };
 
@@ -48,8 +48,8 @@ const LottieAnimation = () => {
   }, []);
 
   return (
-  <div className='' style={{height:'500px'}}>
-      <div ref={targetRef} className='d-flex justify-content-end align-items-end' style={{width:'100%' , height:"100%"}}></div>
+  <div className='mb-5' style={{height:'359px'}}>
+      <div ref={targetRef} style={{width:'100%' , height:"100%"}}></div>
      
   </div>
   );

@@ -10,7 +10,7 @@ const Footer = () => {
   
   return (
     <footer className='black text-white d-flex flex-column'>
-        <FooterLogo />
+        <FooterAnimation/>
     <div className='d-flex flex-row-reverse justify-content-between p-3 text-section'>
         <SocialFooter/>
         <div className='d-flex flex-column justify-content-between'>
