@@ -5,6 +5,9 @@ import { NavLink } from 'react-router-dom';
 import { FaVimeoV, FaInstagram, FaFacebookF } from 'react-icons/fa';
 import { useTransform, motion, useScroll,useMotionValue, useMotionValueEvent } from 'framer-motion';
 
+import Links from './Links';
+
+
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const { scrollYProgress,scrollY } = useScroll();
@@ -24,7 +27,7 @@ const Navbar = () => {
   })
 
   return (
-    <motion.nav className="navbar" 
+    <motion.nav className="navbar"  
     variants={{
       visible:{y:0},
       hidden:{y: '-100%'}
@@ -32,17 +35,7 @@ const Navbar = () => {
     animate={hidden ? 'hidden' : 'visible'}
     transition={{duration:0.35,ease:'easeInOut'}}
     style={{height: heightProgress,position:'fixed'}}>
-      <div className="links-social">
-        <NavLink className="link">Projects</NavLink>
-        <NavLink className="link" to={'/about'}>About</NavLink>
-        
-        
-        <NavLink className="link">Contact</NavLink>
-        <FaInstagram className="link" />
-        <FaFacebookF className="link" />
-        <FaVimeoV className="link" />
-        
-      </div>
+      <Links/>
 
       <motion.div className="logo-container" style={{ scale: scaleProgress ,translateX:transformXProgress,translateY:transformYProgress}}>
         <motion.img

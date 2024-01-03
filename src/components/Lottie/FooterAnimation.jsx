@@ -48,7 +48,7 @@ const LottieAnimation = () => {
   }, []);
 
   return (
-  <div className='mb-5' style={{height:'359px'}}>
+  <div className='mb-5' style={{maxHeight:'359px'}}>
       <div ref={targetRef} style={{width:'100%' , height:"100%"}}></div>
      
   </div>

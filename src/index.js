@@ -8,19 +8,20 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import ProjectContextProvider from './context/ProjectContext';
+import { Example } from './components/Responsive Navbar/Example';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <React.StrictMode>
+ 
     <BrowserRouter>
     <ProjectContextProvider>
-    <Navbar/>
+    {/*   <Example/> */}
+   {/*  <Navbar/> */}
     <App />
     <Footer/>
     </ProjectContextProvider>
     </BrowserRouter>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

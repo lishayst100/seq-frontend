@@ -5,10 +5,11 @@ import { motion } from 'framer-motion'
 const TitleProjects = () => {
     
     const titles = [
-      {value : ' ',title: 'All'},
-      {value : 'animation' , title:'Animation'},
+      {value : 'all',title: 'All'},
+      {value : 'commercial',title: 'Commercial'},
+      {value : 'production' , title:'Production'},
       {value : 'motion', title: 'Motion' },
-      {value : 'commercials',title: 'Commercials'}
+      
       
       
     ]

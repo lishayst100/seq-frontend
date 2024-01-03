@@ -6,26 +6,37 @@ const ProjectContext = createContext(null);
 
 const ProjectContextProvider = ({children}) => {
     const [projects, setProjects] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     
     const getProjects = () => {
+        setIsLoading(true);
         fetch(`${BASE_URL}/getProjects`)
         .then(res => res.json())
-        .then(data => setProjects(data))
+        .then(data => {
+          setIsLoading(false);
+          setProjects(data)
+       }) 
+        .catch( err => console.log(err) )
     }
 
     const projectsFilter = (filter) => {
-      /* fetch(`${BASE_URL}/getProjects/${filter}`)
+      setIsLoading(true);
+         fetch(`${BASE_URL}/findProjectByGenre/${filter}`)
         .then(res => res.json())
-        .then(data => setProjects(data)) */
+        .then(data => {
+           setIsLoading(false);
+          setProjects(data)
+        }) 
+        .catch( err => console.log(err) )
 
-        console.log(`${BASE_URL}/getProjects/${filter}`)
+        
     }
 
    
 
 
   return (
-    <ProjectContext.Provider value={{projects,getProjects,projectsFilter}}>{children}</ProjectContext.Provider>
+    <ProjectContext.Provider value={{projects,getProjects,projectsFilter,isLoading}}>{children}</ProjectContext.Provider>
   )
 }
 

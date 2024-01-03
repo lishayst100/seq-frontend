@@ -1,0 +1,1 @@
+export const LINKS = [{link:'/',label:'Projects'},{link:'/about',label:'About'},{link:'/contact',label:'Contact'}]

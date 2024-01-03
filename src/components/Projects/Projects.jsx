@@ -1,33 +1,26 @@
-import React, { useContext } from 'react';
-import './Projects.scss'; // Ensure the correct path to your SCSS file
-import navbar from '../../lottie/navbarAnimation.json'
-
-import Lottie from 'lottie-react';
-import YourComponent from '../Lottie/FooterAnimation';
-import TitleProjects from './TitleProjects';
-import { ProjectContext } from '../../context/ProjectContext';
+import React, { useContext } from "react";
+import "./Projects.scss"; // Ensure the correct path to your SCSS file
+import { motion } from "framer-motion";
+import TitleProjects from "./TitleProjects";
+import { ProjectContext } from "../../context/ProjectContext";
+import Loading from "../loading/Loading";
+import Project from "./Project";
 
 const Projects = () => {
- 
-  const {projects} = useContext(ProjectContext)
+  const { projects, isLoading } = useContext(ProjectContext);
   return (
     <div>
-       <TitleProjects/>
-       <div className=' container mx-auto layout'>
-       { projects.map((project, index) => (
-        <div key={project._id} className='item bg-danger' style={{height:400}} >
-          <img src={project.images[0]} alt="" className='image-project' style={{height:400, width:'100%'}} />
-          
+      <TitleProjects />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className="layout">
+          {projects.map((project,index) => (
+            <Project img={project.images[0]} title={project.title} key={project._id} index={index} _id={project._id}/>
+          ))}
         </div>
-       ))}
-       </div>
-       
-            
-           
-
+      )}
     </div>
-    
-
   );
 };
 

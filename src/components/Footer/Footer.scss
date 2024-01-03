@@ -3,7 +3,10 @@
     list-style: none;
     text-decoration: none;
     text-align: right;
-    
+    transition: 0.3s ease-in-out;
+    &:hover{
+        color: rgb(62, 5, 255);
+    }
 
 }
 
@@ -29,4 +32,12 @@ footer{
     height: auto;
     display: block;
     object-fit: cover;
+}
+
+
+@media screen and (max-width: 450px) {
+    footer{
+        padding: 50px 25px;
+        font-size: 0.7em;
+    }
 }
