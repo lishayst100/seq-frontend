@@ -17,9 +17,9 @@ root.render(
  
     <BrowserRouter>
     <ProjectContextProvider>
-    {/*   <Example/> */}
-   {/*  <ZZZNavbar/> */}
-    <Navbar/>
+     {/*  <Example/> */}
+    <ZZZNavbar/>
+    {/* <Navbar/> */}
     <App />
     <Footer/>
     </ProjectContextProvider>
