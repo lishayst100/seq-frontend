@@ -20,6 +20,7 @@ const Projects = () => {
           ))}
         </div>
       )}
+      
     </div>
   );
 };

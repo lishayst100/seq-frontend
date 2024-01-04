@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import ProjectContextProvider from './context/ProjectContext';
 import { Example } from './components/Responsive Navbar/Example';
+import ZZZNavbar from './components/Navbar/ZZZ';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +18,8 @@ root.render(
     <BrowserRouter>
     <ProjectContextProvider>
     {/*   <Example/> */}
-   {/*  <Navbar/> */}
+   {/*  <ZZZNavbar/> */}
+    <Navbar/>
     <App />
     <Footer/>
     </ProjectContextProvider>

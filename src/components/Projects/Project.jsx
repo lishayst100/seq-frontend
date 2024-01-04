@@ -1,20 +1,24 @@
-import React from "react";
-import { motion,AnimatePresence } from "framer-motion";
+import React, { useRef } from "react";
+import { motion,AnimatePresence, useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const Project = ({ title, img, index, _id }) => {
   const nav = useNavigate();
+  const ref = useRef(null);
+  const isView = useInView(ref,{once:true})
+
 
   return (
-    <AnimatePresence>   
+   
       <motion.div
+      ref={ref}
       className="item"
-      initial={{ scale: 0 }}
+      initial={{/*  scale:  isView ? 1 : 0 , */filter: isView ? 'blur(0)':'blur(20px)' }}
       whileInView={{
-        transition: { duration: 0.7, delay: index * 0.05 },
-        scale: 1,
+        transition: { duration:0.7 },
+        filter: 'blur(0)'
       }}
-      exit={{ scale: 0 ,transition: { duration: 0.5}}}
+     
       onClick={() => {
         nav(`/project/${_id}`);
       }}
@@ -25,7 +29,7 @@ const Project = ({ title, img, index, _id }) => {
         <div className="project-title">{title}</div>
       </div>
     </motion.div>
-    </AnimatePresence> 
+
   );
 };
 

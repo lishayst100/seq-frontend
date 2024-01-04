@@ -1,20 +1,18 @@
 import {useState} from 'react';
 import './Navbar.scss'; // Import your CSS file
 import logo from '../../images/logo.png';
-import { NavLink } from 'react-router-dom';
-import { FaVimeoV, FaInstagram, FaFacebookF } from 'react-icons/fa';
-import { useTransform, motion, useScroll,useMotionValue, useMotionValueEvent } from 'framer-motion';
-
+import { useTransform, motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import Links from './Links';
 
 
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const { scrollYProgress,scrollY } = useScroll();
-  const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.2]);
-  const transformXProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-44%']);
-  const transformYProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-55%']);
-  const heightProgress = useTransform(scrollYProgress, [0, 0.1], ['93vh', '8vh']);
+  const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.1]);
+  const transformXProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-48%']);
+  const transformYProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-58%']);
+  const heightProgress = useTransform(scrollYProgress, [0, 0.1], ['93vh', '7vh']);
+  
   
   useMotionValueEvent(scrollY, 'change',(latest) => {
     
@@ -37,7 +35,12 @@ const Navbar = () => {
     style={{height: heightProgress,position:'fixed'}}>
       <Links/>
 
-      <motion.div className="logo-container" style={{ scale: scaleProgress ,translateX:transformXProgress,translateY:transformYProgress}}>
+      <motion.div className="logo-container" style={
+        { scale: scaleProgress ,
+        translateX:transformXProgress
+        ,translateY:transformYProgress,
+        position:'stick'
+        }}>
         <motion.img
           src={logo}
           alt="Logo"
