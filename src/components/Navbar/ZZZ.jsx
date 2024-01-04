@@ -16,46 +16,11 @@ const Navbar = () => {
   const { scrollYProgress, scrollY } = useScroll();
   const ref = useRef(null);
 
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
+ 
 
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const minHeight = windowDimensions.height * 0.08 + "px"; // 8% of window height
-  const maxHeight = windowDimensions.height * 0.93 + "px"; // 93% of window height
-
-  const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.1]);
-  const transformXProgress = useTransform(
-    scrollYProgress,
-    [0, 0.1],
-    ["0%", "-40%"]
-  );
-  const transformYProgress = useTransform(
-    scrollYProgress,
-    [0, 0.1],
-    ["0%", "-55%"]
-  );
-  const heightProgress = useTransform(
-    scrollYProgress,
-    [0, 0.1],
-    [maxHeight, minHeight]
-  );
-
+ 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     if (previous < latest && latest > 600) {
@@ -63,37 +28,36 @@ const Navbar = () => {
     } else {
       setHidden(false);
     }
+    if (latest > 50) {
+        setClick(true);
+        ref.current.setDirection(1)
+        ref.current.play();
+      } else {
+        setClick(false);
+        ref.current.setDirection(-1)
+        ref.current.play()
+      }
   });
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 300) {
-      setClick(true);
-      ref.current.setDirection(1)
-      ref.current.play();
-      console.log("shrink animation" , latest);
-    } else {
-      setClick(false);
-      ref.current.setDirection(-1)
-      ref.current.play()
-      console.log("bigger animation" , latest);
-    }
-  });
+  /* useMotionValueEvent(scrollY, "change", (latest) => {
+ 
+  }); */
   return (
     <motion.nav
-      className="navbar bg-primary"
+      className="navbar"
       variants={{
         visible: { y: 0 },
         hidden: { y: "-100%" },
         big: {
-          height: 800,
+          height: 700,
         },
         small: {
           height: 60,
         },
       }}
-      animate={click === true ? "small" : "big"}
-      initial={{ height: 800 }}
-      transition={{ duration: 1 }}
+      animate={click === true ? "small" : "big" || hidden ? "visible" : "hidden"}
+      initial={{ height: 700 }}
+      transition={{ duration: 1 , ease: "easeInOut" }}
       style={{ position: "fixed" }}
     >
       <Links />
@@ -101,7 +65,7 @@ const Navbar = () => {
       <motion.div
         variants={{
           logoSmaller: {
-            scale: 0.1,
+            scale: 0.15,
             transition: { duration: 1, ease: "easeInOut" },
             translateX: "-40%",
             translateY: "-54%",

@@ -1,28 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import logo from '../../images/logo.png'
-import AOS from 'aos'
+import React, { useEffect, useRef, useState } from 'react'
 import 'aos/dist/aos.css'
 import Lottie from 'lottie-react'
 import animationData from '../../lottie/footer.json' // Replace with your Lottie animation data
+import { useMotionValueEvent,useScroll } from 'framer-motion'
+
+
 const FooterLogo = () => {
 const [show, setShow] = useState(false)
+const { scrollYProgress, scrollY } = useScroll();
+const ref = useRef(null);
 
-  useEffect(()=>{
-    AOS.init({
-      duration: 1000, 
-      delay:500
-     
+ useMotionValueEvent(scrollY, "change", (latest) => {
+    if(scrollYProgress.get() > 0.9){
+      setShow(true)
+      ref.current.setDirection(1)
+      ref.current.play()
+    }else{
+      setShow(false)
+      ref.current.setDirection(-1)
+      ref.current.play()
     }
-    
-    )
-    console.log(show)
-    setShow(true)
-    console.log(show)
-  },[show])
+      
+ })
 
   return (
     <div className='d-flex justify-content-center align-items-center footer-logo' >
-      <Lottie animationData={animationData}  data-aos="fade-down" loop={false} onComplete={()=>{setShow(false)}}/>
+      <Lottie animationData={animationData} lottieRef={ref} loop={false}/>
         {/* <img src={logo} alt='...' className='image-footer'/> */}
     </div>
     

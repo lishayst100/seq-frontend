@@ -4,18 +4,17 @@ import { useNavigate } from "react-router-dom";
 
 const Project = ({ title, img, index, _id }) => {
   const nav = useNavigate();
-  const ref = useRef(null);
-  const isView = useInView(ref,{once:true})
+
 
 
   return (
    
       <motion.div
-      ref={ref}
+      
       className="item"
-      initial={{/*  scale:  isView ? 1 : 0 , */filter: isView ? 'blur(0)':'blur(20px)' }}
+      initial={{/*  scale:  isView ? 1 : 0 , */filter: 'blur(20px)' }}
       whileInView={{
-        transition: { duration:0.7 },
+        transition: { duration: 1 },
         filter: 'blur(0)'
       }}
      

@@ -5,11 +5,11 @@ import { easeInOut, motion, useInView } from 'framer-motion'
 const Text = () => {
 
   const ref = useRef(null);
-  const isView = useInView(ref,{once:true})
+
   const variants = {
     initial: {
-      y: isView ? 0 : '30vh',
-      opacity: isView? 1 : 0,
+      y: '30vh',
+      opacity:  0,
       transition :{
         duration: 1,
         ease: easeInOut
