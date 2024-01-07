@@ -4,13 +4,20 @@ import { ProjectContext } from "../../context/ProjectContext";
 import Loading from "../loading/Loading";
 import { motion, useAnimationControls } from "framer-motion";
 import Vimeo from "@u-wave/react-vimeo";
- const ProjectViewer = () => {
+import "./ProjectDetails.scss";
+import ImagesGrid from "./ImagesGrid";
+import Next from "./Next";
+import Previous from "./Previous";
+import Back from "./Back";
+import Details from "./Details";
+
+const ProjectViewer = () => {
   const { id } = useParams(); // Get the project ID from URL params
   const { projects, isLoading } = useContext(ProjectContext);
   const controls = useAnimationControls();
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
   const navigate = useNavigate(); // Hook to get the navigation function
-  console.log(projects);
+ 
   useEffect(() => {
     // Find the index of the selected project based on the ID from the URL params
     const foundIndex = projects.findIndex((project) => project._id === id);
@@ -55,56 +62,30 @@ import Vimeo from "@u-wave/react-vimeo";
   };
 
   return (
-    <div>
-      <div className="d-flex gap-4 align-items-center justify-content-between ">
+    <div className="">
+      <div className="d-flex justify-content-around align-items-center details-container">
+        <Previous
+          goToPreviousProject={goToPreviousProject}
+          selectedProjectIndex={selectedProjectIndex}
+        />
 
-      
-        <motion.button
-          onClick={goToPreviousProject}
-          disabled={selectedProjectIndex === 0}
-          whileHover={{scale: 1.1,transition: { duration: 0.3, delay: 0.}}}  
-          whileTap={{rotate:'-3deg'}}
-        >
-          Previous Project
-        </motion.button>
-        
-     
-      <motion.div
-        initial="initial"
-        variants={variats}
-        animate={controls}
-        style={{ height: "80vh" }}
-        className="d-flex justify-content-center align-items-center flex-column"
-      >
-        <h2>Project Details</h2>
-        <h3>{selectedProject.title}</h3>
-        <Vimeo video={selectedProject.linkId}/>
-        <pre>{selectedProject.credits}</pre>
-        {/* Display other project details as needed */}
+        <Details
+          controls={controls}
+          selectedProject={selectedProject}
+          variats={variats}
+        />
 
-        <div>
-          {selectedProject.images?.map((image) => (
-            <img src={image} alt={selectedProject.title} width={200} />
-          ))}
-        </div>
-        
-      </motion.div>
-      <motion.button
-          whileHover={{scale: 1.1,transition: { duration: 0.3, delay: 0.}}}  
-          whileTap={{rotate:'3deg'}}
-          onClick={goToNextProject}
-          disabled={selectedProjectIndex === projects.length - 1}
-        >
-          Next Project
-        </motion.button>
-        </div>
-      <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          Back
-        </button>
+        <Next
+          goToNextProject={goToNextProject}
+          projects={projects}
+          selectedProjectIndex={selectedProjectIndex}
+        />
+      </div>
+
+      <ImagesGrid controls={controls}
+          selectedProject={selectedProject}
+          variats={variats} />
+      <Back />
     </div>
   );
 };

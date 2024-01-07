@@ -6,6 +6,7 @@ import About from './pages/About/About';
 import { ProjectContext } from './context/ProjectContext';
 import ProjectDetails from './components/Project-Details/ProjectDetails';
 import ProjectViewer from './components/Project-Details/ProjectViewer';
+import Example from './components/Responsive Navbar/Example';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
   
   return (
     <div className="App">
+     
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

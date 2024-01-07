@@ -8,17 +8,20 @@ import Project from "./Project";
 
 const Projects = () => {
   const { projects, isLoading } = useContext(ProjectContext);
+ 
   return (
     <div>
-      <TitleProjects />
+      <TitleProjects
+     
+       />
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="layout">
+        <motion.div className="layout" >
           {projects.map((project,index) => (
             <Project img={project.images[0]} title={project.title} key={project._id} index={index} _id={project._id}/>
           ))}
-        </div>
+        </motion.div>
       )}
       
     </div>

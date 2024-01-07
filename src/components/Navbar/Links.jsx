@@ -21,7 +21,7 @@ const Links = () => {
         <div className="links-social">
         {
           LINKS.map((link,index) => (
-            <NavLink className= { selected === index ? 'selected link' : 'link'} to={link.link} onClick={()=>{toggleSelected(index)}}>{link.label}</NavLink>
+            <NavLink key={index} className= { selected === index ? 'selected link' : 'link'} to={link.link} onClick={()=>{toggleSelected(index)}}>{link.label}</NavLink>
           ))
         }
         <FaInstagram className="link" />

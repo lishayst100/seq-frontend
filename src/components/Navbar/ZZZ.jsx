@@ -1,9 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState,  useRef } from "react";
 import {
-  useTransform,
+
   motion,
   useScroll,
   useMotionValueEvent,
+ 
 } from "framer-motion";
 import Lottie from "lottie-react";
 import animationData from "../../lottie/navbarAnimation.json";
@@ -13,13 +14,8 @@ import logo from "../../images/logo.png";
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [click, setClick] = useState(false);
-  const { scrollYProgress, scrollY } = useScroll();
+  const { scrollY } = useScroll();
   const ref = useRef(null);
-
-  
-
- 
-
  
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
@@ -30,6 +26,7 @@ const Navbar = () => {
     }
     if (latest > 50) {
         setClick(true);
+       
         ref.current.setDirection(1)
         ref.current.play();
       } else {
@@ -39,25 +36,26 @@ const Navbar = () => {
       }
   });
 
-  /* useMotionValueEvent(scrollY, "change", (latest) => {
  
-  }); */
   return (
     <motion.nav
       className="navbar"
       variants={{
-        visible: { y: 0 },
-        hidden: { y: "-100%" },
+        visible: { y: 0 ,
+        transition:{duration:0.35 , ease: 'easeInOut'}
+        },
+        hidden: { y: "-100%" ,
+        transition:{duration:0.35 , ease: 'easeInOut'}},
         big: {
-          height: 700,
+          height: '90vh',
         },
         small: {
-          height: 60,
+          height: '8vh',
         },
       }}
-      animate={click === true ? "small" : "big" || hidden ? "visible" : "hidden"}
-      initial={{ height: 700 }}
-      transition={{ duration: 1 , ease: "easeInOut" }}
+      animate={hidden ? "hidden" : (click ? "small" : "big")}
+      initial={hidden ? "hidden" : "big"}
+      transition={{ duration: 0.8 , ease: "easeInOut" }}
       style={{ position: "fixed" }}
     >
       <Links />
@@ -66,7 +64,7 @@ const Navbar = () => {
         variants={{
           logoSmaller: {
             scale: 0.15,
-            transition: { duration: 1, ease: "easeInOut" },
+            transition: { duration: 0.8, ease: "easeInOut" },
             translateX: "-40%",
             translateY: "-54%",
           },

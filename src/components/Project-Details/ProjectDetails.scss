@@ -1,0 +1,47 @@
+.images-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
+.arrows{
+  font-size: 5rem;
+}
+
+
+.details-container{
+    min-height:40vh;
+    padding-top: 150px;
+   
+}
+
+.title-details{
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.credits-details{
+    font-size: 1.1em;
+}
+
+
+
+
+  @media screen and (max-width: 768px) {
+    .arrows{
+      font-size: 2rem;
+    }
+    .credits-details{
+      font-size: 0.9em;
+  }
+  
+  }
+
+
+  @media screen and (max-width: 450px) {
+    .credits-details{
+      font-size: 0.7em;
+  }
+  }
