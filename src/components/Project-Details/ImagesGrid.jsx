@@ -5,7 +5,8 @@ const ImagesGrid = ({ selectedProject, variats,controls}) => {
     <motion.div 
     variants={variats}
     animate={controls}
-    style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '40px', maxWidth: '100%', overflow: 'hidden',padding:40 }}>
+    className="images-grid"
+    >
     {selectedProject.images.slice(0, 4).map((photo, index) => (
       <img
      
