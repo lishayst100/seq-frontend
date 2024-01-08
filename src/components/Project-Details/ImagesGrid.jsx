@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-const ImagesGrid = ({ selectedProject, variats,controls}) => {
+const ImagesGrid = ({ selectedProject, variants,controls}) => {
   return (
     <motion.div 
-    variants={variats}
+    variants={variants}
     animate={controls}
     className="images-grid"
     >

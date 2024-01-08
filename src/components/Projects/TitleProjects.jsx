@@ -28,7 +28,7 @@ const TitleProjects = () => {
 
       
   return (
-    <div className='d-flex gap-xl-4 gap-2 justify-content-center align-items-center titles' >
+    <div className='d-flex gap-xl-4 gap-3 justify-content-center align-items-center titles' >
         {titles.map((title, index) => (
           <motion.div
             className={ selected === index ? 'title-projects selected' : 'title-projects'} key={index} onClick={()=>{

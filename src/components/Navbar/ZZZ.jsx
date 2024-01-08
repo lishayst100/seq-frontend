@@ -1,17 +1,13 @@
 import { useState,  useRef } from "react";
-import {
-
-  motion,
-  useScroll,
-  useMotionValueEvent,
- 
-} from "framer-motion";
+import {motion,useScroll,useMotionValueEvent} from "framer-motion";
 import Lottie from "lottie-react";
 import animationData from "../../lottie/navbarAnimation.json";
 import Links from "./Links";
-import logo from "../../images/logo.png";
+import { useResize } from "../../hooks/useResize";
+
 
 const Navbar = () => {
+  const isMobile = useResize() 
   const [hidden, setHidden] = useState(false);
   const [click, setClick] = useState(false);
   const { scrollY } = useScroll();
@@ -26,7 +22,6 @@ const Navbar = () => {
     }
     if (latest > 50) {
         setClick(true);
-       
         ref.current.setDirection(1)
         ref.current.play();
       } else {
@@ -46,15 +41,11 @@ const Navbar = () => {
         },
         hidden: { y: "-100%" ,
         transition:{duration:0.35 , ease: 'easeInOut'}},
-        big: {
-          height: '90vh',
-        },
-        small: {
-          height: '8vh',
-        },
+        big: { height: isMobile < 800 ? '50vh' : '80vh',},
+        small: { height: '8vh',}
       }}
       animate={hidden ? "hidden" : (click ? "small" : "big")}
-      initial={hidden ? "hidden" : "big"}
+      initial={hidden ? "small" : "big"}
       transition={{ duration: 0.8 , ease: "easeInOut" }}
       style={{ position: "fixed" }}
     >
@@ -77,11 +68,7 @@ const Navbar = () => {
         }}
         animate={click === true? "logoSmaller" : "logoBigger"}
         className="logo-container"
-        /* style={{
-          scale: scaleProgress,
-          translateX: transformXProgress,
-          translateY: transformYProgress,
-        }} */
+        
       >
         <Lottie
           animationData={animationData}

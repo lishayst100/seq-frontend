@@ -5,9 +5,13 @@ import Text from '../../components/Home/Text/Text'
 import Projects from '../../components/Projects/Projects'
 import {motion,useScroll,useMotionValueEvent} from 'framer-motion'
 import Navbar from '../../components/Navbar/ZZZ'
+import { useResize } from '../../hooks/useResize'
 const Home = () => {
+  const isMobile = useResize()
   const [isAnimated , setIsAnimated] = useState(false);
   const { scrollY } = useScroll();
+
+
   useMotionValueEvent(scrollY, "change", (latest) => {
       if(scrollY.get() > 50){
         setIsAnimated(true)
@@ -22,12 +26,12 @@ const Home = () => {
       <Navbar/>
     <motion.div className='home' 
     variants={{
-      hidden: {paddingTop:200 ,  transition: { duration: 1, ease: "easeInOut" }},
-      visible:{paddingTop:600 , transition: { duration: 1, ease: "easeInOut" }},
+      withPadding: {paddingTop: isMobile < 800 ? '50vh' : '80vh' ,  transition: { duration: 0.85, ease: "easeInOut" }},
+      withoutPadding:{paddingTop:'19vh' , transition: { duration: 0.75, ease: "easeInOut" }},
     }}
-    animate={isAnimated? "hidden" : "visible"}
-    initial='visible'
-    style={{paddingTop: isAnimated ? 50 : 500}}>
+    animate={ isAnimated ? "withoutPadding" : "withPadding"}
+    initial='withPadding'
+   >
         <Video/>
         <Text/>
         <Projects/>

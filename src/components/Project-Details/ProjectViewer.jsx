@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { ProjectContext } from "../../context/ProjectContext";
 import Loading from "../loading/Loading";
 import { motion, useAnimationControls } from "framer-motion";
-import Vimeo from "@u-wave/react-vimeo";
 import "./ProjectDetails.scss";
 import ImagesGrid from "./ImagesGrid";
 import Next from "./Next";
@@ -12,14 +11,19 @@ import Back from "./Back";
 import Details from "./Details";
 
 const ProjectViewer = () => {
-  const { id } = useParams(); // Get the project ID from URL params
+
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  const { id } = useParams(); 
   const { projects, isLoading } = useContext(ProjectContext);
   const controls = useAnimationControls();
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-  const navigate = useNavigate(); // Hook to get the navigation function
- 
+  const navigate = useNavigate(); 
   useEffect(() => {
-    // Find the index of the selected project based on the ID from the URL params
+    
     const foundIndex = projects.findIndex((project) => project._id === id);
     if (foundIndex !== -1) {
       setSelectedProjectIndex(foundIndex);
@@ -53,7 +57,13 @@ const ProjectViewer = () => {
   }
 
   const selectedProject = projects[selectedProjectIndex];
-  const variats = {
+  const projectGenre = 
+  projects
+  .filter(project => project.genres[0] === selectedProject.genres[0])
+  .filter(project => project !== selectedProject)
+  
+
+  const variants = {
     initial: { opacity: 1 },
     nextProject: {
       opacity: [0, 0.5, 1],
@@ -62,7 +72,7 @@ const ProjectViewer = () => {
   };
 
   return (
-    <div className="">
+    <>
       <div className="d-flex justify-content-around align-items-center details-container">
         <Previous
           goToPreviousProject={goToPreviousProject}
@@ -72,7 +82,7 @@ const ProjectViewer = () => {
         <Details
           controls={controls}
           selectedProject={selectedProject}
-          variats={variats}
+          variants={variants}
         />
 
         <Next
@@ -84,9 +94,16 @@ const ProjectViewer = () => {
 
       <ImagesGrid controls={controls}
           selectedProject={selectedProject}
-          variats={variats} />
+          variants={variants} />
+
       <Back />
-    </div>
+      <h3>
+        More From This Genre
+      </h3>
+      {projectGenre.map(project => (
+        <div key={project._id}>{project.title}</div>
+      ))}
+    </>
   );
 };
 
