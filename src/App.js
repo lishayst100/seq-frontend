@@ -7,8 +7,8 @@ import { ProjectContext } from './context/ProjectContext';
 import ProjectDetails from './components/Project-Details/ProjectDetails';
 import ProjectViewer from './components/Project-Details/ProjectViewer';
 import Example from './components/Responsive Navbar/Example';
-import Contact from './components/Contact/Contact';
 import OtherNavbar from './components/Navbar/OtherNavbar';
+import Contact from './pages/Contact/Contact';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact/>} />
           <Route path="/project/:id" element={<ProjectViewer />} />
         </Routes>
     </div>

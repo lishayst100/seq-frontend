@@ -17,12 +17,12 @@ const OtherNavbar = () => {
 
     const variants = {
         hidden: {
-            y: '-100vh',
-            transition: {duration: 0.35 , ease: 'easeInOut'}
+            y: '-30vh',
+            transition: {duration: 1 , ease: 'easeInOut'}
         },
         visible: {
             y: '0',
-            transition: {duration: 0.35 , ease: 'easeInOut'}
+            transition: {duration: 1 , ease: 'easeInOut'}
         }
     }
 
