@@ -10,7 +10,7 @@ const ProjectContextProvider = ({children}) => {
     
     const getProjects = () => {
         setIsLoading(true);
-        fetch(`${BASE_URL}/getProjects`)
+        fetch(`${BASE_URL}/projects/getProjects`)
         .then(res => res.json())
         .then(data => {
           setIsLoading(false);

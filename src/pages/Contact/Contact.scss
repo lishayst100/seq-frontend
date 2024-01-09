@@ -22,12 +22,19 @@
 
 }
 
+.error-message{
+    font-size: 15px;
+   
+ 
+}
+
 .input-div{
     border-bottom: #000000 solid 1px;
 }
 
 .input-div label{
     font-weight: 600;
+  
 }
 
 .contact-btn{
@@ -39,4 +46,21 @@
 
 .form-container{
     padding: 50px 0 150px 0;
+}
+
+
+@media screen and (max-width: 450px) {
+    .contact-text{
+        font-size: 1em;
+        
+    }
+    .input-div label{
+        font-size: 0.8em;
+    }
+    .error-message{
+        font-size: 0.7em;
+     
+       
+     
+    }
 }
