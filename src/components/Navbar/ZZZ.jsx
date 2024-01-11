@@ -13,7 +13,7 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const { scrollY } = useScroll();
   const ref = useRef(null);
- 
+ console.log(isMobile)
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     if (previous < latest && latest > 400) {
@@ -31,6 +31,15 @@ const Navbar = () => {
         ref.current.play()
       }
   });
+
+  const resizeLogo = () => {
+    if(isMobile < 1970){
+      return '-43%'
+    }
+    return '-50%'
+  }
+
+  const translateXLogo = resizeLogo()
 
  
   return (
@@ -58,7 +67,7 @@ const Navbar = () => {
           logoSmaller: {
             scale: 0.15,
             transition: { duration: transitionNavbar },
-            translateX: "-40%",
+            translateX: translateXLogo,
             translateY: "-54%",
           },
           logoBigger:{

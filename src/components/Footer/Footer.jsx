@@ -7,7 +7,7 @@ import Copyright from './Copyright'
 
 
 const Footer = () => {
-  
+    
   return (
     <footer className='black text-white d-flex flex-column'>
       

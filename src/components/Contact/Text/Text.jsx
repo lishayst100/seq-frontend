@@ -1,17 +1,44 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import {motion} from 'framer-motion'
+
 
 const Text = () => {
+ 
+
+  
+
+  const variants ={
+    initial: { y: '-200%'},
+    animate: { y: 0, transition: {duration: 1}},
+    initial2 : { y: '-200%'},
+    animate2 : { y: 0, transition: {duration:1,delay: 0.3 }}
+
+  }
+
   return (
-    <div className="container mx-auto d-flex justify-content-center">
-      <p className="text-black contact-text ">
+    <div className=" container mx-auto">
+
+   
+    <div className="container mx-auto d-flex justify-content-center overflow-hidden flex-column  ">
+      <motion.p variants={variants} initial='initial' animate='animate'  className="text-black contact-text">
         For potential projects and collabrations, fell free to send us a
         message.
-        <br />
-        We look forward creating with you!
-      </p>
+       
+      </motion.p>
+      </div>
+
+      <div className="container mx-auto d-flex justify-content-center overflow-hidden flex-column ">
+      <motion.p className="text-black contact-text" initial='initial2' animate='animate2' variants={variants}>
+            We look forward creating with you!
+      </motion.p>
+      </div>
 
       
+      
+     
+      
+    
     </div>
   );
 };

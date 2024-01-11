@@ -112,7 +112,7 @@ const ProjectViewer = () => {
           variants={variants} />
 
       {/* <Back /> */}
-      <h3>
+    {/*   <h3>
         Similar Projects
       </h3>
       <div className="w-75 d-flex justify-content-center align-items-center gap-3 mx-auto pt-2">
@@ -124,9 +124,9 @@ const ProjectViewer = () => {
           <img src={project.images[0]} alt="" width={400} />
           </div>
       ))}
-      </div>
+      </div> */}
     </>
   );
 };
 
-export default transition(ProjectViewer);
+export default ProjectViewer;
