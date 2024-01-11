@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const Text = () => {
@@ -9,6 +10,8 @@ const Text = () => {
         <br />
         We look forward creating with you!
       </p>
+
+      
     </div>
   );
 };

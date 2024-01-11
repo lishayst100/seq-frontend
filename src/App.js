@@ -9,25 +9,30 @@ import ProjectViewer from './components/Project-Details/ProjectViewer';
 import Example from './components/Responsive Navbar/Example';
 import OtherNavbar from './components/Navbar/OtherNavbar';
 import Contact from './pages/Contact/Contact';
+import { AnimatePresence } from 'framer-motion';
+
 
 
 function App() {
-  const {pathname} = useLocation()
+  const location = useLocation()
   const {getProjects} = useContext(ProjectContext)
   useEffect(()=>{
     getProjects()
   },[])
- 
+
+  
   
   return (
     <div className="App">
-        {pathname !== '/' && <OtherNavbar/>}
-        <Routes>
-          <Route path="/" element={<Home />} />
+        {location.pathname !== '/' && <OtherNavbar/>}
+       <AnimatePresence mode='wait'>
+        <Routes location={location} key={location.pathname}>
+          <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/project/:id" element={<ProjectViewer />} />
         </Routes>
+        </AnimatePresence>
     </div>
   );
 }

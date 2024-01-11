@@ -9,13 +9,14 @@ import Next from "./Next";
 import Previous from "./Previous";
 import Back from "./Back";
 import Details from "./Details";
+import transition from "../../transition";
 
 const ProjectViewer = () => {
 
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, []);
 
   const { id } = useParams(); 
   const { projects, isLoading } = useContext(ProjectContext);
@@ -61,6 +62,20 @@ const ProjectViewer = () => {
   projects
   .filter(project => project.genres[0] === selectedProject.genres[0])
   .filter(project => project !== selectedProject)
+
+
+  function shuffleArray(array) {
+    // Create a copy of the original array
+    const shuffledArray = array.slice();
+  
+    // Fisher-Yates shuffle algorithm
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+  
+    return shuffledArray;
+  }
   
 
   const variants = {
@@ -96,15 +111,22 @@ const ProjectViewer = () => {
           selectedProject={selectedProject}
           variants={variants} />
 
-      <Back />
+      {/* <Back /> */}
       <h3>
-        More From This Genre
+        Similar Projects
       </h3>
-      {projectGenre.map(project => (
-        <div key={project._id}>{project.title}</div>
+      <div className="w-75 d-flex justify-content-center align-items-center gap-3 mx-auto pt-2">
+          <hr />
+      
+      
+      {shuffleArray(projectGenre).map(project => (
+        <div key={project._id}>
+          <img src={project.images[0]} alt="" width={400} />
+          </div>
       ))}
+      </div>
     </>
   );
 };
 
-export default ProjectViewer;
+export default transition(ProjectViewer);

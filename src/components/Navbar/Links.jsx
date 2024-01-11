@@ -2,6 +2,7 @@ import { useState } from "react";
 import { LINKS } from "./navLinks";
 import { NavLink } from "react-router-dom";
 import { FaVimeoV, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Links = () => {
   const [selected, setSelected] = useState(null);
@@ -12,6 +13,14 @@ const Links = () => {
     }
 
     setSelected(i);
+  };
+
+
+  const [hovered, setHovered] = useState(false);
+
+  const iconStyle = {
+    color: hovered ? '#877817' : '#915315',
+    transition: 'color 0.3s ease-in-out',
   };
 
   return (
@@ -28,8 +37,11 @@ const Links = () => {
           {link.label}
         </NavLink>
       ))}
-      <a href="https://www.instagram.com/dvir.aviram.seq" target="_blank" rel="noreferrer">
-        <FaInstagram className="link" />
+      <a href="https://www.instagram.com/dvir.aviram.seq" target="_blank" rel="noreferrer" style={iconStyle} onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}>
+        <FaInstagram className="link" style={iconStyle}
+        
+        />
       </a>
       <a
         href="https://www.facebook.com/dvir.aviram.seq"
@@ -39,8 +51,9 @@ const Links = () => {
         <FaFacebookF className="link" />
       </a>
       <a href="https://vimeo.com/dviraviram" target="_blank" rel="noreferrer">
-        <FaVimeoV className="link" />
+        <FaVimeoV className="link icons"  />
       </a>
+      
     </div>
   );
 };

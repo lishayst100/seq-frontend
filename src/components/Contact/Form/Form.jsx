@@ -43,7 +43,7 @@ const FormContact = () => {
       initialValues={initialValues}
       onSubmit={(values, { resetForm }) => {
         handleForm(values);
-        resetForm(); // Optional: Reset the form after successful submission
+        resetForm(); 
       }}
     >
       {({ handleSubmit }) => (
@@ -52,34 +52,31 @@ const FormContact = () => {
           onSubmit={handleSubmit}
         >
           <div className="input-div d-flex gap-2 justify-content-start w-75 pb-2">
-            <label htmlFor="name" className="text-black">
-              Name*
-            </label>
+           
             <Field
               type="text"
               className="text-black contact-input flex-grow-1"
               name="name"
               id="name"
+              placeholder='Name*'
             />
             <ErrorMessage name="name" id="id" component={'div'} className="text-danger error-message" />
           </div>
           <div className="input-div d-flex gap-2 justify-content-start w-75 pb-2">
-            <label htmlFor="email" className="text-black">
-              Email*
-            </label>
+            
             <Field
+              placeholder='Email*'
               type="email"
               className="text-black contact-input flex-grow-1"
               name="email"
               id="email"
             />
-            <ErrorMessage name="email" id="id" component={'div'} className="text-danger error-message" />
+            <ErrorMessage  name="email" id="id" component={'div'} className="text-danger error-message" />
           </div>
           <div className="input-div d-flex gap-2 justify-content-start w-75 pb-2 mb-5">
-            <label htmlFor="message" className="text-black">
-              Your Message:
-            </label>
+            
             <Field
+            placeholder='Your Message:'
               name="message"
               id="message"
               component="textarea"
@@ -89,9 +86,7 @@ const FormContact = () => {
           </div>
 
          
-          {error && <div className="text-danger">{error}</div>}
-         
-          {message && <div className="text-success">{message}</div>}
+          
 
           
 
@@ -100,6 +95,10 @@ const FormContact = () => {
               {isLoading ? 'Sending...' : 'Send'}
             </button>
           </div>
+
+          {error && <div className="text-danger">{error}</div>}
+         
+          {message && <div className="text-success">{message}</div>}
         </Form>
       )}
     </Formik>

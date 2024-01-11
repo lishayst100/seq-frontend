@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import animationData from "../../lottie/navbarAnimation.json";
 import Links from "./Links";
 import { useResize } from "../../hooks/useResize";
+import { transitionNavbar } from "../../utils/utils";
 
 
 const Navbar = () => {
@@ -15,7 +16,7 @@ const Navbar = () => {
  
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
-    if (previous < latest && latest > 600) {
+    if (previous < latest && latest > 400) {
       setHidden(true);
     } else {
       setHidden(false);
@@ -37,16 +38,17 @@ const Navbar = () => {
       className="navbar"
       variants={{
         visible: { y: 0 ,
-        transition:{duration:0.35 , ease: 'easeInOut'}
+        transition:{duration:3.35 }
         },
+        
         hidden: { y: "-100%" ,
-        transition:{duration:0.35 , ease: 'easeInOut'}},
-        big: { height: isMobile < 800 ? '50vh' : '80vh',},
-        small: { height: '8vh',}
+        transition:{duration:0.8}},
+        big: { height: isMobile < 800 ? '50vh' : '80vh', transition:{duration:transitionNavbar}},
+        small: { height: '8vh',transition:{duration:transitionNavbar}}
       }}
-      animate={hidden ? "hidden" : (click ? "small" : "big")}
+      animate={hidden ? "hidden" :  (click ? "small" : "big")}
       initial={hidden ? "small" : "big"}
-      transition={{ duration: 0.8 , ease: "easeInOut" }}
+      
       style={{ position: "fixed" }}
     >
       <Links />
@@ -55,13 +57,13 @@ const Navbar = () => {
         variants={{
           logoSmaller: {
             scale: 0.15,
-            transition: { duration: 0.8, ease: "easeInOut" },
+            transition: { duration: transitionNavbar },
             translateX: "-40%",
             translateY: "-54%",
           },
           logoBigger:{
             scale: 1,
-            transition: { duration: .75, ease: "easeInOut" },
+            transition: { duration: transitionNavbar},
             translateX: "0%",
             translateY: "0%",
           }

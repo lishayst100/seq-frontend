@@ -2,9 +2,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  max-width: 100%;
+  max-width: 80%;
   overflow: hidden;
-  padding: 40px 
+  padding: 40px ;
+  justify-content: center;
+  margin: 0 auto;
+
 }
 
 .arrows{
