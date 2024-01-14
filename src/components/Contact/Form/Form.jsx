@@ -63,7 +63,7 @@ const FormContact = () => {
     >
       {({ handleSubmit }) => (
         <Form
-          className="container mx-auto d-flex flex-column gap-5 justify-content-start align-items-center form-container"
+          className="container  mx-auto d-flex flex-column gap-5 justify-content-start align-items-center form-container"
           onSubmit={handleSubmit}
         >
           <div className="input-div d-flex gap-2 justify-content-start w-75 pb-2">
@@ -105,8 +105,8 @@ const FormContact = () => {
 
           
 
-          <div className="d-flex  w-75">
-            <button  type="submit" className=" send-btn" >
+          <div className=" d-flex justify-content-center align-self-start">
+            <button  type="submit" className="send-btn" >
                 {<Lottie animationData={animationData2} autoplay={false} loop={false} lottieRef={sendRef}/>}
             </button>
               

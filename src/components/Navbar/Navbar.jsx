@@ -11,7 +11,7 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const { scrollYProgress,scrollY } = useScroll();
   const ref = useRef()
-  const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.15]);
   const transformXProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-48%']);
   const transformYProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-58%']);
   const heightProgress = useTransform(scrollYProgress, [0, 0.1], ['93vh', '7vh']);
@@ -38,8 +38,8 @@ const Navbar = () => {
   return (
     <motion.nav className="navbar "  
     variants={{
-      visible:{y:0, transition: {duration: 0.5 , ease: 'easeInOut'}},
-      hidden:{y: '-100%' , transition: {duration: 0.5 , ease: 'easeInOut'}},
+      visible:{y:0, transition: {duration: 0.8 , ease: 'easeInOut'}},
+      hidden:{y: '-100%' , transition: {duration: 0.8 , ease: 'easeInOut'}},
     }}
     animate={hidden ? 'hidden' : 'visible'}
     transition={{duration:0.35,ease:'easeInOut'}}
