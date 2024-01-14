@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import React from "react";
 import {motion} from 'framer-motion'
 
@@ -9,10 +9,10 @@ const Text = () => {
   
 
   const variants ={
-    initial: { y: '-200%'},
-    animate: { y: 0, transition: {duration: 1}},
+    initial: { y: '-200%',opacity:0},
+    animate: { y: 0,opacity: 1, transition: {duration: 1}},
     initial2 : { y: '-200%'},
-    animate2 : { y: 0, transition: {duration:1,delay: 0.3 }}
+    animate2 : { y: 0,opacity: 1, transition: {duration:1,delay: 0.3 }}
 
   }
 
@@ -29,7 +29,7 @@ const Text = () => {
       </div>
 
       <div className="container mx-auto d-flex justify-content-center overflow-hidden flex-column ">
-      <motion.p className="text-black contact-text" initial='initial2' animate='animate2' variants={variants}>
+      <motion.p className="text-black contact-text" initial='initial' animate='animate2' variants={variants}>
             We look forward creating with you!
       </motion.p>
       </div>

@@ -21,7 +21,7 @@ const ProjectContextProvider = ({children}) => {
 
     const projectsFilter = (filter) => {
       setIsLoading(true);
-         fetch(`${BASE_URL}/findProjectByGenre/${filter}`)
+         fetch(`${BASE_URL}/projects/findProjectByGenre/${filter}`)
         .then(res => res.json())
         .then(data => {
            setIsLoading(false);
