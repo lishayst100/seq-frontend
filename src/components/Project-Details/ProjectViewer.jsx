@@ -10,21 +10,21 @@ import Previous from "./Previous";
 import Back from "./Back";
 import Details from "./Details";
 import transition from "../../transition";
+import Project from "../Projects/Project";
+import SimilarProjects from "./SimilarProjects";
 
 const ProjectViewer = () => {
-
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const { id } = useParams(); 
+  const { id } = useParams();
   const { projects, isLoading } = useContext(ProjectContext);
   const controls = useAnimationControls();
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   useEffect(() => {
-    
     const foundIndex = projects.findIndex((project) => project._id === id);
     if (foundIndex !== -1) {
       setSelectedProjectIndex(foundIndex);
@@ -58,25 +58,25 @@ const ProjectViewer = () => {
   }
 
   const selectedProject = projects[selectedProjectIndex];
-  const projectGenre = 
-  projects
-  .filter(project => project.genres[0] === selectedProject.genres[0])
-  .filter(project => project !== selectedProject)
-
+  const projectGenre = projects
+    .filter((project) => project.genres[0] === selectedProject.genres[0])
+    .filter((project) => project !== selectedProject);
 
   function shuffleArray(array) {
     // Create a copy of the original array
     const shuffledArray = array.slice();
-  
+
     // Fisher-Yates shuffle algorithm
     for (let i = shuffledArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
     }
-  
+
     return shuffledArray;
   }
-  
 
   const variants = {
     initial: { opacity: 1 },
@@ -107,26 +107,18 @@ const ProjectViewer = () => {
         />
       </div>
 
-      <ImagesGrid controls={controls}
-          selectedProject={selectedProject}
-          variants={variants} />
+      <ImagesGrid
+        controls={controls}
+        selectedProject={selectedProject}
+        variants={variants}
+      />
 
       {/* <Back /> */}
-    {/*   <h3>
-        Similar Projects
-      </h3>
-      <div className="w-75 d-flex justify-content-center align-items-center gap-3 mx-auto pt-2">
-          <hr />
+
+      <SimilarProjects shuffleArray={shuffleArray}  projectGenre={projectGenre}/>
       
-      
-      {shuffleArray(projectGenre).map(project => (
-        <div key={project._id}>
-          <img src={project.images[0]} alt="" width={400} />
-          </div>
-      ))}
-      </div> */}
     </>
   );
 };
 
-export default ProjectViewer;
+export default transition(ProjectViewer);

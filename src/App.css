@@ -5,13 +5,18 @@
 }
 
 body::-webkit-scrollbar{
-width: 3px;
-
+  width: 0.5vw;
 }
-
 body::-webkit-scrollbar-track{
-  color: #61dafb;
+  background-color: #000;
 }
+
+body::-webkit-scrollbar-thumb{
+  background-color: rgb(62, 5, 255);
+  border-radius: 30px;
+}
+
+
 
 .black{
   background: #000;

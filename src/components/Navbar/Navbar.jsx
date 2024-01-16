@@ -5,11 +5,14 @@ import { useTransform, motion, useScroll, useMotionValueEvent } from 'framer-mot
 import Links from './Links';
 import Lottie from 'lottie-react';
 import animationData from "../../lottie/navbarAnimation.json";
+import LogoSeq from '../Home/Logo/LogoSeq';
+import { useLocation } from 'react-router-dom';
 
 
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const { scrollYProgress,scrollY } = useScroll();
+  const {pathname} = useLocation()
   const ref = useRef()
   const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.15]);
   const transformXProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-48%']);
@@ -19,13 +22,13 @@ const Navbar = () => {
   
   useMotionValueEvent(scrollY, 'change',(latest) => {
 
-    if(scrollYProgress.get() > 0.1){
+   /*  if(scrollYProgress.get() > 0.1){
         ref.current.setDirection(1)
         ref.current.play()
     }else if( scrollYProgress.get() < 0.1){
         ref.current.setDirection(-1)
         ref.current.play()
-    }
+    } */
     
     const previous = scrollY.getPrevious()
     if( previous < latest && latest > 600){
@@ -36,7 +39,11 @@ const Navbar = () => {
   })
 
   return (
-    <motion.nav className="navbar "  
+   
+
+    
+    <motion.nav className="navbar" 
+   layoutScroll
     variants={{
       visible:{y:0, transition: {duration: 0.8 , ease: 'easeInOut'}},
       hidden:{y: '-100%' , transition: {duration: 0.8 , ease: 'easeInOut'}},
@@ -59,18 +66,22 @@ const Navbar = () => {
           alt="Logo"
           
         /> */}
-
+{/* 
           <Lottie
           animationData={animationData}
-          autoplay={false}
+          autoplay={true}
           lottieRef={ref}
-          loop={false}
+          loop={true}
         />
-        
+         */}
        
+
+       <LogoSeq scrollYProgress={scrollYProgress}/>
       </motion.div>
       
+      
     </motion.nav>
+    
   );
 };
 

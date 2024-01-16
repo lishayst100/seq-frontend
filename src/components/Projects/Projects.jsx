@@ -19,7 +19,7 @@ const Projects = () => {
       ) : (
         <motion.div className="layout" >
           {projects.map((project,index) => (
-            <Project img={project.images[0]} title={project.title} key={project._id} index={index} _id={project._id}/>
+            <Project img={project.images[0]} title={project.title} key={project._id} index={index} _id={project._id} item={'item'}/>
           ))}
         </motion.div>
       )}

@@ -1,1 +1,1 @@
-export const LINKS = [{link:'/',label:'Projects'},{link:'/about',label:'About'},{link:'/contact',label:'Contact'}]
+export const LINKS = [{link:'/about',label:'About'},{link:'/',label:'Projects'},{link:'/contact',label:'Contact'}]

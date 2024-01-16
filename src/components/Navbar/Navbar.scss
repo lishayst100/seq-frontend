@@ -12,6 +12,13 @@
   
 }
 
+.logo-img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 
 
 .otherNavbar{
@@ -32,6 +39,30 @@
   transform-origin: 0 -13%;
   
  /* Add transitions for the transformations */
+}
+
+.img-seq{
+  transform-origin: 0 -13%;
+}
+
+.sequence-logo{
+  position: relative;
+}
+
+.asterisk{
+  position: absolute;
+  top: -15%;
+  left: 34%;
+}
+
+.uence{
+  z-index: 1;
+  
+}
+.seq{
+  z-index: 2;
+  background-color: #000000;
+  
 }
 
 .logo {
@@ -57,6 +88,3 @@
   transition: 0.3s;
 }
 
-  .st0{display: block;}
-	.st1{display:inline;fill:#FFFFFF;}
-	.st2{fill:#FFFFFF;}

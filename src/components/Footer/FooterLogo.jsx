@@ -2,7 +2,7 @@ import React, {  useRef } from 'react'
 import 'aos/dist/aos.css'
 import Lottie from 'lottie-react'
 import animationData from '../../lottie/footer.json' // Replace with your Lottie animation data
-import { useMotionValueEvent,useScroll } from 'framer-motion'
+import { useMotionValueEvent,useScroll ,motion} from 'framer-motion'
 import { useLocation } from 'react-router-dom'
 
 
@@ -34,10 +34,10 @@ const scrollTarget = isPathname()
  })
 
   return (
-    <div className='d-flex justify-content-center align-items-center footer-logo' >
+    <motion.div className='d-flex justify-content-center align-items-center footer-logo'  >
       <Lottie animationData={animationData} lottieRef={ref} loop={false}/>
-        {/* <img src={logo} alt='...' className='image-footer'/> */}
-    </div>
+        
+    </motion.div>
     
   )
 }

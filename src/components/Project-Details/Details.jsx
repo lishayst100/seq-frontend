@@ -6,7 +6,7 @@ import { useResize } from "../../hooks/useResize";
 const Details = ({ variants, controls, selectedProject }) => {
   const width = useResize();
   const containerWidth = width
-  const vimeoWidth = `${containerWidth * 0.7}px`; 
+  const vimeoWidth = `${containerWidth * 0.6}px`; 
 
   
   

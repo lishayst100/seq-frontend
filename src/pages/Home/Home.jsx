@@ -15,7 +15,7 @@ const Home = () => {
   const [isAnimated , setIsAnimated] = useState(false);
   const { scrollY ,scrollYProgress} = useScroll();
 
-  const paddingProgress = useTransform(scrollYProgress ,[0,0.1], ['93vh' , '42vh'])
+  const paddingProgress = useTransform(scrollYProgress ,[0,0.1], ['93vh' , '38vh'])
 
 
   useMotionValueEvent(scrollY, "change", (latest) => {

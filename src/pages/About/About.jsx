@@ -1,9 +1,12 @@
 import React from 'react'
 import transition from '../../transition'
 
+
 const About = () => {
   return (
-    <div>About</div>
+    <div className='bg-light pt-5'>
+      
+    </div>
   )
 }
 

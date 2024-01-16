@@ -4,7 +4,7 @@ import { initialValues, validationSchema } from "../../../validations/contact";
 import { BASE_URL } from "../../../utils/utils";
 
 
-import animationData2 from '../../../lottie/send_03.json'
+import animationData2 from '../../../lottie/send_04.json'
 import Lottie from "lottie-react";
 
 
@@ -105,9 +105,9 @@ const FormContact = () => {
 
           
 
-          <div className=" d-flex justify-content-center align-self-start">
-            <button  type="submit" className="send-btn" >
-                {<Lottie animationData={animationData2} autoplay={false} loop={false} lottieRef={sendRef}/>}
+          <div className="   w-75">
+            <button  type="submit" className=" send-btn  d-flex justify-content-center align-items-center text-center" style={{width:'30%'}} >
+                {<Lottie animationData={animationData2} autoplay={false} loop={false} lottieRef={sendRef} />}
             </button>
               
 

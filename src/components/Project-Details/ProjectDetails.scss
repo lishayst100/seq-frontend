@@ -12,13 +12,21 @@
 
 .arrows{
   font-size: 5rem;
+  cursor: pointer;
 }
 
 
 .details-container{
-    min-height:40vh;
-    padding-top: 150px;
    
+    padding-top: 100px;
+   
+}
+
+.similar-item{
+     position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      
 }
 
 .title-details{
@@ -45,6 +53,16 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.similar-projects-container{
+  padding: 15rem 0 ;
+
+  h3{
+    font-size: 2em;
+    font-weight: 700;
+  }
+  
 }
 
 

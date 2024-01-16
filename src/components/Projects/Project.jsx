@@ -2,12 +2,12 @@ import React from "react";
 import { motion} from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const Project = ({ title, img, index, _id }) => {
+const Project = ({ title, img, index, _id, item }) => {
   const nav = useNavigate();
 
   return (
     <motion.div
-      className="item"
+      className={item}
       onClick={() => {
         nav(`/project/${_id}`);
       }}
@@ -17,11 +17,15 @@ const Project = ({ title, img, index, _id }) => {
           src={img}
           alt={title}
           className="image-project"
-          initial={{ filter: "blur(20px)" }}
+          initial={{ filter: "blur(15px)",  }}
           whileInView={{
-            transition: { duration: 1, delay: 0.4 },
+            transition: { duration: 0.6 },
             filter: "blur(0)",
+           
+
           }}
+          viewport={{margin: '-20%'}}
+         
         />
         <div className="color-overlay"></div>
         <div className="project-title">{title}</div>

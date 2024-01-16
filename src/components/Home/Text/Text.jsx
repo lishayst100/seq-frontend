@@ -17,7 +17,7 @@ const Text = () => {
       opacity: 0,
       transition: {
         duration: 1,
-        ease: 'easeInOut',
+        ease: "easeInOut",
       },
     },
     animate: {
@@ -25,20 +25,54 @@ const Text = () => {
       opacity: 1,
       transition: {
         duration: 1,
-        ease: 'easeInOut',
+        ease: "easeInOut",
       },
     },
   };
   return (
     <motion.p
-      className=" container mx-auto text-header d-flex justify-content-center align-items-start flex-column overflow-hidden text-align-start "
-      /* ref={ref}
-      style={{ zIndex: 55 }}
-      variants={variants}
-      initial="initial"
-      whileInView="animate" */
+      className=" container mx-auto text-header  d-flex justify-content-center"
+      ref={ref}
     >
-      {/* <motion.p className="text-desc">
+      <div>
+
+      
+      {textHome.map((text, i) => (
+        <motion.div key={i}>
+          <motion.span
+            className="text-desc"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ margin: "-20%" }}
+          >
+            {text}
+          </motion.span>
+        </motion.div>
+      ))}
+      <motion.span
+        whileHover={{ scale: 1.1 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 0.5 } }}
+        viewport={{ margin: "-20%" }}
+        className="hi"
+      >
+        Say hi...
+      </motion.span>
+      </div>
+    </motion.p>
+  );
+};
+
+export default Text;
+
+
+
+{/* <motion.p className="text-desc"
+       variants={variants}
+       initial="initial"
+       whileInView="animate"
+     
+      >
         Sequence Studio is a creative boutique studio providing creative
         solutions and productions services including design ,animation & visual
         effects for varius media forms - television, internet and film. We
@@ -49,25 +83,3 @@ const Text = () => {
           Say hi...
         </motion.span>
       </motion.p> */}
-
-      {textHome.map((text, i) => (
-         
-          <motion.span
-            key={i}
-            className="text-desc "
-            initial={{y: '-200%',opacity:0}}
-            whileInView={{ y: 0, transition: {duration: .5 ,delay: i * 0.5}, opacity:1}}
-            
-          >
-            {text}
-          </motion.span>
-      
-        
-      ))}
-    </motion.p>
-  );
-};
-
-export default Text;
-
-//initial={{y: '-200%'}} whileInView={{ y: 0, transition: {duration: 1 ,delay: i *0.3}}}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Links from './Links'
 import logo from '../../images/logo2.png'
-import { useMotionValueEvent, useScroll,motion } from 'framer-motion'
+import { useMotionValueEvent, useScroll,motion, AnimatePresence } from 'framer-motion'
 import { NavLink } from 'react-router-dom'
 
 const OtherNavbar = () => {
@@ -28,10 +28,12 @@ const OtherNavbar = () => {
     }
 
   return (
+    <AnimatePresence>
     <motion.div className='otherNavbar' 
     variants={variants} 
     initial='visible'
     animate={hidden ? 'hidden' : 'visible'}
+    exit={'hidden'}
     style={{position: 'fixed'}}
     >
         <NavLink to={'/'}>
@@ -40,6 +42,7 @@ const OtherNavbar = () => {
         <Links/>
         
     </motion.div>
+    </AnimatePresence>
   )
 }
 

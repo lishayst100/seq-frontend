@@ -17,7 +17,7 @@ const Text = () => {
   }
 
   return (
-    <div className=" container mx-auto">
+    <div className=" w-50 mx-auto  justify-content-center d-flex flex-column">
 
    
     <div className="container mx-auto d-flex justify-content-center overflow-hidden flex-column  ">
