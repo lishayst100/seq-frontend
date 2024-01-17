@@ -12,7 +12,7 @@ body::-webkit-scrollbar-track{
 }
 
 body::-webkit-scrollbar-thumb{
-  background-color: rgb(62, 5, 255);
+  background-color: #3e05ff;
   border-radius: 30px;
 }
 
@@ -24,6 +24,15 @@ body::-webkit-scrollbar-thumb{
 
 .bg-blue{
   background-color: rgb(62, 5, 255);
+}
+
+.color-blue{
+  color: #3e05ff;
+}
+
+
+.text-bolder{
+  font-weight: 900;
 }
 
 button{

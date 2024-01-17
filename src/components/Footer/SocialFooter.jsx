@@ -7,7 +7,7 @@ const SocialFooter = () => {
   return (
     <ul className='d-flex flex-column justify-content-between gap-2'>
         {links.slice(0,3).map(link => (
-            <li  className='link' key={link.link}>
+            <li  className='link' key={link.title}>
                 <NavLink to={link.link} className='link'>{link.title}</NavLink>
             </li>
         ))}

@@ -15,9 +15,10 @@ import { AnimatePresence } from 'framer-motion';
 
 function App() {
   const location = useLocation()
-  const {getProjects} = useContext(ProjectContext)
+  const {getProjects,getCarousel} = useContext(ProjectContext)
   useEffect(()=>{
     getProjects()
+    getCarousel()
   },[])
 
   
@@ -25,7 +26,7 @@ function App() {
   return (
     <div className="App">
         {location.pathname !== '/' && <OtherNavbar/>}
-       <AnimatePresence mode='wait'>
+       <AnimatePresence mode='wait' initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
