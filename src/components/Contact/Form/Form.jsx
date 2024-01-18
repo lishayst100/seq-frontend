@@ -106,7 +106,7 @@ const FormContact = () => {
           
 
           <div className="   w-75">
-            <button  type="submit" className=" send-btn  d-flex justify-content-center align-items-center text-center" style={{width:'30%'}} >
+            <button  type="submit" className=" send-btn  d-flex justify-content-center align-items-center text-center" style={{width: 300}} >
                 {<Lottie animationData={animationData2} autoplay={false} loop={false} lottieRef={sendRef} />}
             </button>
               
