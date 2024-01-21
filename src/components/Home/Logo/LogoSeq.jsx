@@ -1,7 +1,7 @@
 import React from "react";
 import Seq from "../../../images/SEQ (2).png";
 import asterisk from "../../../images/asterisk (1).png";
-import Uence from '../../../images/UENCE.png';
+import Uence from '../../../images/UENCE.png'
 import { motion, useTransform } from "framer-motion";
 
 
