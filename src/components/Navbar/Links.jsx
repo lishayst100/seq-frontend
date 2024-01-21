@@ -20,6 +20,7 @@ const Links = () => {
     <div className="links-social">
       {LINKS.map((link, index) => (
         <NavLink
+        
           key={index}
           className={selected === index ? "selected link" : "link"}
           to={link.link}

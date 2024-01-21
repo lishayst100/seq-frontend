@@ -49,6 +49,10 @@
     padding: 50px 0 150px 0;
 }
 
+.text-contact-container{
+    width: 50%;
+}
+
 
 @media screen and (max-width: 450px) {
     .contact-text{
@@ -60,8 +64,8 @@
     }
     .error-message{
         font-size: 0.7em;
-     
-       
-     
+    }
+    .text-contact-container{
+        width: 75%;
     }
 }

@@ -14,11 +14,7 @@ import Project from "../Projects/Project";
 import SimilarProjects from "./SimilarProjects";
 
 const ProjectViewer = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+  
   const { id } = useParams();
   const { projects, isLoading } = useContext(ProjectContext);
   const controls = useAnimationControls();
@@ -88,7 +84,7 @@ const ProjectViewer = () => {
 
   return (
     <>
-      <div className="d-flex justify-content-around align-items-center details-container">
+      <div className="d-flex container justify-content-around align-items-center  details-container">
         <Previous
           goToPreviousProject={goToPreviousProject}
           selectedProjectIndex={selectedProjectIndex}

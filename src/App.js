@@ -10,6 +10,7 @@ import Example from './components/Responsive Navbar/Example';
 import OtherNavbar from './components/Navbar/OtherNavbar';
 import Contact from './pages/Contact/Contact';
 import { AnimatePresence } from 'framer-motion';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 
 
@@ -26,7 +27,8 @@ function App() {
   return (
     <div className="App">
         {location.pathname !== '/' && <OtherNavbar/>}
-       <AnimatePresence mode='wait' initial={false}>
+       <AnimatePresence mode='wait' initial={false} >
+       <ScrollToTop/>
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />

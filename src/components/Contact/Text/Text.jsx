@@ -17,10 +17,10 @@ const Text = () => {
   }
 
   return (
-    <div className=" w-50 mx-auto  justify-content-center d-flex flex-column">
+    <div className="  text-contact-container  mx-auto  justify-content-center d-flex flex-column ">
 
    
-    <div className="container mx-auto d-flex justify-content-center overflow-hidden flex-column  ">
+    <div className="container mx-auto d-flex justify-content-center overflow-hidden flex-column   ">
       <motion.p variants={variants} initial='initial' animate='animate'  className="text-black contact-text">
         For potential projects and collabrations, fell free to send us a
         message.
