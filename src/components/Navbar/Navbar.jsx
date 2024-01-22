@@ -43,7 +43,7 @@ const Navbar = () => {
 
     
     <motion.nav className="navbar" 
-   layoutScroll
+   
     variants={{
       visible:{y:0, transition: {duration: 0.8 , ease: 'easeInOut'}},
       hidden:{y: '-100%' , transition: {duration: 0.8 , ease: 'easeInOut'}},
@@ -55,6 +55,8 @@ const Navbar = () => {
       <Links/>
       <motion.div className="logo-container" style={
         { scale: scaleProgress ,
+          
+
        /*  translateX:transformXProgress
         ,translateY:transformYProgress, */
        

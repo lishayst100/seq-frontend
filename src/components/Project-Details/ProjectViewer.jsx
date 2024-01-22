@@ -84,24 +84,21 @@ const ProjectViewer = () => {
 
   return (
     <>
-      <div className="d-flex container justify-content-around align-items-center  details-container">
-        <Previous
-          goToPreviousProject={goToPreviousProject}
-          selectedProjectIndex={selectedProjectIndex}
-        />
+     
+        
 
         <Details
           controls={controls}
           selectedProject={selectedProject}
           variants={variants}
-        />
-
-        <Next
           goToNextProject={goToNextProject}
+          goToPreviousProject={goToPreviousProject}
           projects={projects}
           selectedProjectIndex={selectedProjectIndex}
         />
-      </div>
+
+       
+     
 
       <ImagesGrid
         controls={controls}
