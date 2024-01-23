@@ -85,8 +85,8 @@ const ProjectViewer = () => {
   return (
     <>
      
-        
-
+       
+    
         <Details
           controls={controls}
           selectedProject={selectedProject}

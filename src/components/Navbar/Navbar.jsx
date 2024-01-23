@@ -22,13 +22,13 @@ const Navbar = () => {
   
   useMotionValueEvent(scrollY, 'change',(latest) => {
 
-   /*  if(scrollYProgress.get() > 0.1){
+    if(scrollYProgress.get() > 0.1){
         ref.current.setDirection(1)
         ref.current.play()
     }else if( scrollYProgress.get() < 0.1){
         ref.current.setDirection(-1)
         ref.current.play()
-    } */
+    }
     
     const previous = scrollY.getPrevious()
     if( previous < latest && latest > 600){
@@ -42,7 +42,7 @@ const Navbar = () => {
    
 
     
-    <motion.nav className="navbar" 
+    <motion.nav className="navbar " 
    
     variants={{
       visible:{y:0, transition: {duration: 0.8 , ease: 'easeInOut'}},
@@ -68,17 +68,17 @@ const Navbar = () => {
           alt="Logo"
           
         /> */}
-{/* 
+
           <Lottie
           animationData={animationData}
-          autoplay={true}
+          autoplay={false}
           lottieRef={ref}
-          loop={true}
+          loop={false}
         />
-         */}
+        
        
 
-       <LogoSeq scrollYProgress={scrollYProgress}/>
+       {/* <LogoSeq scrollYProgress={scrollYProgress}/> */}
       </motion.div>
       
       

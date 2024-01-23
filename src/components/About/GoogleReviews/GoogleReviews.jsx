@@ -5,7 +5,7 @@ import Stars from "./Stars";
 import Review from "./Review";
 const GoogleReviews = () => {
   return (
-    <div className="container mx-auto  d-flex justify-content-between align-items-center review-container">
+    <div className="container mx-auto  d-flex justify-content-between align-items-center review-container ">
       <Review />
       <Stars />
     </div>

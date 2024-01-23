@@ -11,7 +11,6 @@ const Video = () => {
         muted
         autoPlay
         loop
-       
       />
      
     </div>

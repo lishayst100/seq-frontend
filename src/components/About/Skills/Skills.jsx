@@ -34,7 +34,7 @@ const Skills = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ margin: "200px" }}
-        className="bg-blue skills d-flex gap-2 gap-lg-5 justify-content-center  "
+        className="bg-blue skills d-flex gap-2 gap-lg-5 justify-content-center p-2  "
       >
         {images.map((image,index) => (
           <div

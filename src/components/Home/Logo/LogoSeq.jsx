@@ -13,10 +13,10 @@ const LogoSeq = ({scrollYProgress}) => {
    
 
   return (
-    <motion.div className="pt-5 d-flex gap-3 sequence-logo" >
+    <motion.div className=" d-flex gap-3 sequence-logo"  >
       <img src={Seq} alt="..." className="seq"/>
-          <motion.img src={asterisk} alt="..." className="asterisk" style={{rotate}}/>
-          <motion.img src={uence} alt="..." style={{scale,translateX}}/>
+        <motion.img src={asterisk} alt="..." className="asterisk" style={{rotate}}/>
+          <motion.img src={uence} alt="..." style={{scale,translateX}} className="uence"/>
       
     </motion.div>
   );
