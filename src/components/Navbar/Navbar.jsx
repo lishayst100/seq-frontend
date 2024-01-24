@@ -13,7 +13,7 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const { scrollYProgress,scrollY } = useScroll();
   const {pathname} = useLocation()
-  const ref = useRef(null)
+  /* const ref = useRef(null) */
   const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.15]);
   const transformXProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-48%']);
   const transformYProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-58%']);
@@ -22,13 +22,13 @@ const Navbar = () => {
   
   useMotionValueEvent(scrollY, 'change',(latest) => {
 
-    if(scrollYProgress.get() > 0.1){
+   /*  if(scrollYProgress.get() > 0.1){
         ref.current.setDirection(1)
         ref.current.play()
     }else if( scrollYProgress.get() < 0.1){
         ref.current.setDirection(-1)
         ref.current.play()
-    }
+    } */
     
     const previous = scrollY.getPrevious()
     if( previous < latest && latest > 600){
@@ -70,16 +70,16 @@ const Navbar = () => {
           
         /> */}
 
-          <Lottie
+          {/* <Lottie
           animationData={animationData}
           autoplay={false}
           lottieRef={ref}
           loop={false}
-        />
+        /> */}
         
        
 
-       {/* <LogoSeq scrollYProgress={scrollYProgress}/> */}
+       <LogoSeq scrollYProgress={scrollYProgress}/>
       </motion.div>
       
       
