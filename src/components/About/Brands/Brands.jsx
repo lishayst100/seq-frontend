@@ -1,8 +1,12 @@
 import React from 'react'
+import Lottie from 'lottie-react'
+import animationData from '../../../lottie/logos.json'
 
 const Brands = () => {
   return (
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt molestias sit nobis magni placeat similique facere iusto veritatis, minima eum iste quae doloribus laboriosam exercitationem consequuntur, aspernatur esse magnam necessitatibus!</div>
+   
+        <Lottie animationData={animationData} style={{width: '100%'}} />
+   
   )
 }
 

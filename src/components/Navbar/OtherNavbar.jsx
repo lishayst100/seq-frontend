@@ -28,12 +28,11 @@ const OtherNavbar = () => {
     }
 
   return (
-    <AnimatePresence>
+    
     <motion.div className='otherNavbar' 
     variants={variants} 
     initial='visible'
     animate={hidden ? 'hidden' : 'visible'}
-    exit={'hidden'}
     style={{position: 'fixed'}}
     >
         <NavLink to={'/'}>
@@ -42,7 +41,7 @@ const OtherNavbar = () => {
         <Links/>
         
     </motion.div>
-    </AnimatePresence>
+    
   )
 }
 

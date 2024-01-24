@@ -1,17 +1,39 @@
-import React from 'react';
+import { useRef } from "react";
+import Logo from "./Logo";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import './MainNavbar.scss'
+import { LINKS } from "./Links";
 
-const YourSVGComponent = () => {
+const Navbar = () => {
+  const navRef = useRef(null);
+
+  const showNavbar = () => {
+    if (navRef.current) {
+      navRef.current.classList.toggle("responsive_nav");
+    }
+  };
+
   return (
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="203.000000pt" height="196.000000pt" viewBox="0 0 203.000000 196.000000"
- preserveAspectRatio="xMidYMid meet">
+    <header className="navbar-logo">
+      <Logo />
 
-<g transform="translate(0.000000,196.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-</g>
-</svg>
-
+      <nav className="links" ref={navRef}>
+        {LINKS.map((v) => (
+          <NavLink className={"link"} key={v.link} to={v.link} onClick={showNavbar}>
+            {v.label}
+          </NavLink>
+        ))}
+        <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+          <FaTimes />
+        </button>
+        <Logo />
+      </nav>
+      <button className="nav-btn" onClick={showNavbar}>
+        <FaBars />
+      </button>
+    </header>
   );
 };
 
-export default YourSVGComponent;
+export default Navbar;

@@ -11,6 +11,10 @@
     height: 500px;
 }
 
+.text-about{
+    font-size: 1.3em;
+    width: 100%;
+}
 
 .skill{
     font-size: 8em;

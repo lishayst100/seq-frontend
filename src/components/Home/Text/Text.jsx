@@ -1,59 +1,40 @@
 import React, { useRef } from "react";
 import "./Text.scss";
 import { easeInOut, motion, useInView } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Text = () => {
   const ref = useRef(null);
-  const textHome = [
-    "Sequence Studio is a creative boutique studio providing creative solutions and productions services",
-    "including design ,animation & visual effects for varius media forms - television, internet and ",
-    "film. television, internet and film. We specialize in the development and production of commercials,",
-    "animations films, promotional and product videos, from concept stage to final.",
-  ];
-
-  const variants = {
-    initial: {
-      y: "-30vh",
-      opacity: 0,
-      transition: {
-        duration: 1,
-        ease: "easeInOut",
-      },
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 1,
-        ease: "easeInOut",
-      },
-    },
-  };
+  const nav = useNavigate()
+  const string = 'Sequence Studio is a creative boutique studio providing creative solutions and productions services including design ,animation & visual effects for varius media forms - television, internet and film. We specialize in the development and production of commercials, animations films, promotional and product videos, from concept stage to final.'.split(' ')
+  
   return (
     <motion.p
       className=" container mx-auto text-header  d-flex justify-content-center"
       ref={ref}
     >
-      <div>
+      <div className="">
 
       
-      {textHome.map((text, i) => (
-        <motion.div key={i}>
+      {string.map((text, i) => (
+       
           <motion.span
+            key={i}
             className="text-desc"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1, transition: { duration: 1 } }}
-            viewport={{ margin: "-20%" }}
+            viewport={{ margin: "-15%" }}
           >
-            {text}
+            {`${text} `}
           </motion.span>
-        </motion.div>
+       
       ))}
       <motion.span
+        onClick={()=>{nav('/about')}}
         whileHover={{ scale: 1.1 }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 0.5 } }}
-        viewport={{ margin: "-20%" }}
+        viewport={{ margin: "-15%" }}
         className="hi"
       >
         Say hi...
@@ -66,20 +47,3 @@ const Text = () => {
 export default Text;
 
 
-
-{/* <motion.p className="text-desc"
-       variants={variants}
-       initial="initial"
-       whileInView="animate"
-     
-      >
-        Sequence Studio is a creative boutique studio providing creative
-        solutions and productions services including design ,animation & visual
-        effects for varius media forms - television, internet and film. We
-        specialize in the development and production of commercials, animations
-        films, promotional and product videos, from concept stage to final.
-        <motion.span whileHover={{ scale: 1.1 }} className="hi">
-          
-          Say hi...
-        </motion.span>
-      </motion.p> */}

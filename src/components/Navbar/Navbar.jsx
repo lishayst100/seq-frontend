@@ -7,13 +7,13 @@ import Lottie from 'lottie-react';
 import animationData from "../../lottie/navbarAnimation.json";
 import LogoSeq from '../Home/Logo/LogoSeq';
 import { useLocation } from 'react-router-dom';
-
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const { scrollYProgress,scrollY } = useScroll();
   const {pathname} = useLocation()
-  const ref = useRef()
+  const ref = useRef(null)
   const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.15]);
   const transformXProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-48%']);
   const transformYProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-58%']);
@@ -42,7 +42,7 @@ const Navbar = () => {
    
 
     
-    <motion.nav className="navbar " 
+    <motion.nav className="navbar" 
    
     variants={{
       visible:{y:0, transition: {duration: 0.8 , ease: 'easeInOut'}},
@@ -53,6 +53,7 @@ const Navbar = () => {
     style={{height: heightProgress, position: 'fixed'}}>
       
       <Links/>
+      
       <motion.div className="logo-container" style={
         { scale: scaleProgress ,
           

@@ -17,7 +17,7 @@ const Links = () => {
 
 
   return (
-    <div className="links-social">
+    <div className="links-social ">
       {LINKS.map((link, index) => (
         <NavLink
         
