@@ -48,7 +48,7 @@ const Skills = () => {
               className="image-footer"
               initial="hidden"
               whileInView= {{ opacity: 1, y: "0%", transition: { duration: 0.8,delay: index * 0.2 } }}
-            
+              viewport={{amount: 'some'}}
             
             
             />

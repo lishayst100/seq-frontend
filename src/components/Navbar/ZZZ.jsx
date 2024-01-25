@@ -12,7 +12,7 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [click, setClick] = useState(false);
   const { scrollY } = useScroll();
-  const ref = useRef(null);
+  /* const ref = useRef(null); */
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
@@ -21,7 +21,7 @@ const Navbar = () => {
     } else {
       setHidden(false);
     }
-    if (latest > 50) {
+    /* if (latest > 50) {
         setClick(true);
         ref.current.setDirection(1)
         ref.current.play();
@@ -29,7 +29,7 @@ const Navbar = () => {
         setClick(false);
         ref.current.setDirection(-1)
         ref.current.play()
-      }
+      } */
   });
 
   const resizeLogo = () => {
@@ -84,7 +84,7 @@ const Navbar = () => {
         <Lottie
           animationData={animationData}
           autoplay={false}
-          lottieRef={ref}
+          /* lottieRef={ref} */
           loop={false}
         />
       </motion.div>
