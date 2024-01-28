@@ -10,6 +10,7 @@ import { transitionNavbar } from '../../utils/utils'
 import Lenis from '@studio-freight/lenis'
 import transition from '../../transition'
 import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
 const Home = () => {
   const isMobile = useResize()
   const [isAnimated , setIsAnimated] = useState(false);
@@ -45,7 +46,9 @@ const Home = () => {
         <Video/>
         <Text/>
         <Projects/>
+        
     </motion.div>
+    <Footer scrollProgress={0.8}/>
     </div>
     
   )

@@ -4,7 +4,7 @@
 }
 
 .review-container{
-    padding: 8rem 0;
+    padding: 5% 0;
 }
 
 .skills{
@@ -69,4 +69,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px ,1fr));
     gap: 2rem
+  }
+
+  @media screen and (max-width: 768px) {
+    .skills{
+        height: 300px;
+    }
   }

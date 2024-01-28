@@ -21,7 +21,7 @@ root.render(
    {/*  <ZZZNavbar/> */}
     {/* <Navbar/> */}
     <App />
-    <Footer/>
+   
     </ProjectContextProvider>
     </BrowserRouter>
 );

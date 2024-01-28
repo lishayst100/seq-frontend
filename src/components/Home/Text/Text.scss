@@ -11,6 +11,8 @@
     display: inline-flex;
     color: #3e05ff;
     cursor: pointer;
+
+   
 }
 
 .text-desc{
@@ -32,7 +34,7 @@
 
 @media screen and (max-width: 768px) {
     .text-header{
-        font-size: 1rem ;
+        font-size: 1.3rem ;
         padding-top:100px;
     }
     .text-desc{

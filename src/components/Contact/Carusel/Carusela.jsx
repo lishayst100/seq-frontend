@@ -8,7 +8,7 @@ const Carusela = () => {
   const { images } = useContext(ProjectContext);
 
   return (
-    <div className="carousel">
+    <div className="carousel" >
       <Carousel fade>
         {images.map((slider) => (
           <Carousel.Item key={slider}>
@@ -21,6 +21,9 @@ const Carusela = () => {
                 objectFit: "cover",
               }}
             />
+            
+
+            
           </Carousel.Item>
         ))}
       </Carousel>

@@ -6,22 +6,36 @@ import {motion} from 'framer-motion'
 const Text = () => {
  
 
-  
-
-  const variants ={
-    initial: { y: '-200%',opacity:0},
-    animate: { y: 0,opacity: 1, transition: {duration: 1}},
-    initial2 : { y: '-200%'},
-    animate2 : { y: 0,opacity: 1, transition: {duration:1,delay: 0.3 }}
-
+  const container = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: {
+        
+        staggerChildren: 0.2,
+        
+      }
+    }
   }
 
+  const item = {
+    hidden: {  y: '-300%'},
+    show: { y: '0%', transition: {duration: 0.7, ease: 'easeOut'} },
+    
+  };
+
+  
+
   return (
-    <div className="  text-contact-container  mx-auto  justify-content-center d-flex flex-column ">
+    <motion.div 
+    variants={container}
+    initial="hidden"
+    animate="show"
+    className="  text-contact-container  mx-auto  justify-content-center d-flex flex-column ">
 
    
     <div className="container mx-auto d-flex justify-content-center overflow-hidden flex-column   ">
-      <motion.p variants={variants} initial='initial' animate='animate'  className="text-black contact-text">
+      <motion.p variants={item}  className="text-black contact-text">
         For potential projects and collabrations, fell free to send us a
         message.
        
@@ -29,7 +43,7 @@ const Text = () => {
       </div>
 
       <div className="container mx-auto d-flex justify-content-center overflow-hidden flex-column ">
-      <motion.p className="text-black contact-text" initial='initial' animate='animate2' variants={variants}>
+      <motion.p className="text-black contact-text" variants={item}>
             We look forward creating with you!
       </motion.p>
       </div>
@@ -39,7 +53,7 @@ const Text = () => {
      
       
     
-    </div>
+    </motion.div>
   );
 };
 

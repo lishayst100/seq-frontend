@@ -12,6 +12,7 @@ import Details from "./Details";
 import transition from "../../transition";
 import Project from "../Projects/Project";
 import SimilarProjects from "./SimilarProjects";
+import Footer from "../Footer/Footer";
 
 const ProjectViewer = () => {
   
@@ -109,7 +110,7 @@ const ProjectViewer = () => {
       {/* <Back /> */}
 
       <SimilarProjects shuffleArray={shuffleArray}  projectGenre={projectGenre}/>
-      
+      <Footer scrollProgress={0.8}/>
     </>
   );
 };

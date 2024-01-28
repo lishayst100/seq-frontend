@@ -3,7 +3,7 @@ import { BsStarFill } from "react-icons/bs";
 
 const Stars = () => {
   return (
-    <div className='rating text-black d-flex gap-3 align-items-center justify-content-center'>
+    <div className='rating text-black d-flex gap-3 align-items-start justify-content-start'>
     <div>
         <BsStarFill className='star' />
         <BsStarFill className='star' />

@@ -1,58 +1,39 @@
-import React, { useRef, useEffect } from 'react';
-import lottie from 'lottie-web';
-import animationData from '../../lottie/footer.json'; // Replace with your Lottie animation data
+import React, { useContext, useState } from 'react';
+import { ProjectContext } from '../../context/ProjectContext';
+import Project from '../Projects/Project';
 
-const LottieAnimation = () => {
-  const targetRef = useRef(null);
+const YourComponent = () => {
+  const {projects} = useContext(ProjectContext)
+  const data = projects;
 
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1 // Adjust this threshold based on when you want the animation to trigger
-    };
+  const [selectedGenre, setSelectedGenre] = useState(''); // State to store selected genre
 
-    const playLottieAnimation = () => {
-      if (targetRef.current) {
-        setTimeout(() => {
-          lottie.loadAnimation({
-            container: targetRef.current,
-            animationData: animationData, // Replace with your animation data
-            loop: false,
-            autoplay: true
-          });
-        }, 100); // Delay of 0.5 seconds (500 milliseconds)
-      }
-    };
+  const filteredData = selectedGenre
+    ? data.filter(item => item.genres.includes(selectedGenre))
+    : data;
 
-    const intersectionCallback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          playLottieAnimation();
-          observer.unobserve(entry.target);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(intersectionCallback, options);
-
-    if (targetRef.current) {
-      observer.observe(targetRef.current);
-    }
-
-    return () => {
-      if (targetRef.current) {
-        observer.unobserve(targetRef.current);
-      }
-    };
-  }, []);
+  const handleGenreClick = (genre) => {
+    setSelectedGenre(genre);
+  };
 
   return (
-  <div className='mb-5' style={{height:'359px'}}>
-      <div ref={targetRef} style={{width:'100%' , height:"100%"}}></div>
-     
-  </div>
+    <div>
+      <div>
+        <button onClick={() => handleGenreClick('')}>All Genres</button>
+        <button onClick={() => handleGenreClick('production')}>Production</button>
+        <button onClick={() => handleGenreClick('commercial')}>Commercial</button>
+        <button onClick={() => handleGenreClick('motion')}>Motion</button>
+        {/* Add more buttons as needed */}
+      </div>
+
+      {/* Render your filtered data here */}
+      <ul>
+        {filteredData.map(item => (
+          <Project {...item} img={item.images[0]} item={'item'}/>
+        ))}
+      </ul>
+    </div>
   );
 };
 
-export default LottieAnimation;
+export default YourComponent;

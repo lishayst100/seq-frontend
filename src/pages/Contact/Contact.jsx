@@ -4,6 +4,8 @@ import Text from "../../components/Contact/Text/Text";
 import Carusela from "../../components/Contact/Carusel/Carusela";
 import Form from "../../components/Contact/Form/Form";
 import transition from "../../transition";
+import Footer from "../../components/Footer/Footer";
+
 
 
 const Contact = () => {
@@ -12,6 +14,9 @@ const Contact = () => {
       <Text />
       <Carusela/>
       <Form/>
+     
+      <Footer scrollProgress={0.5}/>
+      
     </div>
   );
 };

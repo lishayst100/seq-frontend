@@ -13,14 +13,10 @@ const FormContact = () => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isSending, setIsSending] = useState(false);
   const sendRef = useRef(null)
 
 
-  const handleSending = () => {
-    sendRef.current.setDirection(1)
-    sendRef.current.play()
-  }
+  
 
   const handleForm = async (formValues) => {
     setIsLoading(true)
@@ -124,7 +120,6 @@ const FormContact = () => {
 
           {error && <div className="text-danger">{error}</div>}
          
-          {message && <div className="text-success">{message}</div>}
         </Form>
       )}
     </Formik>

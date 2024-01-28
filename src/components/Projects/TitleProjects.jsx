@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Projects.scss'
 import { ProjectContext } from '../../context/ProjectContext'
 import { motion } from 'framer-motion' 
-const TitleProjects = () => {
+const TitleProjects = ({handleGenreClick}) => {
     
     const titles = [
-      {value : 'all',title: 'All'},
+      {value : '',title: 'All'},
       {value : 'commercial',title: 'Commercial'},
       {value : 'production' , title:'Production'},
       {value : 'motion', title: 'Motion' },
@@ -16,6 +16,11 @@ const TitleProjects = () => {
     const [selected,setSelected] = useState(0)
     const {projectsFilter} = useContext(ProjectContext)
 
+
+
+    useEffect(()=>{
+      setSelected(0)
+    },[])
     const toggleSelected = (i) => {
         if (selected === i) {
           return setSelected(null);
@@ -33,7 +38,7 @@ const TitleProjects = () => {
           <motion.div
             className={ selected === index ? 'title-projects selected' : 'title-projects'} key={index} onClick={()=>{
             toggleSelected(index)
-            projectsFilter(title.value)
+            handleGenreClick(title.value)
             }}>
             {title.title}
           </motion.div>
