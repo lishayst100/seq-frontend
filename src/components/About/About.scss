@@ -27,7 +27,7 @@
 }
 
 .about-padding{
-    padding-top: 10%;
+    padding-top: 100px;
 }
 
 .title-team{
@@ -71,8 +71,20 @@
     gap: 2rem
   }
 
+
+  
+
   @media screen and (max-width: 768px) {
     .skills{
         height: 300px;
     }
+    .review-titles-container{
+
+        h4{
+            font-size: 1em
+        }
+        h3{
+            font-size: 1em;
+        }
+      }
   }

@@ -14,7 +14,7 @@ const About = () => {
 
   
   return (
-    <div className='bg-white'>
+    <div className='bg-white about-padding'>
       
       <div className='container mx-auto review-container'>
         <h3 className='font-bolder text-black text-start title-team p-2'>About Us</h3>

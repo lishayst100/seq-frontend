@@ -11,6 +11,7 @@ import OtherNavbar from './components/Navbar/OtherNavbar';
 import Contact from './pages/Contact/Contact';
 import { AnimatePresence } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import Navbar from './components/Navbar/ResNavbar';
 
 
 
@@ -26,7 +27,7 @@ function App() {
   
   return (
     <div className="App">
-        {location.pathname !== '/' && <OtherNavbar/>}
+        {location.pathname !== '/' && <Navbar/>}
        <AnimatePresence mode='wait' initial={false} >
        <ScrollToTop/>
         <Routes location={location} key={location.pathname}>

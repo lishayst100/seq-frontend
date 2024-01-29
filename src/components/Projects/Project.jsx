@@ -24,7 +24,7 @@ const Project = ({ title, img, index, _id, item }) => {
            
 
           }}
-          viewport={{margin: '-20%'}}
+          viewport={{margin: '-20% 0px -20% 0px'}}
          
         />
         <div className="color-overlay"></div>

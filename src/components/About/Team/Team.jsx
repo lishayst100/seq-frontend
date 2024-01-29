@@ -27,7 +27,7 @@ const Team = () => {
                 isLoading ? <Loading/> : (
                     team.map( t => (
                         <div 
-                        className='d-flex flex-column justify-content-start align-items-start  gap-3'
+                        className='d-flex flex-column justify-content-start align-items-start  gap-3 overflow-hidden'
                         
                         key={t._id}>
                             <img src={t.img[0]} alt={t.name} width={150} height={150} className='rounded-3' />

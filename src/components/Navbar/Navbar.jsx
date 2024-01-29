@@ -17,7 +17,7 @@ const Navbar = () => {
   const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.15]);
   const transformXProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-48%']);
   const transformYProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-58%']);
-  const heightProgress = useTransform(scrollYProgress, [0, 0.1], ['93vh', '7vh']);
+  const heightProgress = useTransform(scrollYProgress, [0, 0.1], ['90vh', '8vh']);
   
   
   useMotionValueEvent(scrollY, 'change',(latest) => {
