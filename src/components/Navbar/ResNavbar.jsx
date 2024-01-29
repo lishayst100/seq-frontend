@@ -12,9 +12,9 @@ import { useDimensions } from "../Responsive Navbar/use-dimensions";
 const Navbar = () => {
   const navRef = useRef(null);
   const nav = useNavigate()  
-  const {height, width} = useDimensions(navRef)
+  
 
-  console.log(height, width)
+
   const showNavbar = () => {
     if (navRef.current) {
       navRef.current.classList.toggle("responsive_nav");
@@ -55,12 +55,12 @@ const Navbar = () => {
     variants={variants} 
     initial='visible'
     animate={hidden ? 'hidden' : 'visible'}
-    ref={navRef}
+    
   
     >
       
         <img src={logo} alt="" style={{ height:'50%' } } onClick={()=>{nav('/')}} />
-      <nav className="links" >
+      <nav className="links" ref={navRef}>
         {LINKS.map((v) => (
           <NavLink className={"link-navbar"} key={v.link} to={v.link} onClick={showNavbar}>
             {v.label}
