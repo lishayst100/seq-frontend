@@ -28,6 +28,15 @@ const Text = () => {
              >{`${word}`}&nbsp;</motion.span>
           ))
         }
+        <motion.span className="hi"
+        onClick={()=>{nav('/about')}}
+        initial={{opacity: 0}} 
+        whileInView={{opacity: 1 , transition: {duration: 1}}} 
+        viewport={{margin: '-15% 0px -15% 0px '}}
+        whileHover={{scale:1.1}}
+        >
+          Say Hi!
+        </motion.span>
       </p>
   );
 };

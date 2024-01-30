@@ -6,11 +6,10 @@ import Projects from '../../components/Projects/Projects'
 import {motion,useScroll,useMotionValueEvent, useTransform} from 'framer-motion'
 /* import Navbar from '../../components/Navbar/ZZZ' */
 import { useResize } from '../../hooks/useResize'
-import { transitionNavbar } from '../../utils/utils'
-import Lenis from '@studio-freight/lenis'
 import transition from '../../transition'
-import Navbar from '../../components/Navbar/Navbar'
+
 import Footer from '../../components/Footer/Footer'
+import Navbar from '../../components/Navbar/Navbar'
 const Home = () => {
   const isMobile = useResize()
   const [isAnimated , setIsAnimated] = useState(false);

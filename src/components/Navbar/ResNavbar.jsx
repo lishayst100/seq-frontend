@@ -88,7 +88,7 @@ const Navbar = () => {
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
-        
+        <img src={logo} alt="" className="res-logo-menu"  onClick={()=>{nav('/')}}  />
       </nav>
       <button className="nav-btn" onClick={showNavbar}>
         <FaBars />

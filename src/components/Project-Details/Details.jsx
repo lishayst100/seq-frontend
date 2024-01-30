@@ -35,8 +35,10 @@ const Details = ({ variants, controls, selectedProject,goToPreviousProject,selec
       
    
       
-
-      <pre className="credits-details">{selectedProject.credits}</pre>
+   
+        <pre className="credits-details">{selectedProject.credits}</pre>
+      
+      
     </motion.div>
   );
 };
