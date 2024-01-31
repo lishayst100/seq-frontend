@@ -5,7 +5,7 @@ import animationData from '../../../lottie/logos.json'
 const Brands = () => {
   return (
    
-        <Lottie animationData={animationData} style={{width: '70%'}} />
+        <Lottie animationData={animationData} style={{width: '100%'}} />
    
   )
 }
