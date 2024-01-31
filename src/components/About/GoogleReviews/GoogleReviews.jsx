@@ -9,8 +9,7 @@ const GoogleReviews = () => {
     justify-content-between
     align-items-center 
     gap-1
-    p-3
-    p-lg-5
+    
 
     ">
       <Review />

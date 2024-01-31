@@ -4,7 +4,7 @@
 }
 
 .review-container{
-    padding: 5% 0;
+    padding: 5%;
 }
 
 .skills{
@@ -77,6 +77,10 @@
   @media screen and (max-width: 768px) {
     .skills{
         height: 300px;
+    }
+
+    .review-container{
+        padding: 10%;
     }
     .review-titles-container{
 

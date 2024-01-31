@@ -7,9 +7,10 @@ import {motion,useScroll,useMotionValueEvent, useTransform} from 'framer-motion'
 /* import Navbar from '../../components/Navbar/ZZZ' */
 import { useResize } from '../../hooks/useResize'
 import transition from '../../transition'
-
+import ResNavbar from '../../components/Navbar/ResNavbar'
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
+import MobileLogo from '../../components/Home/MobileLogo/MobileLogo'
 const Home = () => {
   const isMobile = useResize()
   const [isAnimated , setIsAnimated] = useState(false);
@@ -32,9 +33,9 @@ const Home = () => {
 
   return (
     <div> 
-      <Navbar/>
+      {isMobile > 760 ? <Navbar/> : <ResNavbar/>}
     <motion.div className='home' 
-    style={{paddingTop: paddingProgress}}
+    style={{paddingTop: isMobile > 760 ? paddingProgress : ''}}
     /* variants={{
       withPadding: {paddingTop: isMobile < 800 ? '50vh' : '80vh' ,  transition: { duration: transitionNavbar }},
       withoutPadding:{paddingTop:'19vh' , transition: { duration: transitionNavbar  }},
@@ -42,6 +43,7 @@ const Home = () => {
     animate={ isAnimated ? "withoutPadding" : "withPadding"}
     initial='withPadding' */
    >
+      {isMobile > 760 ? '' :  <MobileLogo/>}
         <Video/>
         <Text/>
         <Projects/>

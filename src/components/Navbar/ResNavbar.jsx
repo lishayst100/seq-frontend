@@ -50,7 +50,7 @@ const Navbar = () => {
  
 
   return (
-    <motion.header className="navbar-logo d-flex justify-content-between" 
+    <motion.header className="navbar-logo d-flex justify-content-between " 
     style={{position:'fixed', width:'100%', zIndex:100}}
     variants={variants} 
     initial='visible'
