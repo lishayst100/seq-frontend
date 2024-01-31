@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Text.scss";
-import { easeInOut, motion, useInView } from "framer-motion";
+import { AnimatePresence, easeInOut, motion, useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDimensions } from "../../Responsive Navbar/use-dimensions";
 
@@ -16,6 +16,7 @@ const Text = () => {
 
 
   return (
+    <AnimatePresence initial={true}>
       <p className="d-flex flex-wrap  container mx-auto text-header" ref={containerRef}>
         {
           string.map((word,i) => (
@@ -38,6 +39,7 @@ const Text = () => {
           Say Hi!
         </motion.span>
       </p>
+      </AnimatePresence>
   );
 };
 
