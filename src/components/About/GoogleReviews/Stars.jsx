@@ -5,8 +5,8 @@ const Stars = () => {
   return (
     <div className='rating text-black 
                     d-flex gap-3 
-                    align-items-center justify-content-start 
-                    align-items-lg-start justify-content-start 
+                    align-items-start justify-content-start 
+                    align-items-lg-start align-items-center 
                     flex-lg-row flex-column'>
     <div>
         <BsStarFill className='star' />

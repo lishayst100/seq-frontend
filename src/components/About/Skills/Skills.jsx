@@ -5,7 +5,7 @@ import circle3 from "../../../images/Circle icons_03.png";
 import circle4 from "../../../images/Circle icons_04.png";
 import circle5 from "../../../images/Circle icons_05.png";
 import circle6 from "../../../images/Circle icons_06.png";
-import {  motion } from "framer-motion";
+import {  AnimatePresence, motion } from "framer-motion";
 
 const Skills = () => {
   const images = [circle1, circle2, circle3, circle4, circle5, circle6];
@@ -28,7 +28,7 @@ const Skills = () => {
   };
 
   return (
-    
+    <AnimatePresence initial={true}>
       <motion.div
         variants={container}
         initial="hidden"
@@ -49,6 +49,7 @@ const Skills = () => {
              </div>
         ))}
       </motion.div>
+      </AnimatePresence>
     
   );
 };

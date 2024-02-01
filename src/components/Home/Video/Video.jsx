@@ -3,7 +3,7 @@ import React from 'react'
 const Video = () => {
     const video = 'https://res.cloudinary.com/dabvgy03h/video/upload/v1704022256/g5j9ucuyql3jhm8uid9z.mp4'
   return (
-    <div className='video-container'>
+    <div className='video-container' style={{zIndex: 3 , position: 'relative'}}>
       <video
         className='video'
         src={video}

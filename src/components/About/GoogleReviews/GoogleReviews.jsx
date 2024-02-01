@@ -6,7 +6,8 @@ const GoogleReviews = () => {
     <div className="
     container mx-auto review-container
     d-flex 
-    justify-content-between
+    flex-column flex-lg-row flex-md-row
+    justify-content-md-between justify-content-lg-between justify-content-center
     align-items-center 
     gap-1
     

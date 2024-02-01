@@ -35,7 +35,8 @@ const Home = () => {
     <div> 
       {isMobile > 760 ? <Navbar/> : <ResNavbar/>}
     <motion.div className='home' 
-    style={{paddingTop: isMobile > 760 ? paddingProgress : ''}}
+
+    style={{paddingTop: isMobile > 760 ? paddingProgress : '', position:'relative', zIndex: 3}}
     /* variants={{
       withPadding: {paddingTop: isMobile < 800 ? '50vh' : '80vh' ,  transition: { duration: transitionNavbar }},
       withoutPadding:{paddingTop:'19vh' , transition: { duration: transitionNavbar  }},
