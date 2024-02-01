@@ -44,8 +44,11 @@ const Home = () => {
     animate={ isAnimated ? "withoutPadding" : "withPadding"}
     initial='withPadding' */
    >
-      {isMobile > 760 ? '' :  <MobileLogo/>}
+    <div style={{position:'relative'}}>
+        {isMobile > 760 ? '' :  <MobileLogo/>}
         <Video/>
+    </div>
+      
         <Text/>
         <Projects/>
         
