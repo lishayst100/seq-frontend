@@ -143,7 +143,7 @@ const Navbar = () => {
         
         />
         <motion.span className="line" style={{
-          bottom: '28%',
+          bottom: '30%',
           left: '50%',
           y: '-50%',
           x: '-50%'
@@ -151,12 +151,12 @@ const Navbar = () => {
         variants={{
           open: {
             rotate: ['0deg','0deg','45deg'],
-            bottom: ['28%', '28%' , '44.5%']
+            bottom: ['30%', '30%' , '45%']
             
           },
           close: {
             rotate: ['45deg','0deg','0deg'],
-            bottom: ['44.5%','28%', '28%' ]
+            bottom: ['45%','30%', '30%' ]
            
           },
         }}
