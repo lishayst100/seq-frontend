@@ -151,12 +151,12 @@ const Navbar = () => {
         variants={{
           open: {
             rotate: ['0deg','0deg','45deg'],
-            bottom: ['28%', '28%' , '45%']
+            bottom: ['28%', '28%' , '44.5%']
             
           },
           close: {
             rotate: ['45deg','0deg','0deg'],
-            bottom: ['45%','28%', '28%' ]
+            bottom: ['44.5%','28%', '28%' ]
            
           },
         }}
