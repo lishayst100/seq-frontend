@@ -10,11 +10,12 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "./MainNavnar.scss";
 import { LINKS } from "./navLinks";
 import logo from "../../images/logo2.png";
-import { useMotionValueEvent, useScroll, motion } from "framer-motion";
-import { useDimensions } from "../Responsive Navbar/use-dimensions";
+import { useMotionValueEvent, useScroll, motion, MotionConfig } from "framer-motion";
+
 
 const Navbar = () => {
   const navRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false)
   const nav = useNavigate();
   const { pathname } = useLocation();
 
@@ -22,6 +23,7 @@ const Navbar = () => {
     if (navRef.current) {
       navRef.current.classList.toggle("responsive_nav");
     }
+    setIsOpen(prev => !prev)
   };
 
   const [hidden, setHidden] = useState(false);
@@ -59,7 +61,7 @@ const Navbar = () => {
         alt=""
         style={{
           visibility: pathname === '/' ? (scrollY.get() > 600 ? "visible" : "hidden") : 'visible',
-          height: "50%",
+          height: "50%",zIndex: 889
         }}
         onClick={() => {
           nav("/");
@@ -99,21 +101,69 @@ const Navbar = () => {
             <FaVimeoV className="link-navbar link-social" />
           </a>
         </div>
-        <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-          <FaTimes />
-        </button>
-        <img
-          src={logo}
-          alt=""
-          className="res-logo-menu"
-          onClick={() => {
-            nav("/");
+        
+       
+      </nav>
+      <MotionConfig transition={{duration: 0.3, ease: 'easeInOut'}}>
+      <motion.div className="nav-hamburger " onClick={showNavbar} animate={isOpen ? 'open' : 'close'} initial={false}>
+        <motion.span className="line" style={{
+          top: '35%',
+          left: '50%',
+          y: '-50%',
+          x: '-50%'
+        }}
+          variants={{
+            open: {
+              rotate: ['0deg','0deg','45deg'],
+              top: ['35%', '50%', '50%'],
+            },
+            close: {
+              rotate: ['45deg','0deg','0deg'],
+              top: ['50%', '50%', '35%'],
+            },
           }}
         />
-      </nav>
-      <button className="nav-btn" onClick={showNavbar}>
-        <FaBars />
-      </button>
+        <motion.span className="line" style={{
+          top: '50%',
+          left: '50%',
+          y: '-50%',
+          x: '-50%',
+          
+        }}
+        variants={{
+          open: {
+            rotate: ['0deg','0deg','-45deg'],
+            
+          },
+          close: {
+            rotate: ['-45deg','0deg','0deg'],
+            
+          },
+        }}
+        
+        />
+        <motion.span className="line" style={{
+          bottom: '28%',
+          left: '50%',
+          y: '-50%',
+          x: '-50%'
+        }}
+        variants={{
+          open: {
+            rotate: ['0deg','0deg','45deg'],
+            bottom: ['28%', '28%' , '45%']
+            
+          },
+          close: {
+            rotate: ['45deg','0deg','0deg'],
+            bottom: ['45%','28%', '28%' ]
+           
+          },
+        }}
+        />
+       
+      </motion.div>
+      </MotionConfig>
     </motion.header>
   );
 };
