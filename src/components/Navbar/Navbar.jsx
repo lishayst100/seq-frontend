@@ -14,7 +14,7 @@ const Navbar = () => {
   const { scrollYProgress,scrollY } = useScroll();
   const {pathname} = useLocation()
   const ref = useRef(null)
-  const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.15]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.18]);
   const transformXProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-48%']);
   const transformYProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-58%']);
   const heightProgress = useTransform(scrollYProgress, [0, 0.1], ['90vh', '8vh']);
@@ -59,31 +59,19 @@ const Navbar = () => {
       <Links/>
       
       <motion.div className="logo-container" style={
-        { scale: scaleProgress ,
-          
-
-       /*  translateX:transformXProgress
-        ,translateY:transformYProgress, */
-       
-        
+        { scale: scaleProgress
         }}>
-        {/* <motion.img
-          style={{objectFit:'cover' , height: '100%', width:'100%'}}
-          src={logo}
-          alt="Logo"
-          
-        /> */}
 
-          <Lottie
+         {/*  <Lottie
           animationData={animationData}
           autoplay={false}
           lottieRef={ref}
           loop={false}
-        />
+        /> */}
         
        
 
-       {/* <LogoSeq scrollYProgress={scrollYProgress}/> */}
+       <LogoSeq scrollYProgress={scrollYProgress}/>
       </motion.div>
       
       

@@ -33,7 +33,7 @@ const TitleProjects = ({handleGenreClick}) => {
 
       
   return (
-    <div className='d-flex gap-xl-4 gap-3 justify-content-center align-items-center titles' >
+    <div className='d-flex gap-xl-4 gap-3 justify-content-center align-items-center titles flex-wrap' >
         {titles.map((title, index) => (
           <motion.div
             className={ selected === index ? 'title-projects selected' : 'title-projects'} key={index} onClick={()=>{
