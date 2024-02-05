@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import {
-  FaBars,
+  
   FaFacebookF,
   FaInstagram,
-  FaTimes,
+ 
   FaVimeoV,
 } from "react-icons/fa";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";

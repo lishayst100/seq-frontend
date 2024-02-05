@@ -1,22 +1,16 @@
 import {useRef, useState} from 'react';
-import './Navbar.scss'; // Import your CSS file
-import logo from '../../images/logo.png';
+import './Navbar.scss';
 import { useTransform, motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import Links from './Links';
-import Lottie from 'lottie-react';
-import animationData from "../../lottie/navbarAnimation.json";
 import LogoSeq from '../Home/Logo/LogoSeq';
-import { useLocation } from 'react-router-dom';
-import { GiHamburgerMenu } from "react-icons/gi";
+
+
 
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const { scrollYProgress,scrollY } = useScroll();
-  const {pathname} = useLocation()
   const ref = useRef(null)
   const scaleProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0.18]);
-  const transformXProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-48%']);
-  const transformYProgress = useTransform(scrollYProgress, [0, 0.1], ['0', '-58%']);
   const heightProgress = useTransform(scrollYProgress, [0, 0.1], ['90vh', '8vh']);
   
   
@@ -61,15 +55,6 @@ const Navbar = () => {
       <motion.div className="logo-container" style={
         { scale: scaleProgress
         }}>
-
-         {/*  <Lottie
-          animationData={animationData}
-          autoplay={false}
-          lottieRef={ref}
-          loop={false}
-        /> */}
-        
-       
 
        <LogoSeq scrollYProgress={scrollYProgress}/>
       </motion.div>

@@ -15,7 +15,7 @@ const Contact = () => {
       <Carusela/>
       <Form/>
      
-      <Footer scrollProgress={0.5}/>
+      <Footer scrollProgress={0.7}/>
       
     </div>
   );

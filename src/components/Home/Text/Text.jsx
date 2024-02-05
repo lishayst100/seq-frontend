@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import "./Text.scss";
-import { AnimatePresence, easeInOut, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { useDimensions } from "../../Responsive Navbar/use-dimensions";
+
 
 const Text = () => {
   const containerRef = useRef(null)

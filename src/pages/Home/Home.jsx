@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import Video from '../../components/Home/Video/Video'
 import './Home.scss'
 import Text from '../../components/Home/Text/Text'
@@ -37,12 +37,6 @@ const Home = () => {
     <motion.div className='home' 
 
     style={{paddingTop: isMobile > 1000 ? paddingProgress : '', position:'relative', zIndex: 3}}
-    /* variants={{
-      withPadding: {paddingTop: isMobile < 800 ? '50vh' : '80vh' ,  transition: { duration: transitionNavbar }},
-      withoutPadding:{paddingTop:'19vh' , transition: { duration: transitionNavbar  }},
-    }}
-    animate={ isAnimated ? "withoutPadding" : "withPadding"}
-    initial='withPadding' */
    >
     <div style={{position:'relative'}}>
         {isMobile > 1000 ? '' :  <MobileLogo/>}
