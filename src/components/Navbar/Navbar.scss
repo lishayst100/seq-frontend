@@ -36,7 +36,7 @@
 .logo-container {
   display: flex;
   align-items: center;
-  transform-origin: 0 -25%;
+  transform-origin: 0 -30%;
   
  /* Add transitions for the transformations */
 }
@@ -114,6 +114,12 @@
 
 
 
-@media (max-width: 768px){
- 
+@media (max-width: 1350px){
+  .logo-container {
+    display: flex;
+    align-items: center;
+    transform-origin: 0 -38%;
+    
+   /* Add transitions for the transformations */
+  }
 }

@@ -15,7 +15,6 @@ import SimilarProjects from "./SimilarProjects";
 import Footer from "../Footer/Footer";
 
 const ProjectViewer = () => {
-  
   const { id } = useParams();
   const { projects, isLoading } = useContext(ProjectContext);
   const controls = useAnimationControls();
@@ -76,7 +75,7 @@ const ProjectViewer = () => {
   }
 
   const variants = {
-    initial: { opacity: 1 },
+    initial: { opacity: 0 },
     nextProject: {
       opacity: [0, 0.5, 1],
       transition: { duration: 1, delay: 0.5 },
@@ -85,21 +84,15 @@ const ProjectViewer = () => {
 
   return (
     <>
-     
-       
-    
-        <Details
-          controls={controls}
-          selectedProject={selectedProject}
-          variants={variants}
-          goToNextProject={goToNextProject}
-          goToPreviousProject={goToPreviousProject}
-          projects={projects}
-          selectedProjectIndex={selectedProjectIndex}
-        />
-
-       
-     
+      <Details
+        controls={controls}
+        selectedProject={selectedProject}
+        variants={variants}
+        goToNextProject={goToNextProject}
+        goToPreviousProject={goToPreviousProject}
+        projects={projects}
+        selectedProjectIndex={selectedProjectIndex}
+      />
 
       <ImagesGrid
         controls={controls}
@@ -109,8 +102,11 @@ const ProjectViewer = () => {
 
       {/* <Back /> */}
 
-      <SimilarProjects shuffleArray={shuffleArray}  projectGenre={projectGenre}/>
-      <Footer scrollProgress={0.8}/>
+      <SimilarProjects
+        shuffleArray={shuffleArray}
+        projectGenre={projectGenre}
+      />
+      <Footer scrollProgress={0.8} />
     </>
   );
 };
