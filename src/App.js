@@ -9,23 +9,28 @@ import Contact from './pages/Contact/Contact';
 import { AnimatePresence } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Navbar from './components/Navbar/ResNavbar';
+import { useResize } from './hooks/useResize';
 
 
 
 function App() {
   const location = useLocation()
-  const {getProjects,getCarousel} = useContext(ProjectContext)
+  const isMobile = useResize()
+  const {getProjects,getCarousel,getText} = useContext(ProjectContext)
   useEffect(()=>{
     getProjects()
     getCarousel()
+    getText()
   },[])
 
   
   
   return (
     <div className="App">
-        {location.pathname !== '/' && <Navbar/>}
+        {isMobile < 1000 ? <Navbar/> : (location.pathname !== '/' ? <Navbar/> : '')}
+       
        <AnimatePresence mode='wait' initial={false} >
+        
        <ScrollToTop/>
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />

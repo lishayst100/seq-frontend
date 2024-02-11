@@ -8,6 +8,7 @@ const ProjectContextProvider = ({children}) => {
     const [projects, setProjects] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [images, setImages] = useState([])
+    const [text, setText] = useState([])
     
     const getProjects = () => {
         setIsLoading(true);
@@ -41,12 +42,19 @@ const ProjectContextProvider = ({children}) => {
           setIsLoading(false)
           setImages(result[0].url)})
     }
+    const getText = () => {
+      fetch(`${BASE_URL}/text/`)
+      .then(res => res.json())
+      .then(result => {
+          setIsLoading(false)
+          setText(result)})
+    }
 
    
 
 
   return (
-    <ProjectContext.Provider value={{projects,getProjects,projectsFilter,isLoading,images,getCarousel}}>{children}</ProjectContext.Provider>
+    <ProjectContext.Provider value={{projects,getProjects,projectsFilter,isLoading,images,getCarousel,text,getText}}>{children}</ProjectContext.Provider>
   )
 }
 

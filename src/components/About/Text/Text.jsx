@@ -1,26 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext} from "react";
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
-import { BASE_URL } from "../../../utils/utils";
+
+import { ProjectContext } from "../../../context/ProjectContext";
 
 const Text = () => {
 
-
-    const [textAbout, setTextAbout] = useState([])
+    const {text} = useContext(ProjectContext)
   
-    useEffect(()=>{
-      fetch(`${BASE_URL}/text`)
-      .then(res => res.json())
-      .then(result => setTextAbout(result))
-      .catch(err => console.log(err))
-    },[])
+  
+    
 
   return (
     <div className="d-flex flex-column justify-content-around">
 
 
       {
-        textAbout.map(text => (
+        text.map(text => (
       <div key={text._id}>
         <p className="text-black text-start text-about">
         {text.text}
