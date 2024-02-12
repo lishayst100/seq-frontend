@@ -26,6 +26,15 @@ const Navbar = () => {
     setIsOpen(prev => !prev)
   };
 
+
+  const handleLogoNav = () => {
+    if(isOpen){
+      navRef.current.classList.remove('responsive_nav');
+      setIsOpen(prev => !prev)
+    }
+      nav('/')
+  }
+
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -63,9 +72,7 @@ const Navbar = () => {
           visibility: pathname === '/' ? (scrollY.get() > 600 ? "visible" : "hidden") : 'visible',
           height: "50%",zIndex: 889
         }}
-        onClick={() => {
-          nav("/");
-        }}
+        onClick={handleLogoNav}
       />
       <nav className="links" ref={navRef}>
         {LINKS.map((v) => (

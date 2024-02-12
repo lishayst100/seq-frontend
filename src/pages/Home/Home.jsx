@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <div> 
-      {isMobile > 1000 ? <Navbar/> : <ResNavbar/>}
+      {isMobile > 1000 && <Navbar/>}
     <motion.div className='home' 
 
     style={{paddingTop: isMobile > 1000 ? paddingProgress : '', position:'relative', zIndex: 3}}
