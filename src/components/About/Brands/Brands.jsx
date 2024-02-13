@@ -9,7 +9,7 @@ const Brands = () => {
   return (
     <>
       {isMobile >= 1000 ? 
-      <Lottie animationData={animationData} style={{ width: isMobile > 1400 ? '100%' : '170%' }} />
+      <Lottie animationData={animationData} style={{ width: isMobile > 1400 ? '100%' : '170%' }}  />
         : <Lottie animationData={animationDataMobile} style={{ width: "130%" }}/> 
     }
     </>
