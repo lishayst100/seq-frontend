@@ -16,7 +16,7 @@ const Carusela = () => {
               src={slider}
               alt="..."
               style={{
-                height: resize > 800 ? 700 : 200,
+                height: resize > 800 ? 700 : 300,
                 width: "100%",
                 objectFit: "cover",
               }}

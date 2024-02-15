@@ -7,6 +7,11 @@ const Project = ({ title, img, index, _id, item }) => {
 
   return (
     <motion.div
+      animate= {{opacity: 1}}
+      initial={{opacity: 0}}
+      exit={{opacity: 0}}
+      
+      layout
       className={item}
       onClick={() => {
         nav(`/project/${_id}`);

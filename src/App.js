@@ -10,6 +10,7 @@ import { AnimatePresence } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Navbar from './components/Navbar/ResNavbar';
 import { useResize } from './hooks/useResize';
+import NotFound from './components/NotFound/NotFound';
 
 
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/project/:id" element={<ProjectViewer />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         </AnimatePresence>
     </div>
