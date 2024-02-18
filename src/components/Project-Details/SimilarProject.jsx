@@ -1,16 +1,13 @@
 import React from "react";
-import { motion} from "framer-motion";
+
 import { useNavigate } from "react-router-dom";
 
-const Project = ({ title, img, index, _id, item }) => {
+const SimilarProject = ({ title, img, index, _id, item }) => {
   const nav = useNavigate();
 
   return (
-    <motion.div
-      animate= {{opacity: 1}}
-      initial={{opacity: 0}}
-      exit={{opacity: 0}}
-      layout
+    <div
+      
       
       className={item}
       onClick={() => {
@@ -18,7 +15,7 @@ const Project = ({ title, img, index, _id, item }) => {
       }}
     >
       <div className="image-container">
-        <motion.img
+        <img
           src={img}
           alt={title}
           className="image-project"
@@ -35,8 +32,8 @@ const Project = ({ title, img, index, _id, item }) => {
         <div className="color-overlay"></div>
         <div className="project-title">{title}</div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
-export default Project;
+export default SimilarProject;
