@@ -1,11 +1,5 @@
 import { useRef, useState } from "react";
-import {
-  
-  FaFacebookF,
-  FaInstagram,
- 
-  FaVimeoV,
-} from "react-icons/fa";
+import {FaFacebookF ,FaInstagram,FaVimeoV,} from "react-icons/fa";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "./MainNavnar.scss";
 import { LINKS } from "./navLinks";
@@ -18,6 +12,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const nav = useNavigate();
   const { pathname } = useLocation();
+  const [hidden, setHidden] = useState(false);
+  const { scrollY,scrollYProgress } = useScroll();
 
   const showNavbar = () => {
     if (navRef.current) {
@@ -35,8 +31,7 @@ const Navbar = () => {
       nav('/')
   }
 
-  const [hidden, setHidden] = useState(false);
-  const { scrollY } = useScroll();
+  
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     if (previous < latest  && latest > 200) {
@@ -69,7 +64,7 @@ const Navbar = () => {
         src={logo}
         alt=""
         style={{
-          visibility: pathname === '/' ? (scrollY.get() > 600 ? "visible" : "hidden") : 'visible',
+          visibility: pathname === '/' ? (scrollYProgress.get() >= 0.1 ? "visible" : "hidden") : 'visible',
           height: "50%",zIndex: 889
         }}
         onClick={handleLogoNav}

@@ -1,4 +1,4 @@
-import {  motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import Next from "./Next";
 import ReactPlayer from "react-player";
@@ -17,7 +17,7 @@ const Details = ({
   return (
   
     <motion.div
-      
+      exit={{opacity: 0, transition: {duration: 1.5} }}
       variants={variants}
       animate={controls}
       /* initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5}}} */

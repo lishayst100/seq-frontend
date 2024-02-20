@@ -120,6 +120,17 @@
     align-items: center;
     transform-origin: 0 -38%;
     
-   /* Add transitions for the transformations */
+  
+  }
+}
+
+
+@media (max-height: 750px){
+  .logo-container {
+    display: flex;
+    align-items: center;
+    transform-origin: 0 -38%;
+    
+  
   }
 }
