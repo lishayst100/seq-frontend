@@ -29,7 +29,7 @@ const Projects = () => {
 
         <motion.div className="layout" layout>
           <AnimatePresence>
-          {filteredData.map((project,index) => (
+          {filteredData.sort((a,b)=> a.linkId - b.linkId).map((project,index) => (
             <Project img={project.images[0]} title={project.title} key={project._id} index={index} _id={project._id} item={'item'}/>
           ))}
           </AnimatePresence>
