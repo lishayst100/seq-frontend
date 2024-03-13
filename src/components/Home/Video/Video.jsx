@@ -14,7 +14,6 @@ const Video = () => {
         autoPlay
         loop
         playsInline
-        poster={projects[0]?.images[0]}
       />
      
     </div>

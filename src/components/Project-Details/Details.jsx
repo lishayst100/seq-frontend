@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import Next from "./Next";
 import ReactPlayer from "react-player";
 import Previous from "./Previous";
@@ -14,6 +14,9 @@ const Details = ({
   goToNextProject,
   projects,
 }) => {
+
+    console.log(selectedProject.link)
+
   return (
   
     <motion.div
@@ -32,13 +35,15 @@ const Details = ({
         <motion.div className="ratio ratio-16x9"
         initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5}}}
         >
+          
           <ReactPlayer
             url={selectedProject.link}
             controls={true}
             width="100%"
             height="100%"
-            light={true}
             playing={true}
+            muted={true}
+            disableDeferredLoading={true}
           />
         </motion.div>
         <Next

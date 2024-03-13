@@ -6,7 +6,9 @@ import LogoSeq from '../Home/Logo/LogoSeq';
 
 
 
+
 const Navbar = () => {
+
   const [hidden, setHidden] = useState(false);
   const { scrollYProgress,scrollY } = useScroll();
   const ref = useRef(null)
@@ -39,7 +41,7 @@ const Navbar = () => {
   return (
    
 
-    
+   
     <motion.nav className="navbar" 
    
     variants={{
@@ -61,6 +63,7 @@ const Navbar = () => {
       
       
     </motion.nav>
+  
     
   );
 };

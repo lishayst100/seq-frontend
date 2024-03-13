@@ -2,15 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { ProjectContext } from "../../context/ProjectContext";
 import Loading from "../loading/Loading";
-import { motion, useAnimationControls } from "framer-motion";
+import {  useAnimationControls } from "framer-motion";
 import "./ProjectDetails.scss";
 import ImagesGrid from "./ImagesGrid";
-import Next from "./Next";
-import Previous from "./Previous";
-import Back from "./Back";
 import Details from "./Details";
 import transition from "../../transition";
-import Project from "../Projects/Project";
 import SimilarProjects from "./SimilarProjects";
 import Footer from "../Footer/Footer";
 
@@ -31,7 +27,7 @@ const ProjectViewer = () => {
     controls.start("nextProject");
     if (selectedProjectIndex > 0) {
       const newIndex = selectedProjectIndex - 1;
-      setSelectedProjectIndex(newIndex);
+      setTimeout(()=>{setSelectedProjectIndex(newIndex);},500)
       navigate(`/project/${projects[newIndex]._id}`);
     }
   };
@@ -40,7 +36,8 @@ const ProjectViewer = () => {
     controls.start("nextProject");
     if (selectedProjectIndex < projects.length - 1) {
       const newIndex = selectedProjectIndex + 1;
-      setSelectedProjectIndex(newIndex);
+      
+      setTimeout(()=>{setSelectedProjectIndex(newIndex);},500)
       navigate(`/project/${projects[newIndex]._id}`);
     }
   };
@@ -87,12 +84,13 @@ const ProjectViewer = () => {
       <Details
         controls={controls}
         selectedProject={selectedProject}
-        variants={variants}
+
         goToNextProject={goToNextProject}
         goToPreviousProject={goToPreviousProject}
         projects={projects}
         selectedProjectIndex={selectedProjectIndex}
       />
+     
 
       <ImagesGrid
         controls={controls}
