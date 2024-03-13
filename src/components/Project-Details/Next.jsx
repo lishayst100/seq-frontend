@@ -3,7 +3,7 @@ import React from 'react'
 import { IoIosArrowForward } from "react-icons/io";
 
 
-const Previous = ({selectedProjectIndex,goToNextProject,projects}) => {
+const Previous = ({selectedProjectIndex,goToNextProject,projects,find}) => {
   return (
     <motion.div
     whileHover={{ scale: 1.1, transition: { duration: 0.3, delay: 0 } }}
@@ -11,7 +11,7 @@ const Previous = ({selectedProjectIndex,goToNextProject,projects}) => {
     onClick={goToNextProject}
     disabled={selectedProjectIndex === projects.length - 1}
   >
-    <IoIosArrowForward className='arrows' />
+    <IoIosArrowForward className='arrows' style={{fill: find ? '#000' : '#fff'}} />
   </motion.div>
   )
 }

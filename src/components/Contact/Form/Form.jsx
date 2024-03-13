@@ -18,7 +18,7 @@ const FormContact = () => {
 
   
 
-  const handleForm = async (formValues) => {
+  const handleForm = async (formValues, resetForm) => {
     setIsLoading(true)
     try {
       const response = await fetch(`${BASE_URL}/mail/sendEmail`, {
@@ -31,6 +31,7 @@ const FormContact = () => {
 
       if (response.ok) {
         setMessage('Email sent successfully');
+        resetForm()
         sendRef.current.play()
         setError('');
        
@@ -53,8 +54,8 @@ const FormContact = () => {
       validationSchema={validationSchema}
       initialValues={initialValues}
       onSubmit={(values, { resetForm }) => {
-        handleForm(values);
-        resetForm(); 
+        handleForm(values, resetForm);
+      
       }}
     >
       {({ handleSubmit }) => (
@@ -101,7 +102,7 @@ const FormContact = () => {
 
           
 
-          <div className="   w-75">
+          <div className="w-75">
             <button  type="submit" className=" send-btn  d-flex justify-content-center align-items-center text-center" style={{width: 300}} >
                 {<Lottie animationData={animationData2} autoplay={false} loop={false} lottieRef={sendRef} />}
             </button>

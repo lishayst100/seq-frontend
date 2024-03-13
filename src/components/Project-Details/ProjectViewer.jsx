@@ -16,6 +16,7 @@ const ProjectViewer = () => {
   const controls = useAnimationControls();
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
   const navigate = useNavigate();
+  
   useEffect(() => {
     const foundIndex = projects.findIndex((project) => project._id === id);
     if (foundIndex !== -1) {
@@ -71,6 +72,8 @@ const ProjectViewer = () => {
     return shuffledArray;
   }
 
+  const find = selectedProject.genres.some(genre => genre === 'events')
+
   const variants = {
     initial: { opacity: 0 },
     nextProject: {
@@ -80,7 +83,8 @@ const ProjectViewer = () => {
   };
 
   return (
-    <>
+    <span style={{background: find ? '#ffffff' : '#000'}} className="d-flex flex-column">
+
       <Details
         controls={controls}
         selectedProject={selectedProject}
@@ -103,9 +107,10 @@ const ProjectViewer = () => {
       <SimilarProjects
         shuffleArray={shuffleArray}
         projectGenre={projectGenre}
+        find={find}
       />
       <Footer scrollProgress={0.8} />
-    </>
+    </span>
   );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react'
 import SimilarProject from './SimilarProject'
 
-const SimilarProjects = ({shuffleArray,projectGenre}) => {
+const SimilarProjects = ({shuffleArray,projectGenre,find}) => {
   return (
     <div className="similar-projects-container container mx-auto d-flex flex-column gap-5">
         <div>
-        <h3>Similar Projects</h3>
+        <h3 style={{color: find ? '#000' : '#fff'}}>Similar Projects</h3>
         <hr />
         </div>
         

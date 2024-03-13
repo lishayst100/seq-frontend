@@ -2,19 +2,13 @@ import React, { useRef } from 'react';
 import Lottie from 'lottie-react';
 import animationData from '../../lottie/footer.json';
 import { useMotionValueEvent, useScroll, motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+
 
 const FooterLogo = ({ scrollProgress }) => {
-  const { pathname } = useLocation();
+
   const ref = useRef(null);
-  const { scrollYProgress, scrollY } = useScroll({ target: ref });
+  const { scrollYProgress, scrollY } = useScroll();
 
-  const isPathname = () => {
-    if (pathname === '/') return 0.8;
-    return 0.5;
-  };
-
-  const scrollTarget = isPathname();
 
   useMotionValueEvent(scrollY, 'change', () => {
     if (ref.current?.setDirection && ref.current?.play) {

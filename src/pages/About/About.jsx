@@ -33,4 +33,4 @@ const About = () => {
   )
 }
 
-export default transition(About) 
+export default transition(About);

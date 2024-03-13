@@ -32,8 +32,8 @@ function App() {
     <div className="App">
         {isMobile < 1000 ? <Navbar/> : (location.pathname !== '/' ? <Navbar/> : '')}
        
-       <AnimatePresence mode='wait' initial={false} >
-        
+       <AnimatePresence mode='wait' initial={false}  >
+       
        <ScrollToTop/>
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />
