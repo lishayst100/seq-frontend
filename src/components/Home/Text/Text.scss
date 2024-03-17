@@ -19,46 +19,40 @@
   
 }
 
-.video-container{
-    
-    z-index:100; 
-    height: 800px;
+.video-container{ 
+    height: 900px;
 }
 
 .video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
 }
 
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 1200px) {
     .text-header{
         font-size: 1.3rem ;
         padding-top:100px;
     }
-    
-    /* .video-container{
-        width: 100%;
-        height: 400px;
-    } */
-    .video{
-        object-fit: none;
-    }
 
+    .video-container{ 
+        height: auto;
+    }
+    
+    .video{
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+    }
     
 }
 
 
 @media screen and (max-width: 450px) {
     .text-header{
-        font-size: 1rem ;
-        
+        font-size: 1rem;
     }
-    
-    .video-container{
-        width: 100%;
-        height: auto;
-    }
-    
+ 
 }
