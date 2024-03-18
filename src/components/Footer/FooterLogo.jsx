@@ -10,7 +10,7 @@ const FooterLogo = ({ scrollProgress }) => {
   const { scrollYProgress, scrollY } = useScroll();
 
 
-  useMotionValueEvent(scrollY, 'change', () => {
+  /* useMotionValueEvent(scrollY, 'change', () => {
     if (ref.current?.setDirection && ref.current?.play) {
       if (scrollYProgress.get() > scrollProgress) {
         ref.current.setDirection(1);
@@ -20,11 +20,17 @@ const FooterLogo = ({ scrollProgress }) => {
         ref.current.play();
       }
     }
-  });
+  }); */
 
   return (
-    <motion.div className='d-flex justify-content-center align-items-center footer-logo'>
-      <Lottie animationData={animationData} lottieRef={ref} loop={false} />
+    <motion.div className='d-flex justify-content-center align-items-center footer-logo' 
+    whileInView={()=>{
+      ref.current.setDirection(1);
+      ref.current.play();
+    }}
+    
+    >
+      <Lottie animationData={animationData} lottieRef={ref} loop={false} autoplay={false} />
     </motion.div>
   );
 };
