@@ -1,25 +1,43 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-const ImagesGrid = ({ selectedProject, variants,controls}) => {
+
+const ImagesGrid = ({ selectedProject, variants, controls }) => {
+  const [imageLoaded, setImageLoaded] = useState({});
+  const ref = useRef();
+
+  const handleImageLoad = (index) => {
+    setImageLoaded((prev) => ({ ...prev, [index]: true }));
+  };
+
   return (
-    <motion.div 
-    variants={variants}
-    animate={controls}
-    className="images-grid container"
+    <motion.div
+      variants={variants}
+      animate={controls}
+      className="images-grid container"
     >
-    {selectedProject.images.map((img, index) => (
-      <img
-        key={img}
-        src={img}
-        alt={`hoto ${index + 1}`}
-        style={{ width: '100%', height: '100%', objectFit: 'cover', maxWidth: '100%', maxHeight: '100%' }}
-        className="rounded"
-      />
-    ))}
-  </motion.div>
+      {selectedProject.images.map((img, index) => (
+        <div key={img} className="image-wrapper">
+          {!imageLoaded[index] && <div className="blur-placeholder" style={{
+             background: `url('${img}?tr=w-300,bl-3,q-50') center center`
+          }} />}
+          <img
+            src={img}
+            alt={`img ${index + 1}`}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              maxWidth: "100%",
+              maxHeight: "100%",
+            }}
+            className={`rounded ${imageLoaded[index] ? 'loaded' : ''}`}
+            ref={ref}
+            onLoad={() => handleImageLoad(index)}
+          />
+        </div>
+      ))}
+    </motion.div>
   );
 };
 
 export default ImagesGrid;
-
-///

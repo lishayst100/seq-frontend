@@ -57,10 +57,29 @@
 }
 
 
-pre {
-  /* Set maximum width to 100% of its container */
+
+.blur-placeholder {
+  width: 100%;
+  height: 100%;
+  filter: blur(20px);
 }
 
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.images-grid img {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* .images-grid img.loaded {
+  opacity: 1;
+}
+
+.images-grid img:not(.loaded) {
+  opacity: 0;
+} */
 
 
 
