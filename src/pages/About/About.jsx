@@ -5,7 +5,6 @@ import Skills from '../../components/About/Skills/Skills'
 import Text from '../../components/About/Text/Text'
 import Brands from '../../components/About/Brands/Brands'
 import Team from '../../components/About/Team/Team'
-import Footer from '../../components/Footer/Footer'
 import '../../components/About/About.scss'
 
 
@@ -28,7 +27,7 @@ const About = () => {
       <Team/>
       <Skills/>
       <GoogleReviews/>
-      <Footer scrollProgress={0.8}/>
+     
     </div>
   )
 }

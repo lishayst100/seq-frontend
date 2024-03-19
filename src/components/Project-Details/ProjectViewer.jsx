@@ -109,7 +109,7 @@ const ProjectViewer = () => {
         projectGenre={projectGenre}
         find={find}
       />
-      <Footer scrollProgress={0.8} />
+
     </span>
   );
 };

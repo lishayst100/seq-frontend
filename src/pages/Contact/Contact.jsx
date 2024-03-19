@@ -4,7 +4,7 @@ import Text from "../../components/Contact/Text/Text";
 import Carusela from "../../components/Contact/Carusel/Carusela";
 import Form from "../../components/Contact/Form/Form";
 import transition from "../../transition";
-import Footer from "../../components/Footer/Footer";
+
 
 
 
@@ -15,7 +15,7 @@ const Contact = () => {
       <Carusela/>
       <Form/>
      
-      <Footer scrollProgress={0.7}/>
+    
       
     </div>
   );

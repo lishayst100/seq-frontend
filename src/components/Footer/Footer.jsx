@@ -6,12 +6,11 @@ import Contact from './Contact'
 import Copyright from './Copyright'
 
 
-const Footer = ({scrollProgress}) => {
+const Footer = () => {
     
   return (
     <footer className='black text-white d-flex flex-column'>
-      
-        <FooterLogo scrollProgress={scrollProgress}/>
+        <FooterLogo/>
     <div className='d-flex flex-row-reverse justify-content-between p-3 text-section'>
         <SocialFooter/>
         <div className='d-flex flex-column justify-content-between  text-start'>

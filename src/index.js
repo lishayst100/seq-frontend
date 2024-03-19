@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import ProjectContextProvider from './context/ProjectContext';
+import Footer from './components/Footer/Footer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,6 +14,7 @@ root.render(
     <BrowserRouter >
     <ProjectContextProvider>
     <App />
+    <Footer/>
     </ProjectContextProvider>
     </BrowserRouter>
 );

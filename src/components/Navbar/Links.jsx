@@ -22,7 +22,7 @@ const Links = () => {
         <NavLink
         
           key={index}
-          className={selected === index ? "selected link" : "link"}
+          className={selected === index ? "selected link-navbar" : "link-navbar"}
           to={link.link}
           onClick={() => {
             toggleSelected(index);

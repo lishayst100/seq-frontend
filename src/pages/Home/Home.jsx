@@ -47,7 +47,7 @@ const Home = () => {
         <Projects/>
         
     </motion.div>
-    <Footer scrollProgress={0.8}/>
+    
     </div>
     
   )
