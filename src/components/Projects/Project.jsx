@@ -35,8 +35,12 @@ const Project = ({ title, img, index, _id, item }) => {
         )}
         <motion.img
           src={`${base_img}tr:w-800/${src_img}`}
-          srcSet={`${base_img}tr:w-400/${src_img} 400w ${base_img}tr:w-800/${src_img} 800w ${base_img}tr:w-1200/${src_img} 1200w`}
+          srcSet={`${base_img}tr:w-400/${src_img} 400w ,${base_img}tr:w-800/${src_img} 800w, ${base_img}tr:w-1200/${src_img} 1200w`}
           alt={title}
+          onError={({currentTarget})=>{
+            currentTarget.src = `${base_img}tr:w-800,f-png/${src_img}`
+            currentTarget.onerror = null
+          }}
           loading="lazy"
           className={`image-project ${imageLoaded ? "loaded" : ""}`}
           onLoad={handleImageLoad}
