@@ -29,7 +29,7 @@ const Project = ({ title, img, index, _id, item }) => {
           <div
             className="blur-placeholder"
             style={{
-              backgroundImage: `url('${img}?tr=w-300,bl-3,q-50')`,
+              backgroundColor: 'red'
             }}
           />
         )}
