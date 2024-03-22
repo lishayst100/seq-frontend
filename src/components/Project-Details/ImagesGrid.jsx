@@ -29,7 +29,8 @@ const ImagesGrid = ({ selectedProject, variants, controls }) => {
               />
             )}
             <img
-              src={img}
+              src={`${base_img}tr:w-800,f-auto/${src_img}`}
+              srcSet={`${base_img}tr:w-400/${src_img} 400w ,${base_img}tr:w-800/${src_img} 800w, ${base_img}tr:w-1200/${src_img} 1200w`}
               alt={`img ${index + 1}`}
               style={{
                 width: "100%",
