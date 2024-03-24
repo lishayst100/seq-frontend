@@ -24,13 +24,14 @@ const ImagesGrid = ({ selectedProject, variants, controls }) => {
               <div
                 className="blur-placeholder"
                 style={{
-                  background: `url('${img}?tr=w-300,bl-3,q-50') center center`,
+                  background: `url('${img}?tr=w-300,bl-3,q-50,fm-auto') center center`,
+                  height: 200
                 }}
               />
             )}
             <img
-              src={`${base_img}tr:w-800,f-auto/${src_img}`}
-              srcSet={`${base_img}tr:w-400/${src_img} 400w ,${base_img}tr:w-800/${src_img} 800w, ${base_img}tr:w-1200/${src_img} 1200w`}
+                 src={`${base_img}tr:w-800,f-auto/${src_img}`}
+                 srcSet={`${base_img}tr:w-400,f-auto/${src_img} 400w ,${base_img}tr:w-800,f-auto/${src_img} 800w, ${base_img}tr:w-1200,f-auto/${src_img} 1200w`}
               alt={`img ${index + 1}`}
               style={{
                 width: "100%",

@@ -18,7 +18,8 @@ const SimilarProject = ({ title, img, index, _id, item }) => {
     >
       <div className="image-container">
         <img
-          src={img}
+             src={`${base_img}tr:w-800,f-auto/${src_img}`}
+             srcSet={`${base_img}tr:w-400,f-auto/${src_img} 400w ,${base_img}tr:w-800,f-auto/${src_img} 800w, ${base_img}tr:w-1200,f-auto/${src_img} 1200w`}
           alt={title}
           className="image-project"
           initial={{ filter: "blur(15px)",  }}

@@ -25,17 +25,17 @@ const Project = ({ title, img, index, _id, item }) => {
       }}
     >
       <div className="image-container">
-        {/* {!imageLoaded && (
+        {!imageLoaded && (
           <div
             className="blur-placeholder"
             style={{
-              backgroundColor: 'red'
+              background:`${base_img}tr:w-800,f-auto/${src_img}`
             }}
           />
-        )} */}
+        )}
         <motion.img
           src={`${base_img}tr:w-800,f-auto/${src_img}`}
-          //srcSet={`${base_img}tr:w-400/${src_img} 400w ,${base_img}tr:w-800/${src_img} 800w, ${base_img}tr:w-1200/${src_img} 1200w`}
+          srcSet={`${base_img}tr:w-400,f-auto/${src_img} 400w ,${base_img}tr:w-800,f-auto/${src_img} 800w, ${base_img}tr:w-1200,f-auto/${src_img} 1200w`}
           alt={title}
           onError={({currentTarget})=>{
             currentTarget.src = `${base_img}tr:w-800,f-png/${src_img}`
