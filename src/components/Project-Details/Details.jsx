@@ -1,7 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import Next from "./Next";
-import ReactPlayer from "react-player";
 import Previous from "./Previous";
 import Loading from "../loading/Loading";
 
@@ -27,6 +26,7 @@ const Details = ({
       className="d-flex justify-content-center align-items-center gap-4 flex-column  flex-grow-1 container details-container"
     >
       <motion.h3 className="title-details" style={{color: find ? '#000' : '#ffffff'}} >{selectedProject.title}</motion.h3>
+     
       <div className="w-100 d-flex justify-content-center align-items-center gap-1 gap-lg-4">
         <Previous
           goToPreviousProject={goToPreviousProject}
@@ -37,15 +37,8 @@ const Details = ({
         initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5}}}
         >
           
-          <ReactPlayer
-            url={selectedProject.link}
-            controls={true}
-            width="100%"
-            height="100%"
-            playing={true}
-            muted={true}
-            disableDeferredLoading={true}
-          />
+          <video src={selectedProject.link} controls autoPlay={false} controlsList="nodownload"></video>
+         
         </motion.div>
         <Next
           find ={find}
@@ -53,6 +46,7 @@ const Details = ({
           projects={projects}
           selectedProjectIndex={selectedProjectIndex}
         />
+        
       </div>
 
       <pre className="credits-details" style={{color: find ? '#000' : '#ffffff'}}>{selectedProject.credits}</pre>

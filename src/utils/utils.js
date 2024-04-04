@@ -12,4 +12,14 @@ export const links = [
   {title:'LinkeIn',link: 'https://www.linkedin.com/company/92740534/admin/feed/posts/'}
 ];
 
+
+export const convertBaseImg = (img) => {
+  return img.split("").slice(0, 33).join("");
+}
+
+export const convertSrcImg = (img) => {
+  return img.split("").slice(33, img.length).join("");
+}
+
+
 //https://server-seq.onrender.com/

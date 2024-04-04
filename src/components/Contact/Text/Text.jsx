@@ -28,13 +28,13 @@ const Text = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="  text-contact-container  mx-auto  justify-content-center d-flex flex-column "
+        className="  text-contact-container mx-auto justify-content-center d-flex flex-column "
       >
 
         {
           content.map(text => (
-            <div className="container mx-auto d-flex justify-content-center overflow-hidden flex-column   ">
-          <motion.p variants={item} className="text-black contact-text">
+            <div className="container mx-auto d-flex justify-content-center overflow-hidden flex-column" key={text}>
+          <motion.p variants={item} className="text-black contact-text" >
             {text}
           </motion.p>
         </div>

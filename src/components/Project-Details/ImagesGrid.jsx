@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { convertBaseImg, convertSrcImg } from "../../utils/utils";
 
 const ImagesGrid = ({ selectedProject, variants, controls }) => {
   const [imageLoaded, setImageLoaded] = useState({});
@@ -16,10 +17,11 @@ const ImagesGrid = ({ selectedProject, variants, controls }) => {
       className="images-grid container"
     >
       {selectedProject.images.map((img, index) => {
-        const base_img = img.split("").slice(0, 33).join("");
-        const src_img = img.split("").slice(33, img.length).join("");
+         const base_img = convertBaseImg(img)
+         const src_img = convertSrcImg(img)
         return (
           <div key={img} className="image-wrapper">
+            
             {!imageLoaded[index] && (
               <div
                 className="blur-placeholder"
