@@ -30,8 +30,13 @@ const Team = () => {
                         className='d-flex flex-column justify-content-start align-items-start  gap-3 overflow-hidden'
                         
                         key={t._id}>
-                            <img src={t.img[0]} alt={t.name} width={150} height={150} className='rounded-3' />
-    
+                            <div className='team-img-container'>
+                            <img src={t.img[0]} alt={t.name} className='rounded-3' />
+                            <div className='team-overlay-color rounded-3'></div>
+                            </div>
+                            
+                            
+                          
                             <div className='d-flex flex-column gap-1 justify-content-start align-items-start'>
                                 <span className='text-bolder'>{t.name}</span>
                                 <span>{t.title}</span>
@@ -40,7 +45,7 @@ const Team = () => {
                             <p className='text-start'>
                                 {t.desc}
                             </p>
-    
+                            
                         </div>
                     ))
                 )

@@ -9,6 +9,7 @@ import Details from "./Details";
 import transition from "../../transition";
 import SimilarProjects from "./SimilarProjects";
 import Footer from "../Footer/Footer";
+import VideosGrid from "./VideosGrid";
 
 const ProjectViewer = () => {
   const { id } = useParams();
@@ -81,6 +82,7 @@ const ProjectViewer = () => {
       transition: { duration: 1, delay: 0.5 },
     },
   };
+  console.log(selectedProject)
 
   return (
     <span style={{background: find ? '#ffffff' : '#000'}} className="d-flex flex-column">
@@ -95,12 +97,13 @@ const ProjectViewer = () => {
         selectedProjectIndex={selectedProjectIndex}
       />
      
-
+      {selectedProject.images?.length > 0 &&
       <ImagesGrid
         controls={controls}
         selectedProject={selectedProject}
         variants={variants}
-      />
+      />}
+     {selectedProject.supplementaryVideos?.length > 0 && <VideosGrid selectedProject={selectedProject}/>} 
 
       {/* <Back /> */}
 
