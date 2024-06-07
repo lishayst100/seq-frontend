@@ -37,7 +37,7 @@ const Details = ({
         initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5}}}
         >
           
-          <video src={selectedProject.link} controls autoPlay={false} controlsList="nodownload"></video>
+          <video src={selectedProject.link} controls autoPlay={false} poster={selectedProject.frontImage} controlsList="nodownload"></video>
          
         </motion.div>
         <Next

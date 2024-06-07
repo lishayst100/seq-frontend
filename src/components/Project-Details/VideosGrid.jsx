@@ -5,7 +5,7 @@ const VideosGrid = ({selectedProject}) => {
     <div className='images-grid container'>
         {
             selectedProject.supplementaryVideos?.map(v => (
-                <video src={v} key={v} controls
+                <video src={v} key={v} controls controlsList="nodownload"
                 style={{
                     width: "100%",
                     height: "100%",
