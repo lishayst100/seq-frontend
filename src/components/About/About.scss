@@ -72,30 +72,42 @@
   }
 
 
-  .team-img-container{
+  .team-img-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
     width: 180px;
     height: 180px;
-    position: relative;
-  }
+}
 
-  .team-img-container > img{
+.team-img-container img {
+    display: block;
     width: 100%;
-    height: 100%;
-  }
+    height: auto;
+    transition: transform 0.5s ease;
+}
 
-  .team-overlay-color{
+.team-overlay-color {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(62, 5, 255, 0);
-    transition: 0.3s;
-    &:hover{
-        background-color: rgba(62, 5, 255, 0.5);
-        cursor: pointer;
-    }
-  }
+    background-color: rgba(0, 0, 255, 0.3); /* Blue with low opacity */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.team-img-container:hover .team-overlay-color {
+    opacity: 1;
+}
+
+.team-img-container:hover img {
+    transform: scale(1.2);
+    z-index: 2;
+}
 
   
 

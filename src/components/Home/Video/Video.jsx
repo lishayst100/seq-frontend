@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ProjectContext } from '../../../context/ProjectContext'
 
 const Video = () => {
-    const video = 'https://ik.imagekit.io/whwhqeu9s/showreel-vimeo-229678848-dash-google_mediacdn_sep-video-817a9014.mp4?updatedAt=1710345814131"'
+    const video = 'https://ik.imagekit.io/tyjl9e59h/showreel_2024%20(1).mp4?updatedAt=1717945367133'
     const {projects} = useContext(ProjectContext)
   return (
     <div className='video-container'>

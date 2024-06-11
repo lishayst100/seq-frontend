@@ -13,7 +13,7 @@ const SimilarProjects = ({shuffleArray,projectGenre,find}) => {
           {shuffleArray(projectGenre).slice(0,3).map((project) => (
             <SimilarProject
               key={project._id}
-              img={project.images[0]}
+              img={project.frontImage}
               title={project.title}
               _id={project._id}
               item={'item'}
