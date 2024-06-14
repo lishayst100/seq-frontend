@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { convertBaseImg, convertSrcImg } from "../../utils/utils";
 
-const ImagesGrid = ({ selectedProject, variants, controls }) => {
+const MediaGrid = ({ selectedProject, variants, controls }) => {
   const [imageLoaded, setImageLoaded] = useState({});
   const ref = useRef();
 
@@ -14,13 +14,13 @@ const ImagesGrid = ({ selectedProject, variants, controls }) => {
     <motion.div
       variants={variants}
       animate={controls}
-      className="images-grid container"
+      className="media-grid container"
     >
       {selectedProject.images.map((img, index) => {
         const base_img = convertBaseImg(img);
         const src_img = convertSrcImg(img);
         return (
-          <div key={img} className="image-wrapper">
+          <div key={img} className="media-wrapper ">
             {!imageLoaded[index] && (
               <div
                 className="blur-placeholder"
@@ -34,7 +34,7 @@ const ImagesGrid = ({ selectedProject, variants, controls }) => {
               src={`${base_img}tr:w-800,f-auto/${src_img}`}
               srcSet={`${base_img}tr:w-400,f-auto/${src_img} 400w ,${base_img}tr:w-800,f-auto/${src_img} 800w, ${base_img}tr:w-1200,f-auto/${src_img} 1200w`}
               alt={`img ${index + 1}`}
-              className={`media-item ${imageLoaded[index] ? "loaded" : ""}`}
+              className={`media-item ${imageLoaded[index] ? "loaded rounded-3" : ""}`}
               ref={ref}
               onLoad={() => handleImageLoad(index)}
               onError={({ currentTarget }) => {
@@ -45,8 +45,19 @@ const ImagesGrid = ({ selectedProject, variants, controls }) => {
           </div>
         );
       })}
+
+      {selectedProject.supplementaryVideos?.map((v, index) => (
+        <div key={v} className="media-wrapper">
+          <video
+            src={v}
+            controls
+            controlsList="nodownload"
+            className="media-item rounded-3"
+          />
+        </div>
+      ))}
     </motion.div>
   );
 };
 
-export default ImagesGrid;
+export default MediaGrid;

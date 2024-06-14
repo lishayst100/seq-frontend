@@ -10,6 +10,7 @@ import transition from "../../transition";
 import SimilarProjects from "./SimilarProjects";
 import Footer from "../Footer/Footer";
 import VideosGrid from "./VideosGrid";
+import MediaGrid from "./MediaGrid";
 
 const ProjectViewer = () => {
   const { id } = useParams();
@@ -97,14 +98,10 @@ const ProjectViewer = () => {
         selectedProjectIndex={selectedProjectIndex}
       />
      
-      {selectedProject.images?.length > 0 &&
-      <ImagesGrid
-        controls={controls}
-        selectedProject={selectedProject}
-        variants={variants}
-      />}
-     {selectedProject.supplementaryVideos?.length > 0 && <VideosGrid selectedProject={selectedProject}/>} 
 
+    
+      <MediaGrid controls={controls} selectedProject={selectedProject} variants={variants}/>
+     
       {/* <Back /> */}
 
       <SimilarProjects
