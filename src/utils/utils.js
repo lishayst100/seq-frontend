@@ -4,7 +4,7 @@ export const transitionNavbar = 1.2;
 
 export const links = [
   { title: "Projects", link: "/" },
-  { title: "Reel", link: "/" },
+  { title: "Reel", link: "/#reel" },
   { title: "About", link: "/about" },
   {title:'Instagram',link: 'https://www.instagram.com/dvir.aviram.seq'},
   {title:'Facebook',link: 'https://www.facebook.com/dvir.aviram.seq'},
