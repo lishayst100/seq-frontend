@@ -5,6 +5,8 @@ import { convertBaseImg, convertSrcImg } from "../../utils/utils";
 const MediaGrid = ({ selectedProject, variants, controls }) => {
   const [imageLoaded, setImageLoaded] = useState({});
   const ref = useRef();
+  console.log(selectedProject)
+  
 
   const handleImageLoad = (index) => {
     setImageLoaded((prev) => ({ ...prev, [index]: true }));
@@ -53,6 +55,7 @@ const MediaGrid = ({ selectedProject, variants, controls }) => {
             controls
             controlsList="nodownload"
             className="media-item rounded-3"
+            poster={selectedProject.frontImages[index]}
           />
         </div>
       ))}
