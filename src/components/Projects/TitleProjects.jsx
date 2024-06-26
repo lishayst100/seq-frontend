@@ -6,9 +6,9 @@ const TitleProjects = ({handleGenreClick}) => {
     
     const titles = [
       {value : '',title: 'All'},
-      {value : 'ux',title: 'UX'},
-      {value : 'production' , title:'Production'},
+      {value : 'commercial' , title:'Commercial'},
       {value : 'motion', title: 'Motion' },
+      {value : 'ux',title: 'UX'},
       {value : 'events', title: 'Events' },
       
       
