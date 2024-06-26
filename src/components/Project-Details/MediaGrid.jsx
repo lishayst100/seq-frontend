@@ -52,10 +52,10 @@ const MediaGrid = ({ selectedProject, variants, controls }) => {
         <div key={v} className="media-wrapper">
           <video
             src={v}
-            controls={false}
-            loop={true}
-            muted={true}
-            autoPlay={true}
+            controls={selectedProject.isLooping ? false : true}
+            loop={selectedProject.isLooping ? true : false}
+            muted={selectedProject.isLooping ? true : false}
+            autoPlay={selectedProject.isLooping ? true : false}
             controlsList="nodownload"
             className="media-item rounded-3"
             poster={selectedProject.frontImages[index]}
