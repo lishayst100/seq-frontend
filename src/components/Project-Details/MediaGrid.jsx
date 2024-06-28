@@ -5,7 +5,7 @@ import { convertBaseImg, convertSrcImg } from "../../utils/utils";
 const MediaGrid = ({ selectedProject, variants, controls }) => {
   const [imageLoaded, setImageLoaded] = useState({});
   const ref = useRef();
-  console.log(selectedProject)
+  
   
 
   const handleImageLoad = (index) => {

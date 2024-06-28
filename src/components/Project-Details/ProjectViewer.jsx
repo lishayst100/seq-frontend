@@ -83,8 +83,7 @@ const ProjectViewer = () => {
       transition: { duration: 1, delay: 0.5 },
     },
   };
-  console.log(selectedProject)
-
+  
   return (
     <span style={{background: find ? '#ffffff' : '#000'}} className="d-flex flex-column">
 
