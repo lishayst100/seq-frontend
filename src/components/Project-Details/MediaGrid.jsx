@@ -59,6 +59,7 @@ const MediaGrid = ({ selectedProject, variants, controls }) => {
             controlsList="nodownload"
             className="media-item rounded-3"
             poster={selectedProject.frontImages[index]}
+            playsInline
           />
         </div>
       ))}
