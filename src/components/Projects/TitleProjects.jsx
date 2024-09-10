@@ -6,7 +6,7 @@ const TitleProjects = ({handleGenreClick}) => {
     
     const titles = [
       {value : '',title: 'All'},
-      {value : 'commercial' , title:'Commercial'},
+      {value : 'commercial' , title:'Commercials'},
       {value : 'motion', title: 'Motion' },
       {value : 'ux',title: 'UX'},
       {value : 'events', title: 'Events' },

@@ -10,7 +10,7 @@ export const links = [
   {title:'Instagram',link: 'https://www.instagram.com/dvir.aviram.seq'},
   {title:'Facebook',link: 'https://www.facebook.com/dvir.aviram.seq'},
   {title:'Vimeo',link: 'https://vimeo.com/dviraviram'},
-  {title:'LinkeIn',link: 'https://www.linkedin.com/company/92740534/admin/feed/posts/'}
+  {title:'LinkedIn',link: 'https://www.linkedin.com/company/92740534/admin/feed/posts/'}
 ];
 
 

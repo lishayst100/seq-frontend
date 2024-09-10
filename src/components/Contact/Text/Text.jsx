@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Text = () => {
   const content = [
-    "For potential projects and collabrations, fell free to send us a message.",
+    "For potential projects and collabrations, feel free to send us a message.",
     "We look forward creating with you!"
   ];
   const container = {
