@@ -17,11 +17,12 @@ import NotFound from './components/NotFound/NotFound';
 function App() {
   const location = useLocation()
   const isMobile = useResize()
-  const {getProjects,getCarousel,getText} = useContext(ProjectContext)
+  const {getProjects,getCarousel,getText,getShowreel} = useContext(ProjectContext)
   useEffect(()=>{
     getProjects()
     getCarousel()
     getText()
+    getShowreel()
   },[])
 
   
