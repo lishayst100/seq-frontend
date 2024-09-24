@@ -18,6 +18,22 @@ const MediaGrid = ({ selectedProject, variants, controls }) => {
       animate={controls}
       className="media-grid container"
     >
+
+{selectedProject.supplementaryVideos?.map((v, index) => (
+        <div key={v} className="media-wrapper">
+          <video
+            src={v}
+            controls={selectedProject.isLooping ? false : true}
+            loop={selectedProject.isLooping ? true : false}
+            muted={selectedProject.isLooping ? true : false}
+            autoPlay={selectedProject.isLooping ? true : false}
+            controlsList="nodownload"
+            className="media-item rounded-3"
+            poster={selectedProject.frontImages[index]}
+            playsInline
+          />
+        </div>
+      ))}
       {selectedProject.images.map((img, index) => {
         const base_img = convertBaseImg(img);
         const src_img = convertSrcImg(img);
@@ -48,21 +64,7 @@ const MediaGrid = ({ selectedProject, variants, controls }) => {
         );
       })}
 
-      {selectedProject.supplementaryVideos?.map((v, index) => (
-        <div key={v} className="media-wrapper">
-          <video
-            src={v}
-            controls={selectedProject.isLooping ? false : true}
-            loop={selectedProject.isLooping ? true : false}
-            muted={selectedProject.isLooping ? true : false}
-            autoPlay={selectedProject.isLooping ? true : false}
-            controlsList="nodownload"
-            className="media-item rounded-3"
-            poster={selectedProject.frontImages[index]}
-            playsInline
-          />
-        </div>
-      ))}
+      
     </motion.div>
   );
 };
