@@ -6,7 +6,6 @@ const Video = forwardRef((props, ref) => {
 
     const {showreel} = useContext(ProjectContext)
     const video = 'https://ik.imagekit.io/tyjl9e59h/showreel_2024%20(1).mp4?updatedAt=1717945367133';
-    console.log(showreel[0])
     
     return (
         <div className='video-container' id='reel'>
