@@ -12,7 +12,7 @@ const Video = forwardRef((props, ref) => {
             <video
                 ref={ref}
                 className='video'
-                src={showreel[0]?.link}
+                src={video}
                 controls={false}
                 muted
                 autoPlay
