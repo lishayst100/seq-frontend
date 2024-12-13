@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Review = () => {
-  const link = 'https://g.co/kgs/nsjrzKB/review'
+  const link = 'https://g.page/r/CSuVtSwRPCsBEBM/review'
   return (
     <div className='text-black d-flex flex-column text-lg-start text-md-start text-center review-titles-container'>
       <h4>Sequence</h4>
