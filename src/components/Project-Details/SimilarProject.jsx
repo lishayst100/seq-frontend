@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { convertBaseImg, convertSrcImg } from "../../utils/utils";
 
@@ -9,15 +9,22 @@ const SimilarProject = ({ title, img, index, _id, item }) => {
   const src_img = convertSrcImg(img)
 
   return (
-    <div
+    <motion.div
       
       
       className={item}
       onClick={() => {
         nav(`/project/${_id}`);
       }}
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      layout
+      
     >
-      <div className="image-container">
+      <div className="image-container"
+      
+      >
         <img
              src={`${base_img}tr:w-800,f-auto/${src_img}`}
              srcSet={`${base_img}tr:w-400,f-auto/${src_img} 400w ,${base_img}tr:w-800,f-auto/${src_img} 800w, ${base_img}tr:w-1200,f-auto/${src_img} 1200w`}
@@ -32,7 +39,7 @@ const SimilarProject = ({ title, img, index, _id, item }) => {
         <div className="color-overlay"></div>
         <div className="project-title">{title}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
