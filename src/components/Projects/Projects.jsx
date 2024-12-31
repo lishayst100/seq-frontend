@@ -5,6 +5,7 @@ import TitleProjects from "./TitleProjects";
 import { ProjectContext } from "../../context/ProjectContext";
 import Loading from "../loading/Loading";
 import Project from "./Project";
+import SimilarProject from "../Project-Details/SimilarProject";
 
 const Projects = () => {
   const {projects,isLoading} = useContext(ProjectContext)
