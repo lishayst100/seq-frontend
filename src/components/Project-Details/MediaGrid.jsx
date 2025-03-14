@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { convertBaseImg, convertSrcImg } from "../../utils/utils";
 
-const MediaGrid = ({ selectedProject, variants, controls }) => {
+const MediaGrid = ({ selectedProject/* , variants, controls */ }) => {
   const [imageLoaded, setImageLoaded] = useState({});
   const ref = useRef();
   
@@ -14,8 +14,8 @@ const MediaGrid = ({ selectedProject, variants, controls }) => {
 
   return (
     <motion.div
-      variants={variants}
-      animate={controls}
+      /* variants={variants}
+      animate={controls} */
       className="media-grid container"
     >
 

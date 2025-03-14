@@ -1,15 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ProjectContext } from "../../context/ProjectContext";
 import Loading from "../loading/Loading";
 import {  useAnimationControls } from "framer-motion";
 import "./ProjectDetails.scss";
-import ImagesGrid from "./ImagesGrid";
 import Details from "./Details";
 import transition from "../../transition";
 import SimilarProjects from "./SimilarProjects";
-import Footer from "../Footer/Footer";
-import VideosGrid from "./VideosGrid";
 import MediaGrid from "./MediaGrid";
 
 const ProjectViewer = () => {
@@ -30,7 +27,7 @@ const ProjectViewer = () => {
     controls.start("nextProject");
     if (selectedProjectIndex > 0) {
       const newIndex = selectedProjectIndex - 1;
-      setTimeout(()=>{setSelectedProjectIndex(newIndex);},500)
+      /* setTimeout(()=>{setSelectedProjectIndex(newIndex);},500) */
       navigate(`/project/${projects[newIndex]._id}`);
     }
   };
@@ -40,7 +37,7 @@ const ProjectViewer = () => {
     if (selectedProjectIndex < projects.length - 1) {
       const newIndex = selectedProjectIndex + 1;
       
-      setTimeout(()=>{setSelectedProjectIndex(newIndex);},500)
+     /*  setTimeout(()=>{setSelectedProjectIndex(newIndex);},500) */
       navigate(`/project/${projects[newIndex]._id}`);
     }
   };
@@ -99,9 +96,7 @@ const ProjectViewer = () => {
      
 
     
-      <MediaGrid controls={controls} selectedProject={selectedProject} variants={variants}/>
-     
-      {/* <Back /> */}
+      <MediaGrid controls={controls} selectedProject={selectedProject} /* variants={variants} *//>
 
       <SimilarProjects
         shuffleArray={shuffleArray}

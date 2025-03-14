@@ -19,9 +19,9 @@ const Details = ({
   return (
   
     <motion.div
-      exit={{opacity: 0, transition: {duration: 1.5} }}
-      variants={variants}
-      animate={controls}
+     /*  exit={{opacity: 0, transition: {duration: 1.5} }} */
+      /* variants={variants} */
+     /*  animate={controls} */
       /* initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5}}} */
       className="d-flex justify-content-center align-items-center gap-4 flex-column  flex-grow-1 container details-container"
     >
@@ -34,7 +34,7 @@ const Details = ({
           find ={find}
         />
         <motion.div className="ratio ratio-16x9"
-        initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5}}}
+       /*  initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5}}} */
         >
           
           <video src={selectedProject.link} controls autoPlay={false} poster={selectedProject.frontImage} controlsList="nodownload"></video>

@@ -5,7 +5,7 @@ const Review = () => {
   return (
     <div className='text-black d-flex flex-column text-lg-start text-md-start text-center review-titles-container'>
       <h4>Sequence</h4>
-      <h3 className='text-bolder'>Google 9 Reviews</h3>
+      <h3 className='text-bolder'>Google 11 Reviews</h3>
       <a href={link} className='color-blue text-decoration-none hover-underline-animation text-bolder'>write a review</a>
       </div>
   )

@@ -8,7 +8,7 @@ const Team = () => {
     
     useEffect(()=>{
         setIsLoading(true)
-        fetch(`${BASE_URL}/team/`)
+        fetch(`${BASE_URL}/team`)
         .then(res=> res.json())
         .then(result => {
             setIsLoading(false)
@@ -16,6 +16,7 @@ const Team = () => {
         })
         .catch(err => console.log(err))
     },[])
+    
 
 
   return (
@@ -25,7 +26,7 @@ const Team = () => {
         <div className='team-list container mx-auto pt-3 '>
             {
                 isLoading ? <Loading/> : (
-                    team.map( t => (
+                    team.sort((a,b)=> a.linkId - b.linkId).map( t => (
                         <div 
                         className='d-flex flex-column justify-content-start align-items-start  gap-3 overflow-hidden'
                         
