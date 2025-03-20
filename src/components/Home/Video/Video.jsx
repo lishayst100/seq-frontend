@@ -5,7 +5,7 @@ import { ProjectContext } from '../../../context/ProjectContext';
 const Video = forwardRef((props, ref) => {
 
     const {showreel} = useContext(ProjectContext)
-    const video = 'https://ik.imagekit.io/tyjl9e59h/showreel_2024%20(1).mp4?updatedAt=1717945367133';
+    const video = 'https://ik.imagekit.io/dvirseq10/Showreel%202025_Low%20quality._02mp4.mp4?updatedAt=1742495430399';
     
     return (
         <div className='video-container' id='reel'>
