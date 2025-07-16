@@ -10,6 +10,7 @@ const TitleProjects = ({handleGenreClick}) => {
       {value : 'motion', title: 'Motion' },
       {value : 'ux',title: 'UX'},
       {value : 'events', title: 'Events' },
+      {value : 'ai', title: 'AI' },
       
       
       

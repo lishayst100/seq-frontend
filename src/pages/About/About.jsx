@@ -7,29 +7,38 @@ import Brands from '../../components/About/Brands/Brands'
 import Team from '../../components/About/Team/Team'
 import '../../components/About/About.scss'
 
-
 const About = () => {
-
-
-  
   return (
-    <div className='bg-white about-padding'>
-      
-      <div className='container mx-auto review-container'>
-        <h3 className='font-bolder text-black text-start title-team p-2'>About Us</h3>
-      <div className='d-flex justify-content-between gap-5 flex-column p-2 flex-lg-row align-items-center '>
-      
-      <Text/>
-      <Brands/>
-      </div>
-      </div>
-     
-      <Team/>
-      <Skills/>
-      <GoogleReviews/>
-     
-    </div>
+    <main className='bg-white about-padding'>
+
+      <section className='container mx-auto review-container' aria-labelledby="about-us-title">
+        <h3 id="about-us-title" className='font-bolder text-black text-start title-team p-2'>
+          About Us
+        </h3>
+        <div 
+          className='d-flex justify-content-between gap-5 flex-column p-2 flex-lg-row align-items-center'
+          role="region"
+          aria-label="מידע אודות החברה"
+        >
+          <Text />
+          <Brands />
+        </div>
+      </section>
+
+      <section aria-label="צוות החברה">
+        <Team />
+      </section>
+
+      <section aria-label="כישורים ומיומנויות">
+        <Skills />
+      </section>
+
+      <section aria-label="ביקורות גוגל ודירוגים">
+        <GoogleReviews />
+      </section>
+
+    </main>
   )
 }
 
-export default transition(About);
+export default transition(About)

@@ -3,11 +3,22 @@ import React from 'react'
 const Review = () => {
   const link = 'https://g.page/r/CSuVtSwRPCsBEBM/review'
   return (
-    <div className='text-black d-flex flex-column text-lg-start text-md-start text-center review-titles-container'>
-      <h4>Sequence</h4>
-      <h3 className='text-bolder'>Google 11 Reviews</h3>
-      <a href={link} className='color-blue text-decoration-none hover-underline-animation text-bolder'>write a review</a>
-      </div>
+    <section 
+      className='text-black d-flex flex-column text-lg-start text-md-start text-center review-titles-container' 
+      aria-labelledby="review-title review-subtitle"
+    >
+      <h4 id="review-title">Sequence</h4>
+      <h3 id="review-subtitle" className='fw-bold'>Google 11 Reviews</h3>
+      <a 
+        href={link} 
+        className='color-blue text-decoration-none hover-underline-animation fw-bold' 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="כתוב ביקורת ב-Google על Sequence"
+      >
+        Write a review
+      </a>
+    </section>
   )
 }
 
