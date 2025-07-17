@@ -1,18 +1,23 @@
+// VideosGrid.jsx
 import React from "react";
 
 const VideosGrid = ({ selectedProject }) => {
   return (
-    <div className="videos-grid container">
-      {selectedProject.supplementaryVideos?.map((v) => (
+    <section
+      className="videos-grid container"
+      aria-label={`וידאוים נוספים מתוך הפרויקט ${selectedProject.title}`}
+    >
+      {selectedProject.supplementaryVideos?.map((v, i) => (
         <video
-          src={v}
           key={v}
+          src={v}
           controls
           controlsList="nodownload"
           className="media-item rounded-3"
+          aria-label={`וידאו ${i + 1} מתוך ${selectedProject.supplementaryVideos.length}`}
         />
       ))}
-    </div>
+    </section>
   );
 };
 

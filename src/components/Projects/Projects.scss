@@ -3,20 +3,30 @@
   .titles{
     padding-bottom: 20px;
   }
-    .title-projects{
-      color: #ffffff;
-      font-size: 1.3rem;
-      transition: 0.3s;
-      cursor: pointer;
-      &:hover{
-        color: rgb(62, 5, 255);
-      }
-    }
+    .title-projects {
+  color: #ffffff;
+  font-size: 1.3rem;
+  transition: 0.3s;
+  cursor: pointer;
 
-    .selected{
-      color: rgb(62, 5, 255);
-      transition: 0.3s;
-    }
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    color: rgb(62, 5, 255);
+    outline: none;
+  }
+}
+
+.selected {
+  color: rgb(62, 5, 255);
+  transition: 0.3s;
+}
+
 
 //////////////////////////////////////////////////////////////
 ///Grid Container/////////////////////////////////////////////
