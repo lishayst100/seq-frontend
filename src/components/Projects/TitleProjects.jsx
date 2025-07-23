@@ -22,13 +22,11 @@ const TitleProjects = ({ handleGenreClick }) => {
   return (
     <ul
       className="titles"
-      role="list"
       style={{
         listStyle: 'none',
         padding: 0,
         margin: 0,
         display: 'flex',
-        gap: '1.5rem',
         justifyContent: 'center',
         flexWrap: 'wrap',
       }}
