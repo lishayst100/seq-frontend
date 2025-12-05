@@ -14,6 +14,7 @@ import NotFound from './components/NotFound/NotFound';
 import AccessabilityStatment from './components/Legal Pages/AccessabilityStatment';
 import TermsofUse from './components/Legal Pages/TermsofUse';
 import PrivacyPolicy from './components/Legal Pages/PrivacyPolicy';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 
 
@@ -50,6 +51,7 @@ function App() {
           <Route path="/accessabilityStatment" element={<AccessabilityStatment />} />
         </Routes>
         </AnimatePresence>
+        <SpeedInsights />
     </div>
   );
 }
