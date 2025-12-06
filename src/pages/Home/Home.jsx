@@ -56,13 +56,13 @@ const Home = () => {
           {isMobile > 1000 ? '' : <MobileLogo aria-hidden="false" />}
           
           {/* וידאו פתיחה */}
-         {/*  <section
+          <section
             ref={reelRef}
             aria-label="Intro video section"
             tabIndex={-1}
           >
             <Video />
-          </section> */}
+          </section>
         </div>
 
         {/* טקסט תדמיתי */}

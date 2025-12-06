@@ -3,12 +3,11 @@ import { NavLink } from "react-router-dom";
 import { ProjectContext } from "../../../context/ProjectContext";
 
 const Text = () => {
-  const { getText, text } = useContext(ProjectContext);
-  
-  useEffect(()=>{
-    getText()
-  },[])
+  const { text, getText } = useContext(ProjectContext);
 
+      useEffect(()=>{
+        getText()
+      },[])
   return (
     <div
       className="d-flex flex-column justify-content-around"
