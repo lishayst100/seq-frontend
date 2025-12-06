@@ -25,16 +25,6 @@ const Video = forwardRef((props, ref) => {
         {/* מקור וידאו לגיבוי */}
         <source src={video} type="video/mp4" />
 
-        {/* כתוביות (אם יהיו בעתיד) */}
-        {/* לדוגמה:
-        <track
-          kind="captions"
-          src="/captions/showreel.vtt"
-          srcLang="en"
-          label="English captions"
-          default
-        />
-        */}
       </video>
     </div>
   );

@@ -33,7 +33,9 @@ const SimilarProject = ({ title, img, _id, item }) => {
           onError={({ currentTarget }) => {
             currentTarget.src = `${base_img}tr:w-800,f-png/${src_img}`;
             currentTarget.onerror = null;
+           
           }}
+           loading="lazy"
         />
         <div className="color-overlay" aria-hidden="true" />
         <div className="project-title">{title}</div>
