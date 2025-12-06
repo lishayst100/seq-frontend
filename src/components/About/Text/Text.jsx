@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { ProjectContext } from "../../../context/ProjectContext";
 
 const Text = () => {
-  const { text } = useContext(ProjectContext);
+  const { getText, text } = useContext(ProjectContext);
+  
+  useEffect(()=>{
+    getText()
+  },[])
 
   return (
     <div

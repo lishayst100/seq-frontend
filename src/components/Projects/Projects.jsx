@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Projects.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import TitleProjects from "./TitleProjects";
@@ -7,7 +7,10 @@ import Loading from "../loading/Loading";
 import SimilarProject from "../Project-Details/SimilarProject";
 
 const Projects = () => {
-  const { projects, isLoading } = useContext(ProjectContext);
+  const { getProjects, projects, isLoading } = useContext(ProjectContext);
+  useEffect(()=>{
+    getProjects()
+  },[])
   const data = projects;
 
   const [selectedGenre, setSelectedGenre] = useState(''); // State to store selected genre
@@ -35,6 +38,7 @@ const Projects = () => {
                 <SimilarProject
                   key={project._id}
                   img={project.frontImage}
+                  loading="lazy"
                   title={project.title}
                   index={index}
                   _id={project._id}

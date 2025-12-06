@@ -1,12 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { useResize } from "../../../hooks/useResize";
 import { ProjectContext } from "../../../context/ProjectContext";
 import { convertBaseImg, convertSrcImg } from "../../../utils/utils";
-
+ 
 const Carusela = () => {
   const resize = useResize();
-  const { images } = useContext(ProjectContext);
+  const { images ,getCarousel} = useContext(ProjectContext);
+
+  useEffect(()=>{
+      getCarousel()
+    },[])
 
   return (
     <div className="carousel" >

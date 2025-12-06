@@ -1,8 +1,6 @@
-import React, { forwardRef, useContext } from 'react';
-import { ProjectContext } from '../../../context/ProjectContext';
+import { forwardRef} from 'react';
 
 const Video = forwardRef((props, ref) => {
-  const { showreel } = useContext(ProjectContext);
   const video = 'https://ik.imagekit.io/dvirseq10/Showreel%202025_Low%20quality._02mp4.mp4?updatedAt=1742495430399';
 
   return (
