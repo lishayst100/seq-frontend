@@ -35,7 +35,7 @@ const SimilarProject = ({ title, img, _id, item }) => {
             currentTarget.onerror = null;
            
           }}
-           loading="lazy"
+          
         />
         <div className="color-overlay" aria-hidden="true" />
         <div className="project-title">{title}</div>
