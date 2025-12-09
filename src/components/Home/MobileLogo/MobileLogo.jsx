@@ -1,19 +1,34 @@
-import React, { useEffect, useRef } from 'react'
-import logo2 from '../../../images/logo2.png'
-import logo from '../../../images/logo.png'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useResize } from '../../../hooks/useResize'
+import React from 'react';
+// נשתמש רק ב-logo2 כיוון שזה מובייל בלבד
+import logo2 from '../../../images/logo2.png'; 
+// אין צורך ב-logo
+// אין צורך ב-useResize או ב-useTransform/useScroll
+
+// **חובה להחליף את ערכי הדמה האלה במימדים האמיתיים של קובץ logo2.png**
+const MOBILE_LOGO_WIDTH = 500; 
+const MOBILE_LOGO_HEIGHT = 209; 
 
 const MobileLogo = () => {
- const width = useResize()
- 
- 
+    // אין צורך בבדיקת רוחב
+    
+    return (
+        <div 
+            // ניתן לקצר את הסגנונות הקשיחים ישירות ל-CSS
+            className='mobile-logo-container d-flex justify-content-center align-items-center'
+            role="banner"
+            aria-label="Sequence brand logo"
+        >
+            <img 
+                src={logo2} 
+                alt="Sequence mobile logo" 
+                className="responsive-logo-mobile"
+                // קריטי לתיקון CLS: הגדרת המימדים המקוריים
+                width={MOBILE_LOGO_WIDTH}
+                height={MOBILE_LOGO_HEIGHT}
+                loading="eager" // טעינה מיידית ללוגו קריטי
+            />
+        </div>
+    );
+};
 
-  return (
-    <div style={{ height: '85vh',position:'relative'}} className='d-flex justify-content-center align-items-center'>
-        <img src={width > 650 ? logo : logo2} alt="mobile-logo" style={{ width: '70%', objectFit: 'cover'}} />
-    </div>
-  )
-}
-
-export default MobileLogo
+export default MobileLogo;

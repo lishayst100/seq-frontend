@@ -1,136 +1,122 @@
+/* Navbar.scss */
 
+// --- 1. סרגל ניווט ראשי (.navbar) ---
 .navbar {
-  
-  background-color: #000000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  display: flex;
-  padding: 20px;
-  justify-content: center;
-  align-items: start;
-  width: 100%;
-  
+    background-color: #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    /* קריטי: יישור למטה (כשגובהו 90vh) או למעלה (במצב קטן) 
+       שונה מ-start כדי להתאים למעבר בין הגבהים */
+    align-items: flex-start; 
+    width: 100%;
+    
+    /* קריטי ל-Framer Motion: הגדרת מיקום קבוע */
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-.logo-img{
-  max-width: 100%;
-  
-  display: block;
-  object-fit: cover;
-}
-
-
-
-.otherNavbar{
-  justify-content: space-between; 
-  align-items: center;
-  flex-direction: row;
-  display: flex;
-  padding: 20px;
-  background-color: #000000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  z-index: 1000;
-}
-
+// --- 2. לוגו קונטיינר (.logo-container) ---
 .logo-container {
-  display: flex;
-  align-items: center;
-  transform-origin: 0 -30%;
-  
- /* Add transitions for the transformations */
+    display: flex;
+    align-items: center;
+    /* ה-transform-origin קריטי לאפקט ההקטנה בזמן הגלילה */
+    transform-origin: 0 -30%; 
 }
 
-.img-seq{
-  transform-origin: 0 0;
+// --- 3. הלוגו המורכב (.sequence-logo) ---
+.sequence-logo {
+    position: relative;
+    gap: 1%;
+    user-select: none;
+    display: flex;
+    /* יישור למטה כדי לשמור על קו בסיס יציב של הלוגו */
+    align-items: flex-end; 
+    justify-content: center;
 }
 
-.sequence-logo{
-  position: relative;
-  gap: 1%;
-  user-select: none;
+/* הגדרת תמונות הלוגו: תיקון CLS רספונסיבי */
+.seq, .uence, .asterisk {
+    display: block;
+    
+    /* קריטי: מאפשר לתמונות להתכווץ ולגדול בהתאם ל-width% שנקבע, 
+       תוך שמירה על יחס הגובה-רוחב שנקבע ב-JSX (תיקון CLS) */
+    height: auto; 
+    max-width: 100%; 
 }
 
-.asterisk{
-  position: absolute;
-  top: -44%;
-  left: 34%;
-  width: 5%;
+.asterisk {
+    position: absolute;
+    top: -44%;
+    left: 34%;
+    width: 5%; 
 }
 
-.uence{
- z-index: -1;
-  display: inline-block;
-  width: 60%;
- 
-}
-.seq{
-  
-  display: inline-block;
-  width: 35%;
-  
+.uence {
+    z-index: -1;
+    width: 60%;
 }
 
-.logo-letter{
-  display: block;
-  max-width: 100%;
-  object-fit: cover;
+.seq {
+    width: 35%;
 }
 
-.logo {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-
+// --- 4. קישורים וסושיאל (.links-social) ---
 .links-social {
-  display: flex;
-  justify-content: end;
-  align-items: start;
-  width: 100%;
-  gap: 20px;
-  font-family: 'Gothic';
-  font-size: 19px;
- 
-
-}
-
-.selected{
-  color: rgb(62, 5, 255);
-  transition: 0.3s;
-}
-
-
-.link-social{
- transition:  fill 0.3s ease-in-out;
-  &:hover{
-    fill: #3e05ff;
-  }
-}
-
-
-
-
-
-@media (max-width: 1350px){
-  .logo-container {
     display: flex;
-    align-items: center;
-    transform-origin: 0 -38%;
-    
-  
-  }
+    justify-content: flex-end; /* יישר לימין */
+    align-items: center; /* יישר למרכז אנכי */
+    width: 100%;
+    gap: 20px;
+    font-family: 'Gothic';
+    font-size: 19px;
 }
 
+/* סגנון לקישור הפעיל (במקום .selected) */
+.link-navbar.active-link-style {
+    color: rgb(62, 5, 255);
+    transition: 0.3s;
+}
 
-@media (max-height: 750px){
-  .logo-container {
-    display: flex;
-    align-items: center;
-    transform-origin: 0 -38%;
+.link-social {
+    transition: fill 0.3s ease-in-out;
+    &:hover {
+        fill: #3e05ff;
+    }
+}
+
+// --- 5. מדיה קוואריז (Media Queries) ---
+@media (max-width: 1350px), (max-height: 750px) {
+    .logo-container {
+        /* שינוי transform-origin בהתאם לגודל מסך קטן יותר */
+        transform-origin: 0 -38%; 
+    }
+}
+
+// --- 6. ניקוי והסרת כללים מיותרים ---
+/* כללים אלו הוסרו או אוחדו: 
+.logo-img, .otherNavbar, .img-seq, .logo-letter, .logo, .selected */
+
+
+/* יש להוסיף לקובץ ה-CSS הרלוונטי */
+
+.mobile-logo-container {
+    /* הגדרת גובה קשיח או מבוסס viewport */
+    height: 85vh; 
+    position: relative; /* נשאר כפי שהיה ב-JSX */
+    /* ... סגנונות נוספים של flex אם לא משתמשים ב-Bootstrap d-flex ... */
+}
+
+.responsive-logo-mobile {
+    /* הגדרת הרוחב הרספונסיבי */
+    width: 70%; 
     
-  
-  }
+    /* קריטי: מאפשר לתמונה להתכווץ ולשמור על יחס הגובה-רוחב שנקבע ב-JSX */
+    height: auto; 
+    
+    /* מוודא שהתמונה ממלאת את השטח כנדרש */
+    object-fit: cover; 
 }

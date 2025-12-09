@@ -1,41 +1,42 @@
-.star{
+/* --- קוד SCSS מלא --- */
+
+.star {
     fill: rgb(62, 5, 255);
     font-size: 20px;
 }
 
-.review-container{
+.review-container {
     padding: 5%;
 }
 
-.skills{
+.skills {
     height: 500px;
 }
 
-.text-about{
+.text-about {
     font-size: 1.3em;
     width: 100%;
 }
 
-.skill{
+.skill {
     font-size: 8em;
     fill: rgb(62, 5, 255);
     padding: 20px;
     transform: rotate(-40deg);
     border-radius: 50%;
     background-color: #ffffff;
-
 }
 
-.about-padding{
+.about-padding {
     padding-top: 100px;
 }
 
-.title-team{
+.title-team {
     padding: 3.5rem 0;
     font-weight: 700;
 }
 
-.container-team{
+.container-team {
     padding-bottom: 7rem;
 }
 
@@ -43,10 +44,9 @@
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-   
-  }
-  
-  .hover-underline-animation:after {
+}
+
+.hover-underline-animation:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -57,34 +57,39 @@
     background-color: rgb(62, 5, 255);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
-  }
-  
-  .hover-underline-animation:hover:after {
+}
+
+.hover-underline-animation:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
-  }
+}
 
 
-  .team-list{
+.team-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px ,1fr));
-    gap: 2rem
-  }
+    /* שימוש ב-300px כבסיס רוחב מינימלי */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem;
+}
 
 
-  .team-img-container {
+.team-img-container {
     position: relative;
     overflow: hidden;
     display: inline-block;
     cursor: pointer;
-    width: 180px;
+    /* המימדים הקשיחים ששומרים מקום (1:1) */
+    width: 180px; 
     height: 180px;
 }
 
 .team-img-container img {
     display: block;
     width: 100%;
-    height: auto;
+    /* משתמש בגובה אוטומטי כדי לכבד את המימדים ב-HTML, 
+       אך מאחר ש-container הוא 180x180, זה עובד */
+    height: 100%; 
+    object-fit: cover; /* ודא שהתמונה מכסה את הריבוע 180x180 */
     transition: transform 0.5s ease;
 }
 
@@ -94,7 +99,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 255, 0.3); /* Blue with low opacity */
+    background-color: rgba(62, 5, 255, 0.3); /* שימוש בצבע המותג הכחול/סגול */
     opacity: 0;
     transition: opacity 0.5s ease;
     z-index: 1;
@@ -109,27 +114,23 @@
     z-index: 2;
 }
 
-  
 
-  @media screen and (max-width: 768px) {
-    .text-about{
+@media screen and (max-width: 768px) {
+    .text-about {
         font-size: 1em;
-       
     }
-    .skills{
+
+    .skills {
         height: 300px;
     }
 
-    .review-container{
+    .review-container {
         padding: 10%;
     }
-    .review-titles-container{
 
-        h4{
-            font-size: 1em
-        }
-        h3{
+    .review-titles-container {
+        h4, h3 {
             font-size: 1em;
         }
-      }
-  }
+    }
+}
