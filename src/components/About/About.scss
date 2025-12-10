@@ -3,6 +3,12 @@
 .star {
     fill: rgb(62, 5, 255);
     font-size: 20px;
+        font-family: 'Gothic', sans-serif;  
+
+}
+
+.gothic-font {
+    font-family: 'Gothic', sans-serif;  
 }
 
 .review-container {
@@ -16,6 +22,7 @@
 .text-about {
     font-size: 1.3em;
     width: 100%;
+    font-family: 'Gothic', sans-serif;  
 }
 
 .skill {
@@ -25,6 +32,7 @@
     transform: rotate(-40deg);
     border-radius: 50%;
     background-color: #ffffff;
+    
 }
 
 .about-padding {
@@ -34,6 +42,7 @@
 .title-team {
     padding: 3.5rem 0;
     font-weight: 700;
+    font-family: 'Gothic';
 }
 
 .container-team {
@@ -70,6 +79,7 @@
     /* שימוש ב-300px כבסיס רוחב מינימלי */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 2rem;
+    font-family: 'Gothic';
 }
 
 

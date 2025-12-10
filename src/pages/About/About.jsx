@@ -9,7 +9,7 @@ import '../../components/About/About.scss'
 
 const About = () => {
   return (
-    <main className='bg-white about-padding'>
+    <main className='bg-white about-padding gothic-font'>
 
       <section className='container mx-auto review-container' aria-labelledby="about-us-title">
         <h3 id="about-us-title" className='font-bolder text-black text-start title-team p-2'>

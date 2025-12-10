@@ -10,13 +10,69 @@
       name="description"
       content="SEQUENCE Studio is your boutique destination for captivating video solutions. We specialize in video production for commercials, animations, user interface experiences, and more."
     />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logolink.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/logolink.png" />
+    <link rel="manifest" href="/manifest.json" />
     <title>SEQUENCE</title>
 
+    <link rel="preload" href="/fonts/gothic-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/gothicb-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/gothici-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/gothicbi-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+
     <style>
-      /* סגנון ללינק דילוג */
+      /* 1. Gothic Regular (400, Normal) */
+      @font-face {
+        font-family: 'Gothic';
+        src: url('/fonts/gothic-webfont.woff2') format('woff2');
+        font-weight: 400; 
+        font-style: normal;
+        font-display: swap; 
+      }
+      
+      /* 2. Gothic Bold (700, Normal) */
+      @font-face {
+        font-family: 'Gothic';
+        src: url('/fonts/gothicb-webfont.woff2') format('woff2');
+        font-weight: 700; 
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* 3. Gothic Italic (400, Italic) */
+      @font-face {
+        font-family: 'Gothic';
+        src: url('/fonts/gothici-webfont.woff2') format('woff2');
+        font-weight: 400; 
+        font-style: italic;
+        font-display: swap;
+      }
+      
+      /* 4. Gothic Bold Italic (700, Italic) */
+      @font-face {
+        font-family: 'Gothic';
+        src: url('/fonts/gothicbi-webfont.woff2') format('woff2');
+        font-weight: 700; 
+        font-style: italic;
+        font-display: swap;
+      }
+      
+      /* --- כללי Reset/Body קריטיים --- */
+      body {
+        margin: 0;
+        font-family: 'Gothic', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #000000;
+      }
+
+      * {
+        box-sizing: border-box; 
+        color: #ffffff;
+      }
+      
+      /* --- סגנון ללינק דילוג --- */
       .skip-link {
         position: absolute;
         top: -40px;
@@ -34,10 +90,8 @@
     </style>
   </head>
   <body>
-    <!-- קישור לדילוג ישיר לתוכן המרכזי -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- האלמנט הראשי של האפליקציה -->
     <div id="root" role="main" tabIndex="-1"></div>
 
     <noscript>You need to enable JavaScript to run this app.</noscript>

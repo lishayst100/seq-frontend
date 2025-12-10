@@ -54,7 +54,7 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className="navbar-logo d-flex justify-content-between "
+      className="navbar-logo d-flex justify-content-between gothic-font "
       style={{ position: "fixed", width: "100%", zIndex: 100 }}
       variants={variants}
       initial="visible"

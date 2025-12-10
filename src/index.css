@@ -1,69 +1,20 @@
-/* ------------------------------------------------------------------- */
-/* 1. הגדרת Gothic Regular (משקל 400) - מאופטם */
-/* ------------------------------------------------------------------- */
-@font-face {
- font-family: 'Gothic';
- src: url('./fonts/gothic-webfont.woff2') format('woff2'), 
-   url('./fonts/gothic-webfont.woff') format('woff');
- font-weight: 400; 
- font-style: normal;
- font-display: swap; 
-}
+/*
+ * ⚠️ הערה: כללי ה-@font-face עבור גופן 'Gothic' הוסרו
+ * מקובץ זה. הם מוטמעים כעת בתוך תגית <style> בתוך קובץ index.html
+ * לשיפור מדדי ה-LCP והביצועים.
+ */
 
-/* 2. הגדרת Gothic Bold (משקל 700) - מאופטם */
-@font-face {
- font-family: 'Gothic';
- src: url('./fonts/gothicb-webfont.woff2') format('woff2'),
-   url('./fonts/gothicb-webfont.woff') format('woff'); /* תיקון: שימוש ב-gothicb-webfont.woff */
- font-weight: 700; 
- font-style: normal;
- font-display: swap;
-}
+/* --- כללים בסיסיים ואיפוס (הכללים הקריטיים יותר ב-index.html) --- */
 
-/* 3. הגדרת Gothic Italic (משקל 400, סגנון italic) - מאופטם */
-@font-face {
- font-family: 'Gothic';
- src: url('./fonts/gothici-webfont.woff2') format('woff2'),
-   url('./fonts/gothici-webfont.woff') format('woff');
- font-weight: 400;
- font-style: italic; 
- font-display: swap;
-}
-
-/* 4. הגדרת Gothic Bold Italic (משקל 700, סגנון italic) - מאופטם */
-@font-face {
- font-family: 'Gothic';
- src: url('./fonts/gothicbi-webfont.woff2') format('woff2'),
-   url('./fonts/gothicbi-webfont.woff') format('woff');
- font-weight: 700;
- font-style: italic;
- font-display: swap;
-}
-/* ------------------------------------------------------------------- */
-
-
-/* --- כללים בסיסיים ואיפוס --- */
-
-/* הגדרות גופן ורינדור ל-body */
-body {
- margin: 0;
- /* חשוב: הוספת sans-serif כגיבוי למקרה שהגופן לא נטען */
- font-family: 'Gothic', sans-serif; 
- /* שיפור רינדור הטקסט בדפדפנים */
- -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
-  /* הגדרת רקע שחור כללי, בהתאם לעיצוב האתר שלך */
-  background-color: #000000;
-}
-
-/* איפוס בסיסי וצבע כללי */
-*{
- box-sizing: border-box; /* מבטיח ש-padding ו-border כלולים ברוחב ובגובה הכלליים */
- color: #ffffff; /* הגדרת צבע טקסט לבן כברירת מחדל לכל האלמנטים */
-}
+/* הכללים הקריטיים ל-body ול-* הועברו ל-index.html */
 
 /* סגנון ספציפי ל-pre (טקסט מעוצב מראש) */
 pre {
- font-family: 'Gothic', monospace; /* שימוש בגופן 'Gothic' עם גיבוי 'monospace' */
- color: #ffffff; 
+  font-family: 'Gothic', monospace; /* שימוש בגופן 'Gothic' עם גיבוי 'monospace' */
+  color: #ffffff; 
 }
+
+/* * ------------------------------------------------------------------- 
+ * הוסף כאן כללים גלובליים נוספים שאינם קריטיים לרינדור הראשוני.
+ * ------------------------------------------------------------------- 
+ */

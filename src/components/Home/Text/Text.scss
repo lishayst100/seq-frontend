@@ -1,58 +1,74 @@
-.text-header{
+/* Text.scss */
+
+.text-header {
+    font-family: 'Gothic', sans-serif; /* הגדרה מפורשת כגיבוי למניעת בעיות ירושה */
     font-size: 1.5rem;
     color: #ffffff;
     text-align: left;
     padding: 100px 20px;
     text-align: start;
-  
+    line-height: 1.6; /* שיפור קריאות לטקסט ארוך */
+    
+    /* מניעת קפיצות פריסה בזמן האנימציה */
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.hi{
+.text-desc {
+    font-family: inherit; /* ודא ירושת הגופן מ-.text-header */
+    display: inline-block; /* הכרחי עבור אנימציות של motion.span */
+    white-space: pre; /* שומר על הרווחים בין המילים */
+}
+
+.hi {
+    font-family: inherit;
     display: inline-flex;
     color: #3e05ff;
     cursor: pointer;
+    font-weight: 700; /* שימוש במשקל Bold של הגופן */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    outline: none;
 
-   
+    &:hover, &:focus {
+        color: lighten(#3e05ff, 10%);
+        transform: scale(1.1);
+    }
 }
 
-.text-desc{
-  
-}
-
-.video-container{ 
-    height: 900px;
-}
-
-.video{
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-}
-
-
+/* --- Media Queries --- */
 
 @media screen and (max-width: 1200px) {
-    .text-header{
-        font-size: 1.3rem ;
-        padding-top:100px;
+    .text-header {
+        font-size: 1.3rem;
+        padding-top: 100px;
+        padding-bottom: 50px;
     }
 
-    .video-container{ 
+    .video-container { 
         height: auto;
+        min-height: 300px;
     }
-    
-    .video{
-       width: 100%;
-       height: 100%;
-       object-fit: cover;
-    }
-    
 }
 
-
 @media screen and (max-width: 450px) {
-    .text-header{
-        font-size: 1rem;
+    .text-header {
+        font-size: 1.1rem; 
+        padding: 60px 15px;
     }
- 
+}
+
+/* --- סגנונות וידאו --- */
+.video-container { 
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }

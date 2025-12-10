@@ -21,7 +21,7 @@ function Appbackup() {
   const isMobile = useResize()
 
   return (
-    <div className="App">
+    <div className="App gothic-font">
         {isMobile < 1000 ? <Navbar/> : (location.pathname !== '/' ? <Navbar/> : '')}
        
        <AnimatePresence mode='wait' initial={false}  >
