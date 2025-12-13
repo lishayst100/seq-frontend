@@ -16,7 +16,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react"
 
 
 
-function Appbackup() {
+function App() {
   const location = useLocation()
   const isMobile = useResize()
 
@@ -43,4 +43,4 @@ function Appbackup() {
   );
 }
 
-export default Appbackup;
+export default App;
