@@ -20,7 +20,6 @@
     <link rel="preload" href="/fonts/gothici-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/fonts/gothicbi-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-
     <style>
       /* 1. Gothic Regular (400, Normal) */
       @font-face {
@@ -88,6 +87,15 @@
         top: 0;
       }
     </style>
+    
+    <link rel="stylesheet" 
+          href="/static/css/main.css" 
+          media="print" 
+          onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="/static/css/main.css">
+    </noscript>
+
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -95,5 +103,8 @@
     <div id="root" role="main" tabIndex="-1"></div>
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
-  </body>
+    
+    <script defer src="/static/js/main.js"></script>
+    <script defer src="/static/js/2.js"></script> 
+    </body>
 </html>
