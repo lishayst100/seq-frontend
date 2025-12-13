@@ -6,8 +6,6 @@ import Projects from '../../components/Projects/Projects';
 import { motion, useScroll, useMotionValueEvent, useTransform } from 'framer-motion';
 import { useResize } from '../../hooks/useResize';
 import transition from '../../transition';
-import ResNavbar from '../../components/Navbar/ResNavbar';
-import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navbar/Navbar';
 import MobileLogo from '../../components/Home/MobileLogo/MobileLogo';
 import { useLocation } from 'react-router-dom';

@@ -1,74 +1,80 @@
 /* Text.scss */
 
 .text-header {
-    font-family: 'Gothic', sans-serif; /* הגדרה מפורשת כגיבוי למניעת בעיות ירושה */
-    font-size: 1.5rem;
-    color: #ffffff;
-    text-align: left;
-    padding: 100px 20px;
-    text-align: start;
-    line-height: 1.6; /* שיפור קריאות לטקסט ארוך */
-    
-    /* מניעת קפיצות פריסה בזמן האנימציה */
-    display: flex;
-    flex-wrap: wrap;
+  font-family: 'Gothic', sans-serif; 
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: left;
+  padding: 100px 20px;
+  text-align: start;
+  line-height: 1.6; 
+  
+  /* מניעת קפיצות פריסה בזמן האנימציה */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .text-desc {
-    font-family: inherit; /* ודא ירושת הגופן מ-.text-header */
-    display: inline-block; /* הכרחי עבור אנימציות של motion.span */
-    white-space: pre; /* שומר על הרווחים בין המילים */
+  font-family: inherit; 
+  display: inline-block; 
+  white-space: pre; 
 }
 
 .hi {
-    font-family: inherit;
-    display: inline-flex;
-    color: #3e05ff;
-    cursor: pointer;
-    font-weight: 700; /* שימוש במשקל Bold של הגופן */
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    outline: none;
+  font-family: inherit;
+  display: inline-flex;
+  color: #3e05ff;
+  cursor: pointer;
+  font-weight: 700; 
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  outline: none;
 
-    &:hover, &:focus {
-        color: lighten(#3e05ff, 10%);
-        transform: scale(1.1);
-    }
+  &:hover, &:focus {
+    color: lighten(#3e05ff, 10%);
+    transform: scale(1.1);
+  }
 }
 
 /* --- Media Queries --- */
 
 @media screen and (max-width: 1200px) {
-    .text-header {
-        font-size: 1.3rem;
-        padding-top: 100px;
-        padding-bottom: 50px;
-    }
-
-    .video-container { 
-        height: auto;
-        min-height: 300px;
-    }
+  .text-header {
+    font-size: 1.3rem;
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+    /* ❌ הוסר: .video-container { height: auto; min-height: 300px; } - לא נחוץ עם התיקון */
 }
 
 @media screen and (max-width: 450px) {
-    .text-header {
-        font-size: 1.1rem; 
-        padding: 60px 15px;
-    }
+  .text-header {
+    font-size: 1.1rem; 
+    padding: 60px 15px;
+  }
 }
 
-/* --- סגנונות וידאו --- */
-.video-container { 
+/* --- סגנונות וידאו מתוקנים (Aspect Ratio Box) --- */
+
+.video-aspect-ratio-wrapper { 
+    /* ✅ רכיב העטיפה: קובע את יחס הגובה-רוחב באמצעות padding-bottom */
     width: 100%;
-    height: 900px;
-    overflow: hidden;
     position: relative;
+    height: 0;
+    /* יחס גובה-רוחב 16:9 (9 / 16 * 100 = 56.25%) */
+    padding-bottom: 56.25%; 
+    overflow: hidden;
+    /* אם אתה רוצה שהווידאו יהיה תמיד בגובה מינימלי מסוים: */
+    min-height: 300px; 
 }
 
-.video {
+.video-responsive {
+    /* ✅ רכיב הווידאו: ממלא את יחס הגובה-רוחב שנקבע ע"י ה-Wrapper */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* חיתוך הווידאו כדי למלא את המסך (מונע פסים שחורים) */
     display: block;
 }
