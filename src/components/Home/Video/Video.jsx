@@ -6,16 +6,11 @@ const Video = forwardRef((props, ref) => {
  // נתיבים מאופטמים:
  // WebM: משתמש ב-AV1 Codec (יעיל במיוחד) וב-1.2 Mbps
  const webmVideoSrc =
-  "https://ik.imagekit.io/whwhqeu9s/videos/showreel_2025.webm?tr:vc=av1,q-55,br-1200k";
+  "https://ik.imagekit.io/seqeunce/showreel.webm/ik-video.mp4?tr:vc=av1,q-55,br-1200k";
  
  // MP4: משתמש ב-H.265 (HEVC) Codec (יעיל מאוד) וב-1.5 Mbps
  const fallbackMp4Src =
-  "https://ik.imagekit.io/whwhqeu9s/videos/showreel_2025.mp4?tr:vc=h265,q-55,br-1500k";
-
- // תמונת פוסטר (Poster Image) קריטית ל-LCP:
- // ודאו שזו תמונה קטנה (פחות מ-50KB) ודחוסה ב-WebP
- const posterImageSrc = 
-  "https://ik.imagekit.io/whwhqeu9s/images/showreel_poster.webp?tr:w-800,f-webp,q-50";
+  "https://ik.imagekit.io/seqeunce/Showreel%202025_Low%20quality.mp4?tr:vc=h265,q-55,br-1500k";
 
 
  return (
