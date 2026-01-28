@@ -78,3 +78,28 @@
     object-fit: cover; /* חיתוך הווידאו כדי למלא את המסך (מונע פסים שחורים) */
     display: block;
 }
+
+
+
+/* ברירת מחדל - הסתרת הלוגו המלא */
+.logo-full {
+    display: none;
+    max-height:75px; /* שנה לפי הצורך */
+    width: auto;
+}
+
+.logo-small {
+    display: block;
+    max-width:250px; /* שנה לפי הצורך */
+    height: auto;
+}
+
+/* זיהוי מצב שכיבה (Landscape) במובייל */
+@media (orientation: landscape) and (max-height: 1000px) {
+    .logo-small {
+        display: none;
+    }
+    .logo-full {
+        display: block;
+    }
+}
