@@ -1,4 +1,4 @@
-import React from 'react';
+
 import logoSmall from '../../../images/logo2.png'; // הלוגו המקוצר (SEQ)
 import logoFull from '../../../images/logo.png';  // הלוגו המלא (SEQUENCE)
 
