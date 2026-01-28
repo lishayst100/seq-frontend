@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Video from '../../components/Home/Video/Video';
 import './Home.scss';
 import Text from '../../components/Home/Text/Text';
 import Projects from '../../components/Projects/Projects';
-import { motion, useScroll, useMotionValueEvent, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useResize } from '../../hooks/useResize';
 import transition from '../../transition';
 import Navbar from '../../components/Navbar/Navbar';
@@ -12,8 +12,8 @@ import { useLocation } from 'react-router-dom';
 
 const Home = () => {
   const isMobile = useResize();
-  const [isAnimated, setIsAnimated] = useState(false);
-  const { scrollY, scrollYProgress } = useScroll();
+  // הסרתי את ה-isAnimated כי הוא לא היה בשימוש ב-JSX
+  const { scrollYProgress } = useScroll();
   const reelRef = useRef(null);
   const location = useLocation();
 
@@ -25,13 +25,7 @@ const Home = () => {
 
   const paddingProgress = useTransform(scrollYProgress, [0, 0.1], ['93vh', '50vh']);
 
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    if (scrollY.get() > 50) {
-      setIsAnimated(true);
-    } else {
-      setIsAnimated(false);
-    }
-  });
+  // הסרתי את ה-useMotionValueEvent כי הוא רק עדכן סטייט שלא היה בשימוש
 
   return (
     <div>
@@ -56,6 +50,7 @@ const Home = () => {
           {/* וידאו פתיחה */}
           <section
             ref={reelRef}
+            id="reel" // כדאי להוסיף ID אם אתה משתמש ב-Hash
             aria-label="Intro video section"
             tabIndex={-1}
           >
