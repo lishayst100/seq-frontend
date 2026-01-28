@@ -32,7 +32,7 @@ const TitleProjects = ({ handleGenreClick }) => {
       }}
     >
       {titles.map((title, index) => (
-        <li key={index} role="listitem" style={{ display: 'inline-block' }}>
+        <li key={index}  style={{ display: 'inline-block' }}>
           <button
             type="button"
             className={selected === index ? 'title-projects selected' : 'title-projects'}

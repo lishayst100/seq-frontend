@@ -1,10 +1,9 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+
 
 const Contact = () => {
   
 
-  const nav = useNavigate()
+ 
   return (
     <div className='d-flex flex-column gap-2 '>
         <a href='tel:+972 54-222-0977' className='text-decoration-none text-white '>+972 54-222-0977</a>

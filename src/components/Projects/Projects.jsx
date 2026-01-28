@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Projects.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import TitleProjects from "./TitleProjects";

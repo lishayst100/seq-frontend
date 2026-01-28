@@ -1,8 +1,8 @@
-import { AnimatePresence, motion } from "framer-motion";
+import {  motion } from "framer-motion";
 import React from "react";
 import Next from "./Next";
 import Previous from "./Previous";
-import Loading from "../loading/Loading";
+
 
 const Details = ({
   variants,
