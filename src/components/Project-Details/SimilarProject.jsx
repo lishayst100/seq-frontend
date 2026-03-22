@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { convertBaseImg, convertSrcImg } from "../../utils/utils";
@@ -32,16 +32,21 @@ const SimilarProject = ({ title, img, _id, item, originalWidth, originalHeight }
                 <img
                     src={`${base_img}tr:w-800,f-auto/${src_img}`}
                     srcSet={`${base_img}tr:w-400,f-auto/${src_img} 400w, ${base_img}tr:w-800,f-auto/${src_img} 800w, ${base_img}tr:w-1200,f-auto/${src_img} 1200w`}
+                    // 1. הגדרת גדלים חכמה למניעת הורדת תמונות ענקיות במובייל
+                    sizes="(max-width: 600px) 90vw, (max-width: 1200px) 45vw, 30vw" 
                     alt={`תמונה של הפרויקט ${title}`}
                     className="image-project"
-                    // קריטי לתיקון CLS: הגדרת יחס גובה-רוחב
                     width={aspectRatioWidth} 
                     height={aspectRatioHeight} 
+                    // 2. טעינה עצלנית - קריטי להורדת כמות הבקשות הראשונית
+                    loading="lazy" 
+                    // 3. עדיפות טעינה נמוכה (כי אלו פרויקטים דומים בתחתית הדף)
+                    fetchpriority="low" 
                     onError={({ currentTarget }) => {
                         currentTarget.src = `${base_img}tr:w-800,f-png/${src_img}`;
                         currentTarget.onerror = null;
                     }}
-                />
+        />      
                 <div className="color-overlay" aria-hidden="true" />
                 <div className="project-title">{title}</div>
             </div>
