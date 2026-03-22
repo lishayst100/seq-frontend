@@ -1,18 +1,20 @@
-import React, { useEffect, useRef } from 'react';
-import Video from '../../components/Home/Video/Video';
-import './Home.scss';
-import Text from '../../components/Home/Text/Text';
-import Projects from '../../components/Projects/Projects';
+import React, { useEffect, useRef, Suspense, lazy } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import { useResize } from '../../hooks/useResize';
 import transition from '../../transition';
+
+// Components
+import Video from '../../components/Home/Video/Video';
 import Navbar from '../../components/Navbar/Navbar';
 import MobileLogo from '../../components/Home/MobileLogo/MobileLogo';
-import { useLocation } from 'react-router-dom';
+
+// Lazy Loading לרכיבים שנמצאים מתחת ל-Fold
+const Text = lazy(() => import('../../components/Home/Text/Text'));
+const Projects = lazy(() => import('../../components/Projects/Projects'));
 
 const Home = () => {
   const isMobile = useResize();
-  // הסרתי את ה-isAnimated כי הוא לא היה בשימוש ב-JSX
   const { scrollYProgress } = useScroll();
   const reelRef = useRef(null);
   const location = useLocation();
@@ -25,14 +27,11 @@ const Home = () => {
 
   const paddingProgress = useTransform(scrollYProgress, [0, 0.1], ['93vh', '50vh']);
 
-  // הסרתי את ה-useMotionValueEvent כי הוא רק עדכן סטייט שלא היה בשימוש
-
   return (
     <div>
-      {/* ניווט ראשי */}
+      {/* ניווט ראשי - נטען רק בדסקטופ */}
       {isMobile > 1000 && <Navbar />}
 
-      {/* תוכן ראשי */}
       <motion.main
         className="home"
         style={{
@@ -44,13 +43,12 @@ const Home = () => {
         aria-label="Main content of the homepage"
       >
         <div style={{ position: 'relative' }}>
-          {/* לוגו נייד */}
-          {isMobile > 1000 ? '' : <MobileLogo aria-hidden="false" />}
+          {/* לוגו נייד - עבר אופטימיזציית Picture */}
+          {isMobile <= 1000 && <MobileLogo />}
           
-          {/* וידאו פתיחה */}
           <section
             ref={reelRef}
-            id="reel" // כדאי להוסיף ID אם אתה משתמש ב-Hash
+            id="reel"
             aria-label="Intro video section"
             tabIndex={-1}
           >
@@ -58,15 +56,16 @@ const Home = () => {
           </section>
         </div>
 
-        {/* טקסט תדמיתי */}
-        <section aria-label="Studio description">
-          <Text />
-        </section>
+        {/* Suspense מונע מה-JS של הפרויקטים לחסום את רינדור הלוגו והוידאו */}
+        <Suspense fallback={<div style={{ height: '400px', backgroundColor: '#000' }} />}>
+          <section aria-label="Studio description">
+            <Text />
+          </section>
 
-        {/* פרויקטים */}
-        <section aria-label="Our projects">
-          <Projects />
-        </section>
+          <section aria-label="Our projects">
+            <Projects />
+          </section>
+        </Suspense>
       </motion.main>
     </div>
   );

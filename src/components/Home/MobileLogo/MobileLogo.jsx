@@ -1,6 +1,6 @@
-
-import logoSmall from '../../../images/logo2.png'; // הלוגו המקוצר (SEQ)
-import logoFull from '../../../images/logo.png';  // הלוגו המלא (SEQUENCE)
+import React from 'react';
+import logoSmall from '../../../images/logo2.png'; // SEQ
+import logoFull from '../../../images/logo.png';  // SEQUENCE
 
 const MobileLogo = () => {
     return (
@@ -8,22 +8,25 @@ const MobileLogo = () => {
             className='mobile-logo-container d-flex justify-content-center align-items-center'
             role="banner"
         >
-            {/* לוגו SEQ - יוצג כברירת מחדל לאורך (Portrait) */}
-            <img 
-                src={logoSmall} 
-                alt="Sequence mobile logo" 
-                className="logo-small"
-                width="500" 
-                height="209"
-                loading="eager"
-            />
-            {/* לוגו SEQUENCE - יוצג רק כשהמסך לרוחב (Landscape) */}
-            <img 
-                src={logoFull} 
-                alt="Sequence full logo" 
-                className="logo-full"
-                loading="eager"
-            />
+            <picture>
+                {/* יורד רק אם המכשיר במצב Landscape ורחב מספיק */}
+                <source 
+                    media="(min-width: 600px) and (orientation: landscape)" 
+                    srcSet={logoFull} 
+                />
+                {/* ברירת מחדל למובייל - האלמנט שיקבע את ה-LCP */}
+                <img 
+                    src={logoSmall} 
+                    alt="Sequence mobile logo" 
+                    className="logo-small"
+                    width="500" 
+                    height="209"
+                    // אופטימיזציה קריטית ל-LCP
+                    fetchpriority="high" 
+                    loading="eager" 
+                    decoding="sync"
+                />
+            </picture>
         </div>
     );
 };
